@@ -27,6 +27,16 @@ def index():
     return send_file(os.path.join(os.path.dirname(__file__), 'client', 'www', 'index.html'))
 
 
+@app.route('/register.html')
+def registerhtml():
+    return send_file(os.path.join(os.path.dirname(__file__), 'client', 'public', 'register.html'))
+
+
+@app.route('/login.html')
+def loginhtml():
+    return send_file(os.path.join(os.path.dirname(__file__), 'client', 'public', 'login.html'))
+
+
 @app.route('/login')
 def login():
     user = request.args.get('user')
