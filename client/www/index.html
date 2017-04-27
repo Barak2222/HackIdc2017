@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="cartpoolApp">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -8,8 +8,8 @@
     <title>IDC carpool</title>
     <link rel="stylesheet" href="static/www/css/framework7.ios.min.css">
     <link rel="stylesheet" href="static/www/css/my-app.css">
+    <link rel="stylesheet" href="static/www/css/spinner.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-cookies.js"></script>
     <script src="/static/www/js/angular/cartpool.js"></script>
   </head>
 
@@ -107,6 +107,26 @@
               </div>
             </div>
 
+
+            <!-- pay page -->
+            <div data-page="pay-page" class="page cached">
+              <div class="page-content">
+               <div class="content-block">
+
+                  <div class="content-block-title">Today</div>
+                    <div class="list-block media-list inset">
+                      <ul id="notifToday"><li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a href="#ride" class="item-link item-content"><div class="item-media"><img id="notifImg1" src="static/www/img/notificationOn.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Sivan's request to IDC</div></div><div class="item-subtitle">2 new comments<span class="timeSpan">13:34</span></div></div></a></li></ul>
+                    </div>
+
+                  <div class="content-block-title">OLDER</div>
+                    <div class="list-block media-list inset">
+                      <ul id="notifOlder"></ul>
+                    </div>
+
+               </div>
+              </div>
+            </div>
+
             <!-- Notifications Page -->
             <div data-page="notifications" class="page cached">
               <div class="page-content">
@@ -126,6 +146,31 @@
               </div>
             </div>
 
+            <!-- Select product page -->
+            <div data-page="select-product-page" class="page cached">
+              <div class="page-content">
+                <div class="content-block">
+
+                  <div class="content-block-title" dir="rtl"><input id="search-product-input" type="text" placeholder="חפש מוצר..."></input></div>
+                    <div class="list-block media-list inset">
+                      <ul id="notifToday">
+                        <li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)">
+                           <div class="item-inner">
+                              <div class="item-title-row" id="select-product-div">
+                                 <div class="item-title">לחם</div>
+                                 <input type="number" id="quantity-for-product" value="1"></input>
+                                 <span style="float: left; font-weight: bold; margin-left: 8px">
+                                    4.90
+                                 </span>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                   </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Ride Page -->
             <div data-page="ride" class="page cached" dir="rtl">
               <div class="page-content">
@@ -139,6 +184,7 @@
                         <p id="ridePageFromTo">חברים יקרים בשעה טובה חוגגים יום העצמאות אצלי בחצר, כמובן שהאוכל טיל ושגיא הגרילמן ידאג לבשל לנו את ארוחת השף.</p>
                         <p><b>תאריך רכישה: </b>1.5.17 22:00</p>
                         <p><b>חברים בעגלה: </b>דניאל, בילו, נאור, גיא</p>
+                        <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
                       </div>
                     </div>
                     <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
@@ -147,7 +193,7 @@
                   <div class="content-block-title">אתה משלם</div>
                   <div class="card">
                     <div class="card-header">
-                       <a href="#" class="link">
+                       <a href="#select-product-page" class="link">
                           <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b class="add-to-cart-text"> הוסף פריט</b></div>
                        </a>
                     </div>
@@ -447,6 +493,9 @@
           </div>
         </div>
       </div>
+
+
+
       <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
       <script type="text/javascript" src="/static/www/js/framework7.min.js"></script>
       <script type="text/javascript" src="/static/www/js/my-app.js"></script>
