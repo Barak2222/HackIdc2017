@@ -25,9 +25,9 @@ class MySqlDal(object):
 
     AUTHENTICATE_USER = "select id, display_name from users where name=%s and password=%s"
     GET_PRODUCTS = "select * from products2"
-    GET_CARTS = "select c.id, c.name, c.owner, u.display_name from carts c, user_carts uc, users u where c.owner = u.id and c.id = uc.c_id and uc.u_id = %s"
+    GET_CARTS = "select c.id, c.name, c.owner, u.display_name, c.description from carts c, user_carts uc, users u where c.owner = u.id and c.id = uc.c_id and uc.u_id = %s"
     GET_COMMENTS = "select u.display_name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
-    GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners from cart_items ci, products2 p where p.id = ci.p_id and c_id = %s"
+    GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners, p.price from cart_items ci, products2 p where p.id = ci.p_id and c_id = %s"
     CREATE_CART = "insert into carts (name, owner) values (%s, %s)"
     ADD_USER_CART = "insert into user_carts (c_id, u_id, status) values (%(c_id)s, %(u_id)s, 0)"
     USER_ID_BY_NAME = "select id from users where name = %s"
@@ -39,6 +39,7 @@ class MySqlDal(object):
     DELETE_CART = 'delete from carts where id = %s'
     REMOVE_ITEM_FROM_CART = 'delete from cart_items where c_id = %s and p_id = %s'
     REGISTER = 'insert into users (name, display_name, password) values (%s, %s, %s)'
+    CART_MEMBERS = 'select u.display_name from users u, user_carts uc where u.id=uc.u_id and uc.c_id=%s'
 
     def __init__(self, config):
         self._config = config
@@ -115,6 +116,17 @@ class MySqlDal(object):
             comments.append(self._get_row_data(cur, comment))
 
         return comments
+
+    @cursor_needed
+    def get_cart_members(self, cur, c_id):
+        members = []
+
+        cur.execute(self.CART_MEMBERS, (c_id,))
+
+        for member in cur:
+            members.append(self._get_row_data(cur, member))
+
+        return members
 
     @cursor_needed
     def get_cart_items(self, cur, c_id):

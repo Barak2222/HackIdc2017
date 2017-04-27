@@ -71,6 +71,7 @@ def get_user_data():
     for cart in carts:
         cart['comments'] = db_dal.get_cart_comments(cart['id'])
         cart['products'] = db_dal.get_cart_items(cart['id'])
+        cart['members'] = db_dal.get_cart_members(cart['id'])
 
     return json.dumps(carts)
 

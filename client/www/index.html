@@ -80,30 +80,18 @@
               <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;">
                 <div class="content-block-title">My Carts</div>
                 <div class="list-block media-list inset">
-                   <ul id="todayToIDC">
-                     <li class="rideComponent" onclick="ridePage.handler(0)">
+                   <ul id="todayToIDC" ng-repeat="c in carts">
+
+                     <li class="rideComponent" onclick="ridePage.handler(0)" ng-click="choose_cart(c);">
                         <a href="#ride" class="item-link item-content">
                            <div class="item-media">
                               <img src="static/www/img/cart.png" width="44">
                            </div>
                            <div class="item-inner" dir="rtl">
                               <div class="item-title-row">
-                                 <div class="item-title">על האש יום העצמאות</div>
+                                 <div class="item-title">{{ c.name }}</div>
                               </div>
-                              <div class="item-subtitle ownerName">אופיר</div>
-                           </div>
-                        </a>
-                     </li>
-                     <li class="rideComponent" onclick="ridePage.handler(4)" style="background-color: rgb(255, 255, 255);">
-                        <a href="#ride" class="item-link item-content">
-                           <div class="item-media">
-                              <img src="static/www/img/cart.png" width="44">
-                           </div>
-                           <div class="item-inner" dir="rtl">
-                              <div class="item-title-row">
-                                 <div class="item-title">שותפים</div>
-                              </div>
-                              <div class="item-subtitle ownerName">בילו</div>
+                              <div class="item-subtitle ownerName">{{ c.display_name }}</div>
                            </div>
                         </a>
                      </li>
@@ -183,14 +171,14 @@
               <div class="page-content">
                 <div class="content-block">
                   <div class="card">
-                    <div class="card-header"><b>מנהל העגלה</b><span id="ridePageAuthor">אופיר</span>
+                    <div class="card-header"><b>מנהל העגלה</b><span id="ridePageAuthor">{{ cart.display_name }}</span>
                       <div class="item-media"><img id="ridePageImg" src="static/www/img/cart.png" width="44"></div>
                     </div>
                     <div class="card-content">
                       <div class="card-content-inner">
-                        <p id="ridePageFromTo">חברים יקרים בשעה טובה חוגגים יום העצמאות אצלי בחצר, כמובן שהאוכל טיל ושגיא הגרילמן ידאג לבשל לנו את ארוחת השף.</p>
+                        <p id="ridePageFromTo">{{ cart.description }}</p>
                         <p><b>תאריך רכישה: </b>1.5.17 22:00</p>
-                        <p><b>חברים בעגלה: </b>דניאל, בילו, נאור, גיא</p>
+                        <p><b>חברים בעגלה: </b>{{ members }}</p>
                         <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
                       </div>
                     </div>
@@ -207,30 +195,12 @@
 
                     <div class="card-content">
                       <div class="list-block">
-                        <ul>
+                        <ul ng-repeat="item in my_items">
                           <li>
                              <a href="#" class="item-link">
                                 <div class="item-content">
                                    <div class="item-inner">
-                                      <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
-                                   </div>
-                                </div>
-                             </a>
-                          </li>
-                          <li>
-                              <a href="#" class="item-link">
-                                  <div class="item-content">
-                                     <div class="item-inner">
-                                        <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
-                                     </div>
-                                  </div>
-                              </a>
-                           </li>
-                           <li>
-                             <a href="#" class="item-link">
-                                <div class="item-content">
-                                   <div class="item-inner">
-                                      <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
+                                      <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
                                    </div>
                                 </div>
                              </a>
@@ -238,7 +208,7 @@
                         </ul>
                       </div>
                     </div>
-                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">45.00</span></div>
+                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
                   </div>
 
                   <div class="content-block-title">כולם משלמים</div>
@@ -250,30 +220,12 @@
                     </div>
                     <div class="card-content">
                       <div class="list-block">
-                        <ul>
+                        <ul ng-repeat="item in shared_items">
                           <li>
                              <a href="#" class="item-link">
                                 <div class="item-content">
                                    <div class="item-inner">
-                                      <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
-                                   </div>
-                                </div>
-                             </a>
-                          </li>
-                          <li>
-                              <a href="#" class="item-link">
-                                  <div class="item-content">
-                                     <div class="item-inner">
-                                        <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
-                                     </div>
-                                  </div>
-                              </a>
-                           </li>
-                           <li>
-                             <a href="#" class="item-link">
-                                <div class="item-content">
-                                   <div class="item-inner">
-                                      <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
+                                      <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
                                    </div>
                                 </div>
                              </a>
@@ -281,7 +233,7 @@
                         </ul>
                       </div>
                     </div>
-                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">45.00</span></div>
+                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span></div>
                   </div>
 
                   <div class="content-block-title">אחרים משלמים</div>
@@ -293,30 +245,12 @@
                     </div>
                     <div class="card-content">
                       <div class="list-block">
-                        <ul>
+                         <ul ng-repeat="item in others_items">
                           <li>
                              <a href="#" class="item-link">
                                 <div class="item-content">
                                    <div class="item-inner">
-                                      <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
-                                   </div>
-                                </div>
-                             </a>
-                          </li>
-                          <li>
-                              <a href="#" class="item-link">
-                                  <div class="item-content">
-                                     <div class="item-inner">
-                                        <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
-                                     </div>
-                                  </div>
-                              </a>
-                           </li>
-                           <li>
-                             <a href="#" class="item-link">
-                                <div class="item-content">
-                                   <div class="item-inner">
-                                      <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
+                                      <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
                                    </div>
                                 </div>
                              </a>
@@ -324,29 +258,15 @@
                         </ul>
                       </div>
                     </div>
-                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">45.00</span></div>
+                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span></div>
                   </div>
 
                   <div class="content-block-title">תגובות</div>
-                  <div id="commentsSec">
+                  <div id="commentsSec" ng-repeat="comm in cart.comments">
                      <div class="card" id="aaa">
                         <div class="card-content">
                            <div class="card-content-inner">
-                              <b>בילו: </b>אל תשכח עוגת בצל!
-                           </div>
-                        </div>
-                     </div>
-                     <div class="card" id="aaa">
-                        <div class="card-content">
-                           <div class="card-content-inner">
-                              <b>אופיר: </b>לך תחרבן קוביה
-                           </div>
-                        </div>
-                     </div>
-                     <div class="card" id="aaa">
-                        <div class="card-content">
-                           <div class="card-content-inner">
-                              <b>דניאל: </b>יש לי קקי
+                              <b>{{ comm.display_name }}:</b>{{ comm.comment }}
                            </div>
                         </div>
                      </div>
