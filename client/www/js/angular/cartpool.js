@@ -1,6 +1,6 @@
 var myApp = angular.module('cartpoolApp', ['ngCookies']);
 
-myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $cookies, $window) {
+myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $cookies, $window, $interval) {
 
     // Verify cookie's value to assure the user logged in
     // If he got here before logging in, send him to login page
@@ -21,7 +21,7 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
                 }
             }
         });
-    }
+    };
 
     $scope.choose_cart = function (cart) {
         $scope.cart = cart;
@@ -104,8 +104,7 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
                     location.reload();
                 }
             });
-        }
-        ;
+        };
     };
 
     $scope.add_user_to_cart = function (u_name) {
@@ -122,7 +121,6 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
                 $scope.reload_data();
             }
         });
-
     };
 
     if (!cartPoolCookie) {
@@ -139,7 +137,9 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         $scope.uid = cartPoolCookie.id;
         $scope.display_name = cartPoolCookie.display_name;
         $scope.reload_data();
+
+
+        $interval($scope.reload_data, 5000);
+        $interval(funci, 1000);
     }
-
-
 });
