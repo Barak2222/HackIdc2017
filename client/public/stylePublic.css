@@ -1,0 +1,38 @@
+#login {
+    
+    border-radius: 8px;
+    padding: 50px 100px;
+    font-size: 40px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+}
+
+#sign_up {
+    border-radius: 8px;
+    padding: 50px 100px;
+    font-size: 40px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title {
+    color: #004080;
+    font-size: 80px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.submit {
+    border-radius: 8px;
+    padding: 20px 60px;
+    font-size: 40px;
+    background: #004080;
+    color: white;
+}
+
+.submit:hover {
+    background-color: #99b3ff;
+}
+
+
