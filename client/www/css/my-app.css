@@ -66,6 +66,11 @@ i.tabbar-demo-icon-4 {
    direction: rtl;
 }
 
+.select-product-dropped{
+   direction: rtl;
+   float: right;
+}
+
 #quantity-for-product{
    width: 20px;
    height: 25px;

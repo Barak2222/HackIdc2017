@@ -45,7 +45,11 @@
             </div>
 
 
-
+            <!-- Navbar inner for select-product-page-->
+            <div data-page="select-product-page" class="navbar-inner cached">
+              <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+              <div class="center sliding">Ride Info</div>
+            </div>
             <!-- Navbar inner for ride page-->
             <div data-page="ride" class="navbar-inner cached">
               <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
@@ -154,14 +158,16 @@
                   <div class="content-block-title" dir="rtl"><input id="search-product-input" type="text" placeholder="חפש מוצר..."></input></div>
                     <div class="list-block media-list inset">
                       <ul id="notifToday">
-                        <li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)">
+                        <li class="rideComponent" onclick="/** open dropdown! */">
                            <div class="item-inner">
                               <div class="item-title-row" id="select-product-div">
                                  <div class="item-title">לחם</div>
-                                 <input type="number" id="quantity-for-product" value="1"></input>
-                                 <span style="float: left; font-weight: bold; margin-left: 8px">
-                                    4.90
-                                 </span>
+                                 <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
+                              </div>
+                              <div class="select-product-dropped" class="card-footer">
+                                 <span style="float: right">כמות: </span>
+                                 <input type="number" id="quantity-for-product" value="1" />
+                                 <a href="#" class="link back" style="float: left;"><b>הוספה</b></a>
                               </div>
                            </div>
                         </li>
