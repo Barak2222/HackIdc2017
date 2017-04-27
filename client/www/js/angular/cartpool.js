@@ -1,9 +1,10 @@
 var myApp = angular.module('cartpoolApp', []);
 
-myApp.controller('MainController', function myController($scope, $http) {
-    $scope.get_all = function () {
-        $http.get("/get_products").then(function (response) {
-                $scope.all_products = response.data;
-            })
-    };
+myApp.controller('mainCtrl', function myController($scope, $timeout, $http) {
+    $scope.name = "Barak";
+
+    $http.get("/get_products").then(function (response) {
+        $scope.prods = response.data;
+        $scope.content_ready = true;
+    });
 });
