@@ -83,9 +83,12 @@
                    <ul id="todayToIDC" ng-repeat="c in carts">
 
                      <li class="rideComponent" onclick="ridePage.handler(0)" ng-click="choose_cart(c);">
+
                         <a href="#ride" class="item-link item-content">
+
                            <div class="item-media">
-                              <img src="static/www/img/cart.png" width="44">
+                                <img src="static/www/img/cart.png" width="44">
+
                            </div>
                            <div class="item-inner" dir="rtl">
                               <div class="item-title-row">
@@ -93,6 +96,7 @@
                               </div>
                               <div class="item-subtitle ownerName">{{ c.display_name }}</div>
                            </div>
+
                         </a>
                      </li>
                    </ul>
@@ -245,6 +249,9 @@
                       </div>
                     </div>
                     <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
+                    <div>
+                        <img id="delete-cart-btn" src="static/www/img/delete.png" width="30px" ng-click="delete_cart(cart.id)">
+                    </div>
                   </div>
 
                   <div class="content-block-title">אתה משלם</div>

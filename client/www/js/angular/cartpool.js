@@ -93,6 +93,20 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         });
     };
 
+    $scope.delete_cart = function (c_id) {
+        if (confirm('האם אתה בטוח שברצונך למחוק עגלה זו?')) {
+            $http.get("/delete_cart", {
+                params: {
+                    c_id: c_id
+                }
+            }).then(function (response) {
+                if (response) {
+                    location.reload();
+                }
+            });
+        };
+    }
+
     if (!cartPoolCookie) {
         $window.location.href = "/static/public/login.html";
     }
