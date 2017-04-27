@@ -343,8 +343,8 @@
                           <div class="item-content">
                             <div class="item-inner">
                               <div class="item-input"><form id="commentForm">
-                                <div class="card"><textarea id="message" style="background-color: #f0f0f0;" placeholder="Comment goes here..." required=""></textarea></div>
-                                <input type="Submit" value="Submit" class="button button-fill button-raised" style="width: 40%; margin: 4px auto;"></form>
+                                <div class="card"><textarea ng-model="new_comment" id="message" style="background-color: #f0f0f0;" placeholder="Comment goes here..." required=""></textarea></div>
+                                <input ng-click="add_comment(new_comment);" type="Submit" value="Submit" class="button button-fill button-raised" style="width: 40%; margin: 4px auto;"></form>
                               </div>
                             </div>
                           </div>
@@ -454,7 +454,7 @@
           <!-- Bottom Toolbar-->
           <div class="toolbar">
             <div class="toolbar-inner">
-              <div id="logoutB"><a href="#" id="logout" class="link">התנתק</a></div>
+              <div id="logoutB"><a href="#" id="logout" class="link" ng-click="logout();">התנתק</a></div>
               <a href="#form" onclick="navigation.toIDCTab()" class="link"><img src="static/www/img/create.png" width="30px"></a>
             </div>
           </div>

@@ -9,6 +9,15 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
     $scope.reload_data = function () {
         $http.get("/get_user_data", {params: {u_id: $scope.uid}}).then(function (response) {
             $scope.carts = response.data;
+
+            for (var i = 0; i < $scope.carts.length; i++) {
+                var cart = $scope.carts[i];
+
+                if (cart.id == $scope.cart.id) {
+                    $scope.choose_cart(cart);
+                    return;
+                }
+            }
         });
     }
 
@@ -47,10 +56,6 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         }
     };
 
-    $scope.update_scope = function () {
-        $scope.reload_data();
-
-    };
 
     $scope.add_comment = function (comment) {
         $http.get("/add_comment", {
@@ -62,8 +67,14 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         }).then(function (response) {
             if (response) {
                 $scope.reload_data();
+                $scope.new_comment = '';
             }
         });
+    };
+
+    $scope.logout = function () {
+        $cookies.remove('cartpool_session');
+        location.reload();
     };
 
     if (!cartPoolCookie) {
