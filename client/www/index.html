@@ -8,10 +8,21 @@
     <title>IDC carpool</title>
     <link rel="stylesheet" href="static/www/css/framework7.ios.min.css">
     <link rel="stylesheet" href="static/www/css/my-app.css">
-    <link rel="stylesheet" href="static/www/css/spinner.css">
+    <link rel="stylesheet" href="static/www/css/tabs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-cookies.js"></script>
     <script src="/static/www/js/angular/cartpool.js"></script>
+
+      <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
   </head>
 
   <body ng-controller="mainCtrl">
@@ -120,34 +131,46 @@
                        <h1 class="payment--main-header"> סיכום ביניים</h1>
                        <div class="card">
                            <div class="card-header payment">
-                               <p style="font-size: 25px">המוצרים שלך</p>
+                               <p style="font-size: 25px">בדקנו ומצאנו כי הסל הזול ביותר שייך ל</p><br>
+                               <img src="/static/www/img/best_super.png" class="payment-pay-options-image">
+                           </div>
+                           <p>זמני המשלוח קרובים</p>
+                           <div class="card-content-inner">
+                               <input type="radio" name="deliveryTimes" value="1">28.04.17 - 08:00-12:00<br>
+                               <input type="radio" name="deliveryTimes" value="2">28.04.17 - 08:00-12:00<br>
+                               <p>זמני משלוח נוספים</p>
+                           </div>
+                       </div>
+                       <div class="card">
+                           <div class="card-header payment">
+                               <p style="font-size: 25px; margin: 5px 25px">המוצרים שלך</p>
                                <img src="/static/www/img/person.svg" class="payment-pay-options-image">
                            </div>
                            <div class="card-content">
                                <div class="card-content-inner">
                                    <p>מוצר א</p>
                                    <p>מוצר ב</p>
-                                   <p><b>על החלק שלך תשלם: </b>20 ש"ח</p>
+                                   <p><b>על החלק שלך תשלם: </b>{{ my_sum }} ש"ח</p>
                                </div>
                            </div>
                            <div class="card-header">
-                               <p style="font-size: 25px">המוצרים של כולם</p>
+                               <p style="font-size: 25px ; margin: 5px 25px">המוצרים של כולם</p>
                                <img src="/static/www/img/group.svg" class="payment-pay-options-image">
                            </div>
                            <div class="card-content">
                                <div class="card-content-inner">
                                    <p>מוצר א</p>
                                    <p>מוצר ב</p>
-                                   <p><b>כל אחד ישלם: </b>20 ש"ח</p>
+                                   <p><b>כל אחד ישלם: </b>{{ shared_sum }} ש"ח</p>
                                </div>
                            </div>
                            <div class="card-header">
-                               <p style="font-size: 25px">סך הכול תשלם</p>
+                               <p style="font-size: 25px; margin: 5px 25px">סך הכול תשלם</p>
                                <img src="/static/www/img/total_cost.svg" class="payment-pay-options-image">
                            </div>
                            <div class="card-content">
                                <div class="card-content-inner">
-                                   <p><b>20 ש"ח</b></p>
+                                   <p><b>{{ others_sum }} ש"ח</b></p>
                                </div>
                            </div>
                        </div>
@@ -264,6 +287,72 @@
                     <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
                   </div>
 
+                    <div ng-cloak="" class="tabsdemoDynamicHeight">
+                        <md-content style="margin: 10px; box-shadow: 0 1px 2px rgba(0,0,0,.3); border-radius: 2px">
+                            <md-tabs md-dynamic-height="" md-border-bottom="">
+                                <md-tab label="המוצרים שלך">
+                                    <md-content class="tab-content">
+                                        <table class="tab-table">
+                                            <tr>
+                                                <th>מוצר</th>
+                                                <th>כמות</th>
+                                                <th>מחיר</th>
+                                            </tr>
+                                            </tr>
+                                            <tr ng-repeat="item in my_items">
+                                                <a href="#" class="item-link">
+                                                    <td>{{ item.name }}</td>
+                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
+                                                    <td>{{ item.sum }}</td>
+                                                </a>
+                                            </tr>
+                                        </table>
+                                    </md-content>
+                                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
+                                </md-tab>
+                                <md-tab label="הסל המשותף">
+                                    <md-content class="tab-content">
+                                        <table class="tab-table">
+                                            <tr>
+                                                <th>מוצר</th>
+                                                <th>כמות</th>
+                                                <th>מחיר</th>
+                                            </tr>
+                                            </tr>
+                                            <tr ng-repeat="item in shared_items">
+                                                <a href="#" class="item-link">
+                                                    <td>{{ item.name }}</td>
+                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
+                                                    <td>{{ item.sum }}</td>
+                                                </a>
+                                            </tr>
+                                        </table>
+                                    </md-content>
+                                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span></div>
+                                </md-tab>
+                                <md-tab label="אחרים">
+                                    <md-content class="tab-content">
+                                        <table class="tab-table">
+                                            <tr>
+                                                <th>מוצר</th>
+                                                <th>כמות</th>
+                                                <th>מחיר</th>
+                                            </tr>
+                                            </tr>
+                                            <tr ng-repeat="item in others_items">
+                                                <a href="#" class="item-link">
+                                                    <td>{{ item.name }}</td>
+                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
+                                                    <td>{{ item.sum }}</td>
+                                                </a>
+                                            </tr>
+                                        </table>
+                                    </md-content>
+                                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span></div>
+                                </md-tab>
+                            </md-tabs>
+                        </md-content>
+                    </div>
                   <div class="content-block-title">אתה משלם</div>
                   <div class="card">
                     <div class="card-header">
@@ -383,6 +472,7 @@
 
             <!-- Form Page-->
             <div data-page="form" class="page cached">
+              <div class="page-content">
               <div class="page-content">
               <form id="newPostForm">
 
