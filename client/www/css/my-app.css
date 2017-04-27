@@ -66,6 +66,34 @@ i.tabbar-demo-icon-4 {
    direction: rtl;
 }
 
+.apply-rtl{
+    direction: rtl;
+}
+
+.payment--main-header {
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 2px #6d6d72;
+    margin: 5px 0px;
+}
+.payment--final-total-header {
+    text-align: center;
+    font-size: 35px;
+    margin: 5px 0px;
+}
+.payment-pay-options {
+    text-align: center;
+}
+.payment-pay-options-image:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+
 #quantity-for-product{
    width: 20px;
    height: 25px;
