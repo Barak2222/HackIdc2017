@@ -9,11 +9,12 @@ $('#log').on('submit', function(e){
 		data: userData,
 	}).done(function(dataRecieved){
 		if(dataRecieved){
-			window.location.href = "/www/index.html";
+			window.location.href = "/";
 		} else {
 			window.location.href = "/public/accessDenied.html";
+            form.trigger('reset');
 		}
-		form.trigger('reset');
+
 	})
 	.fail(function(data){
 		

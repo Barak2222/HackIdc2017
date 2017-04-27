@@ -32,15 +32,15 @@ def registerhtml():
     return send_file(os.path.join(os.path.dirname(__file__), 'client', 'public', 'register.html'))
 
 
-@app.route('/login.html')
+@app.route('/login.html', )
 def loginhtml():
     return send_file(os.path.join(os.path.dirname(__file__), 'client', 'public', 'login.html'))
 
 
-@app.route('/login')
+@app.route('/login', methods=['POST', 'GET'])
 def login():
-    user = request.args.get('user')
-    passwd = request.args.get('password')
+    user = request.form.get('user')
+    passwd = request.form.get('password')
 
     if not user or not passwd:
         return json.dumps(False)
@@ -179,7 +179,7 @@ def remove_item_from_cart():
     return json.dumps(res)
 
 
-@app.route('/register')
+@app.route('/register', methods=['POST', 'GET'])
 def register():
     name = request.args.get('name')
     passwd = request.args.get('password')
@@ -188,7 +188,15 @@ def register():
     if not name or not passwd or not display_name:
         return json.dumps(False)
 
-    return json.dumps(db_dal.register(name, display_name, passwd))
+    res = db_dal.register(name, display_name, passwd)
+    if not res:
+        return json.dumps(False)
+
+    u_id = db_dal.get_user_id_by_name(name)
+    redirect_to_index = redirect('/')
+    response = app.make_response(redirect_to_index)
+    response.set_cookie('cartpool_session', value=json.dumps({'display_name': display_name, 'id': u_id}))
+    return response
 
 
 if __name__ == '__main__':
