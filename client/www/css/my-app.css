@@ -56,6 +56,28 @@ i.tabbar-demo-icon-4 {
   font-weight: bold;
 }
 
+#search-product-input{
+   width: 80%;
+   height: 10%;
+   font-size: 40px;
+   size: 20;
+}
+#select-product-div{
+   direction: rtl;
+}
+
+#quantity-for-product{
+   width: 20px;
+   height: 25px;
+   border: 1px solid black;
+   border-radius: 5px;
+   text-align: center;
+}
+
+.single-product-span{
+   float: right;
+}
+
 #epsilon{
    float: left;
 }
