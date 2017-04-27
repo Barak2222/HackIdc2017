@@ -49,7 +49,7 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
 
     $scope.update_scope = function () {
         $scope.reload_data();
-        
+
     };
 
     $scope.add_comment = function (comment) {
