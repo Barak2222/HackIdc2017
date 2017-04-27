@@ -11,8 +11,8 @@ SERVER_ADDR = 'localhost'
 
 
 class DbConfigDev(object):
-    USER = 'root'
+    USER = 'user'
     PORT = 6669
-    PASSWORD = 'Password1'
-    HOST = '127.0.0.1'
+    PASSWORD = '1234'
+    HOST = '10.10.18.211'
     SCHEMA = 'cart_pool'
