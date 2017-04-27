@@ -1,7 +1,7 @@
 import os
 import json
 
-from flask import Flask, request, send_file, make_response
+from flask import Flask, request, send_file, make_response, redirect
 import mysql.connector.errors
 
 from db.mysql_dal import MySqlDal
@@ -39,7 +39,10 @@ def login():
     if not res:
         return json.dumps(False)
 
-    return json.dumps(res)
+    redirect_to_index = redirect('/')
+    response = app.make_response(redirect_to_index)
+    response.set_cookie('cartpool_session', value=json.dumps(res))
+    return response
 
 
 @app.route('/get_products')
