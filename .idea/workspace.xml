@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26368d44-4c17-423c-9cf4-83b7e74b16fe" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/www/js/angular/cartpool.js" afterPath="$PROJECT_DIR$/client/www/js/angular/cartpool.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/www/index.html" afterPath="$PROJECT_DIR$/client/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/mysql_dal.py" afterPath="$PROJECT_DIR$/db/mysql_dal.py" />
     </list>
     <list id="73f6b1dc-9b46-4fbe-a3cb-022cd4cda357" name="idea" comment="" />
     <ignored path="HackIdc2017.iws" />
@@ -19,7 +21,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/HackIdc2017$HackIdc2017.coverage" NAME="HackIdc2017 Coverage Results" MODIFIED="1493299722664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/HackIdc2017$server.coverage" NAME="server Coverage Results" MODIFIED="1493326245238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HackIdc2017$server.coverage" NAME="server Coverage Results" MODIFIED="1493329543115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,43 +38,43 @@
       <file leaf-file-name="mysql_dal.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="3417">
-              <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2230" max-vertical-offset="3417">
+              <caret line="142" column="50" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <element signature="e#3175#3303#0" expanded="false" />
-                <marker date="1493325052425" expanded="true" signature="541:603" placeholder="select id, d..users..." />
-                <marker date="1493325052425" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
-                <marker date="1493325052425" expanded="true" signature="669:820" placeholder="select c.id,..carts..." />
-                <marker date="1493325052425" expanded="true" signature="844:935" placeholder="select u.dis..comments..." />
-                <marker date="1493325052425" expanded="true" signature="961:1078" placeholder="select p.id,..cart_items..." />
-                <marker date="1493325052425" expanded="true" signature="1101:1148" placeholder="insert into ..." />
-                <marker date="1493325052425" expanded="true" signature="1171:1245" placeholder="insert into ..." />
-                <marker date="1493325052425" expanded="true" signature="1270:1304" placeholder="select id fr..users..." />
-                <marker date="1493325052425" expanded="true" signature="1329:1375" placeholder="insert into ..." />
-                <marker date="1493325052425" expanded="true" signature="1396:1436" placeholder="insert into ..." />
-                <marker date="1493325052425" expanded="true" signature="1458:1518" placeholder="update user_..." />
-                <marker date="1493325052425" expanded="true" signature="1549:1595" placeholder="update user_..." />
-                <marker date="1493325052425" expanded="true" signature="1549:1597" placeholder="update user_..." />
-                <marker date="1493325052425" expanded="true" signature="1631:1677" placeholder="update user_..." />
-                <marker date="1493325052425" expanded="true" signature="1631:1690" placeholder="update user_..." />
-                <marker date="1493325052425" expanded="true" signature="1631:1691" placeholder="update user_..." />
-                <marker date="1493325052425" expanded="true" signature="1731:1745" placeholder="update user_..." />
-                <marker date="1493325052425" expanded="true" signature="1776:1812" placeholder="delete from ..." />
-                <marker date="1493325052425" expanded="true" signature="1776:1825" placeholder="delete from ..." />
-                <marker date="1493325052425" expanded="true" signature="1776:1826" placeholder="delete from ..." />
-                <marker date="1493325052425" expanded="true" signature="1846:1914" placeholder="insert into ..." />
-                <marker date="1493325052425" expanded="true" signature="1936:2017" placeholder="select u.dis..users..." />
+                <element signature="e#3192#3320#0" expanded="false" />
+                <marker date="1493329486707" expanded="true" signature="541:603" placeholder="select id, d..users..." />
+                <marker date="1493329486707" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
+                <marker date="1493329486707" expanded="true" signature="669:820" placeholder="select c.id,..carts..." />
+                <marker date="1493329486707" expanded="true" signature="844:935" placeholder="select u.dis..comments..." />
+                <marker date="1493329486707" expanded="true" signature="961:1078" placeholder="select p.id,..cart_items..." />
+                <marker date="1493329486707" expanded="true" signature="1101:1165" placeholder="insert into ..." />
+                <marker date="1493329486707" expanded="true" signature="1188:1262" placeholder="insert into ..." />
+                <marker date="1493329486707" expanded="true" signature="1287:1321" placeholder="select id fr..users..." />
+                <marker date="1493329486707" expanded="true" signature="1346:1392" placeholder="insert into ..." />
+                <marker date="1493329486707" expanded="true" signature="1413:1453" placeholder="insert into ..." />
+                <marker date="1493329486707" expanded="true" signature="1475:1535" placeholder="update user_..." />
+                <marker date="1493329486707" expanded="true" signature="1566:1612" placeholder="update user_..." />
+                <marker date="1493329486707" expanded="true" signature="1566:1614" placeholder="update user_..." />
+                <marker date="1493329486707" expanded="true" signature="1648:1694" placeholder="update user_..." />
+                <marker date="1493329486707" expanded="true" signature="1648:1707" placeholder="update user_..." />
+                <marker date="1493329486707" expanded="true" signature="1648:1708" placeholder="update user_..." />
+                <marker date="1493329486707" expanded="true" signature="1748:1762" placeholder="update user_..." />
+                <marker date="1493329486707" expanded="true" signature="1793:1829" placeholder="delete from ..." />
+                <marker date="1493329486707" expanded="true" signature="1793:1842" placeholder="delete from ..." />
+                <marker date="1493329486707" expanded="true" signature="1793:1843" placeholder="delete from ..." />
+                <marker date="1493329486707" expanded="true" signature="1863:1931" placeholder="insert into ..." />
+                <marker date="1493329486707" expanded="true" signature="1953:2034" placeholder="select u.dis..users..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0" vertical-offset="552" max-vertical-offset="3553">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="1392" max-vertical-offset="3638">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -80,11 +82,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/flask/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="33212" max-vertical-offset="33677">
+              <caret line="1993" column="0" selection-start-line="1993" selection-start-column="0" selection-end-line="1993" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/tornado/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4282" max-vertical-offset="5984">
+              <caret line="304" column="34" selection-start-line="304" selection-start-column="34" selection-end-line="304" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4444444" vertical-offset="7620" max-vertical-offset="8092">
-              <caret line="456" column="88" selection-start-line="456" selection-start-column="88" selection-end-line="456" selection-end-column="88" />
+            <state vertical-scroll-proportion="-4.962963" vertical-offset="6974" max-vertical-offset="8092">
+              <caret line="426" column="101" selection-start-line="426" selection-start-column="101" selection-end-line="426" selection-end-column="101" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -102,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cartpool.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cartpool.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/www/js/angular/cartpool.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6215054" vertical-offset="1054" max-vertical-offset="1734">
-              <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2006">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -125,10 +147,11 @@
         <option value="$PROJECT_DIR$/client/public/register.html" />
         <option value="$PROJECT_DIR$/client/public/login.html" />
         <option value="$PROJECT_DIR$/client/public/login.js" />
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/db/mysql_dal.py" />
-        <option value="$PROJECT_DIR$/client/www/js/angular/cartpool.js" />
+        <option value="$PROJECT_DIR$/client/www/js/my-app.js" />
         <option value="$PROJECT_DIR$/client/www/index.html" />
+        <option value="$PROJECT_DIR$/client/www/js/angular/cartpool.js" />
+        <option value="$PROJECT_DIR$/db/mysql_dal.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -536,7 +559,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -550,7 +573,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3255814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3255814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -581,7 +604,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -592,29 +622,29 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#3175#3303#0" expanded="false" />
-            <marker date="1493325052425" expanded="true" signature="541:603" placeholder="select id, d..users..." />
-            <marker date="1493325052425" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
-            <marker date="1493325052425" expanded="true" signature="669:820" placeholder="select c.id,..carts..." />
-            <marker date="1493325052425" expanded="true" signature="844:935" placeholder="select u.dis..comments..." />
-            <marker date="1493325052425" expanded="true" signature="961:1078" placeholder="select p.id,..cart_items..." />
-            <marker date="1493325052425" expanded="true" signature="1101:1148" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1171:1245" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1270:1304" placeholder="select id fr..users..." />
-            <marker date="1493325052425" expanded="true" signature="1329:1375" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1396:1436" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1458:1518" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1549:1595" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1549:1597" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1631:1677" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1631:1690" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1631:1691" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1731:1745" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1776:1812" placeholder="delete from ..." />
-            <marker date="1493325052425" expanded="true" signature="1776:1825" placeholder="delete from ..." />
-            <marker date="1493325052425" expanded="true" signature="1776:1826" placeholder="delete from ..." />
-            <marker date="1493325052425" expanded="true" signature="1846:1914" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1936:2017" placeholder="select u.dis..users..." />
+            <element signature="e#3192#3320#0" expanded="false" />
+            <marker date="1493329486707" expanded="true" signature="541:603" placeholder="select id, d..users..." />
+            <marker date="1493329486707" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
+            <marker date="1493329486707" expanded="true" signature="669:820" placeholder="select c.id,..carts..." />
+            <marker date="1493329486707" expanded="true" signature="844:935" placeholder="select u.dis..comments..." />
+            <marker date="1493329486707" expanded="true" signature="961:1078" placeholder="select p.id,..cart_items..." />
+            <marker date="1493329486707" expanded="true" signature="1101:1165" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1188:1262" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1287:1321" placeholder="select id fr..users..." />
+            <marker date="1493329486707" expanded="true" signature="1346:1392" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1413:1453" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1475:1535" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1566:1612" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1566:1614" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1694" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1707" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1708" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1748:1762" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1829" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1842" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1843" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1863:1931" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1953:2034" placeholder="select u.dis..users..." />
           </folding>
         </state>
       </provider>
@@ -692,61 +722,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/js/my-app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21935484" vertical-offset="1292" max-vertical-offset="8279">
+          <caret line="82" column="50" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/js/angular/cartpool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2006">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="26841" max-vertical-offset="33677">
-          <caret line="1613" column="0" selection-start-line="1613" selection-start-column="0" selection-end-line="1613" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="33212" max-vertical-offset="33677">
+          <caret line="1993" column="0" selection-start-line="1993" selection-start-column="0" selection-end-line="1993" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/tornado/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4282" max-vertical-offset="5984">
+          <caret line="304" column="34" selection-start-line="304" selection-start-column="34" selection-end-line="304" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="3417">
-          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2230" max-vertical-offset="3417">
+          <caret line="142" column="50" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#3175#3303#0" expanded="false" />
-            <marker date="1493325052425" expanded="true" signature="541:603" placeholder="select id, d..users..." />
-            <marker date="1493325052425" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
-            <marker date="1493325052425" expanded="true" signature="669:820" placeholder="select c.id,..carts..." />
-            <marker date="1493325052425" expanded="true" signature="844:935" placeholder="select u.dis..comments..." />
-            <marker date="1493325052425" expanded="true" signature="961:1078" placeholder="select p.id,..cart_items..." />
-            <marker date="1493325052425" expanded="true" signature="1101:1148" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1171:1245" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1270:1304" placeholder="select id fr..users..." />
-            <marker date="1493325052425" expanded="true" signature="1329:1375" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1396:1436" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1458:1518" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1549:1595" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1549:1597" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1631:1677" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1631:1690" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1631:1691" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1731:1745" placeholder="update user_..." />
-            <marker date="1493325052425" expanded="true" signature="1776:1812" placeholder="delete from ..." />
-            <marker date="1493325052425" expanded="true" signature="1776:1825" placeholder="delete from ..." />
-            <marker date="1493325052425" expanded="true" signature="1776:1826" placeholder="delete from ..." />
-            <marker date="1493325052425" expanded="true" signature="1846:1914" placeholder="insert into ..." />
-            <marker date="1493325052425" expanded="true" signature="1936:2017" placeholder="select u.dis..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="552" max-vertical-offset="3553">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#3192#3320#0" expanded="false" />
+            <marker date="1493329486707" expanded="true" signature="541:603" placeholder="select id, d..users..." />
+            <marker date="1493329486707" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
+            <marker date="1493329486707" expanded="true" signature="669:820" placeholder="select c.id,..carts..." />
+            <marker date="1493329486707" expanded="true" signature="844:935" placeholder="select u.dis..comments..." />
+            <marker date="1493329486707" expanded="true" signature="961:1078" placeholder="select p.id,..cart_items..." />
+            <marker date="1493329486707" expanded="true" signature="1101:1165" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1188:1262" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1287:1321" placeholder="select id fr..users..." />
+            <marker date="1493329486707" expanded="true" signature="1346:1392" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1413:1453" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1475:1535" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1566:1612" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1566:1614" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1694" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1707" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1708" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1748:1762" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1829" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1842" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1843" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1863:1931" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1953:2034" placeholder="select u.dis..users..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4444444" vertical-offset="7620" max-vertical-offset="8092">
-          <caret line="456" column="88" selection-start-line="456" selection-start-column="88" selection-end-line="456" selection-end-column="88" />
+        <state vertical-scroll-proportion="-4.962963" vertical-offset="6974" max-vertical-offset="8092">
+          <caret line="426" column="101" selection-start-line="426" selection-start-column="101" selection-end-line="426" selection-end-column="101" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -763,11 +807,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/www/js/angular/cartpool.js">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6215054" vertical-offset="1054" max-vertical-offset="1734">
-          <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1392" max-vertical-offset="3638">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

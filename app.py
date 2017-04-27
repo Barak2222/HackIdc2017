@@ -80,11 +80,16 @@ def get_user_data():
 def create_cart():
     u_id = request.args.get('user_id')
     name = request.args.get('name')
+    description = request.args.get('description')
 
-    if not u_id or not name:
+    if not u_id or not name or not description:
         return json.dumps(False)
 
-    return json.dumps(db_dal.create_cart(u_id, name))
+    res = db_dal.create_cart(u_id, name, description)
+    if not res:
+        return json.dumps(False)
+
+    return json.dumps(db_dal.add_user_cart(res, u_id))
 
 
 @app.route('/add_user_cart')

@@ -28,7 +28,7 @@ class MySqlDal(object):
     GET_CARTS = "select c.id, c.name, c.owner, u.display_name, c.description from carts c, user_carts uc, users u where c.owner = u.id and c.id = uc.c_id and uc.u_id = %s"
     GET_COMMENTS = "select u.display_name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
     GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners, p.price from cart_items ci, products2 p where p.id = ci.p_id and c_id = %s"
-    CREATE_CART = "insert into carts (name, owner) values (%s, %s)"
+    CREATE_CART = "insert into carts (name, owner, description) values (%s, %s, %s)"
     ADD_USER_CART = "insert into user_carts (c_id, u_id, status) values (%(c_id)s, %(u_id)s, 0)"
     USER_ID_BY_NAME = "select id from users where name = %s"
     ADD_CART_ITEM = 'insert into cart_items values (%s, %s, %s, %s)'
@@ -140,10 +140,10 @@ class MySqlDal(object):
         return items
 
     @cursor_needed
-    def create_cart(self, cur, u_id, name):
-        cur.execute(self.CREATE_CART, (name, u_id))
+    def create_cart(self, cur, u_id, name, description):
+        cur.execute(self.CREATE_CART, (name, u_id, description))
         self._connection.commit()
-        return True
+        return cur._last_insert_id
 
     @cursor_needed
     def add_user_cart(self, cur, c_id, u_id):

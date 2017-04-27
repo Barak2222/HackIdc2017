@@ -10,12 +10,14 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         $http.get("/get_user_data", {params: {u_id: $scope.uid}}).then(function (response) {
             $scope.carts = response.data;
 
-            for (var i = 0; i < $scope.carts.length; i++) {
-                var cart = $scope.carts[i];
+            if ($scope.cart) {
+                for (var i = 0; i < $scope.carts.length; i++) {
+                    var cart = $scope.carts[i];
 
-                if (cart.id == $scope.cart.id) {
-                    $scope.choose_cart(cart);
-                    return;
+                    if (cart.id == $scope.cart.id) {
+                        $scope.choose_cart(cart);
+                        return;
+                    }
                 }
             }
         });
@@ -75,6 +77,20 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
     $scope.logout = function () {
         $cookies.remove('cartpool_session');
         location.reload();
+    };
+
+    $scope.add_cart = function (name, description) {
+        $http.get("/create_cart", {
+            params: {
+                user_id: $scope.uid,
+                name: name,
+                description: description
+            }
+        }).then(function (response) {
+            if (response) {
+                $scope.reload_data();
+            }
+        });
     };
 
     if (!cartPoolCookie) {

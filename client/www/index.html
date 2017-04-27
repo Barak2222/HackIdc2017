@@ -378,7 +378,7 @@
                         <div class="item-inner">
                           <div class="item-title label">מנהל העגלה</div>
                           <div class="item-input">
-                            לי בילו
+                          {{ display_name }}
                           </div>
                         </div>
                       </div>
@@ -412,7 +412,7 @@
                         <div class="item-inner">
                           <div class="item-title label">שם העגלה</div>
                           <div class="item-input">
-                            <input type="text" name="cart_name" required="">
+                            <input type="text" name="cart_name" required="" ng-model="new_cart_name">
                           </div>
                         </div>
                       </div>
@@ -424,7 +424,7 @@
                         <div class="item-inner">
                           <div class="item-title label">תיאור העגלה</div>
                           <div class="item-input">
-                            <input type="text" name="description" required="">
+                            <input type="text" name="description" required="" ng-model="new_cart_desc">
                           </div>
                         </div>
                       </div>
@@ -445,7 +445,7 @@
                 </div>
                 <div class="content-block">
                   <div class="row">
-                    <input type="Submit" class="Submit button button-big button-fill color-green">
+                    <input type="Submit" class="Submit button button-big button-fill color-green" ng-click="add_cart(new_cart_name, new_cart_desc);">
                   </div>
                 </div>
               </form></div>
