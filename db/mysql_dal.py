@@ -23,10 +23,10 @@ def cursor_needed(func):
 class MySqlDal(object):
     BOOL_FIELDS = []
 
-    AUTHENTICATE_USER = "select id from users where name=%s and password=%s"
+    AUTHENTICATE_USER = "select id, display_name from users where name=%s and password=%s"
     GET_PRODUCTS = "select * from products2"
     GET_CARTS = "select c.id, c.name, c.owner from carts c, user_carts uc where c.id = uc.c_id and uc.u_id = %s"
-    GET_COMMENTS = "select u.name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
+    GET_COMMENTS = "select u.display_name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
     GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners from cart_items ci, products2 p where p.id = ci.p_id and c_id = %s"
     CREATE_CART = "insert into carts (name, owner) values (%s, %s)"
     ADD_USER_CART = "insert into user_carts (c_id, u_id, status) values (%(c_id)s, %(u_id)s, 0)"
@@ -34,6 +34,11 @@ class MySqlDal(object):
     ADD_CART_ITEM = 'insert into cart_items values (%s, %s, %s, %s)'
     ADD_COMMENT = 'insert into comments values (%s, %s, %s)'
     APPROVE_CART = 'update user_carts set status = 1 where c_id = %s and u_id = %s'
+    REMOVE_CART_APPROVE = 'update user_carts set status = 0 where c_id = %s'
+    REMOVE_CART_APPROVE_USER = 'update user_carts set status = 0 where c_id = %s and u_id = %s'
+    DELETE_CART = 'delete from carts where id = %s'
+    REMOVE_ITEM_FROM_CART = 'delete from cart_items where c_id = %s and p_id = %s'
+    REGISTER = 'insert into users (name, display_name, password) values (%s, %s, %s)'
 
     def __init__(self, config):
         self._config = config
@@ -67,6 +72,13 @@ class MySqlDal(object):
     @cursor_needed
     def authenticate_user(self, cur, user, passwd):
         cur.execute(self.AUTHENTICATE_USER, (user, passwd))
+
+        for user_data in cur:
+            return self._get_row_data(cur, user_data)
+
+    @cursor_needed
+    def get_user_id_by_name(self, cur, name):
+        cur.execute(self.USER_ID_BY_NAME, (name, ))
 
         for user_data in cur:
             return self._get_row_data(cur, user_data)
@@ -142,5 +154,35 @@ class MySqlDal(object):
     @cursor_needed
     def approve_cart(self, cur, c_id, u_id):
         cur.execute(self.APPROVE_CART, (c_id, u_id))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def remove_cart_approve(self, cur, c_id):
+        cur.execute(self.REMOVE_CART_APPROVE, (c_id, ))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def remove_cart_approve_user(self, cur, c_id, u_id):
+        cur.execute(self.REMOVE_CART_APPROVE_USER, (c_id, u_id))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def delete_cart(self, cur, c_id):
+        cur.execute(self.DELETE_CART, (c_id, ))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def remove_item_from_cart(self, cur, c_id, item_id):
+        cur.execute(self.REMOVE_ITEM_FROM_CART, (c_id, item_id))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def register(self, cur, name, display_name, passwd):
+        cur.execute(self.REGISTER, (name, display_name, passwd))
         self._connection.commit()
         return True

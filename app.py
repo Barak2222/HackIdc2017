@@ -39,7 +39,7 @@ def login():
     if not res:
         return json.dumps(False)
 
-    return json.dumps(res['id'])
+    return json.dumps(res)
 
 
 @app.route('/get_products')
@@ -99,7 +99,11 @@ def add_cart_item():
     if not c_id or not owner or not i_id or not quantity:
         return json.dumps(False)
 
-    return json.dumps(db_dal.add_cart_item(c_id, i_id, quantity, owner))
+    res = db_dal.add_cart_item(c_id, i_id, quantity, owner)
+    if res:
+        db_dal.remove_cart_approve(c_id)
+
+    return json.dumps(res)
 
 
 @app.route('/add_comment')
@@ -113,15 +117,65 @@ def add_comment():
 
     return json.dumps(db_dal.add_comment(c_id, u_id, comment))
 
+
 @app.route('/approve_cart')
 def approve_cart():
     c_id = request.args.get('c_id')
     u_id = request.args.get('u_id')
-    
+
     if not c_id or not u_id:
         return json.dumps(False)
 
     return json.dumps(db_dal.approve_cart(c_id, u_id))
+
+
+@app.route('/remove_cart_approve')
+def remove_cart_approve():
+    c_id = request.args.get('c_id')
+    u_id = request.args.get('u_id')
+
+    if not c_id or not u_id:
+        return json.dumps(False)
+
+    return json.dumps(db_dal.remove_cart_approve_user(c_id, u_id))
+
+
+@app.route('/delete_cart')
+def delete_cart():
+    c_id = request.args.get('c_id')
+
+    if not c_id:
+        return json.dumps(False)
+
+    return json.dumps(db_dal.delete_cart(c_id))
+
+
+@app.route('/remove_item_from_cart')
+def remove_item_from_cart():
+    c_id = request.args.get('c_id')
+    item_id = request.args.get('item_id')
+
+    if not c_id or not item_id:
+        return json.dumps(False)
+
+    res = db_dal.remove_item_from_cart(c_id, item_id)
+
+    if res:
+        db_dal.remove_cart_approve(c_id)
+
+    return json.dumps(res)
+
+
+@app.route('/register')
+def register():
+    name = request.args.get('name')
+    passwd = request.args.get('password')
+    display_name = request.args.get('display_name')
+
+    if not name or not passwd or not display_name:
+        return json.dumps(False)
+
+    return json.dumps(db_dal.register(name, display_name, passwd))
 
 
 if __name__ == '__main__':
