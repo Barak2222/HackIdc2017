@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel = " stylesheet" href="registerStyle.css">
-  <link rel = "stylesheet" href="stylePublic.css">
 </head>
 
 
@@ -14,12 +13,15 @@
 
 
 <body>
-
   <form action="/action_page.php">
   
-    <div class="container">
-      <label><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+    <div class="container" id="main-text">
+
+      <label><b>User Name</b></label>
+      <input type="text" placeholder="Enter your name" name="email">
+
+      <label><b>NickName</b></label>
+      <input type="text" placeholder="Enter your NickName" name="email">
 
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
@@ -30,7 +32,7 @@
       <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
-        <button type="button"  class="cancelbtn">Cancel</button>
+        <button type="button"  class="cancelbtn"  onclick="window.location.href='login.html'">Cancel</button>
         <button type="submit" class="signupbtn">Sign Up</button>
       </div>
   </div>
