@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cartpoolApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -8,9 +8,11 @@
     <title>IDC carpool</title>
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/my-app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+    <script src="js/angular/cartpool.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="MainController as main">
       <div class="statusbar-overlay"></div>
       <div class="panel-overlay"></div>
       <!-- NAVIGATION MENU -->
@@ -65,56 +67,41 @@
             </div>
           </div>
 
-
           <!-- Pages-->
           <div class="pages navbar-through toolbar-through">
             <!-- Index Page-->
-            <div data-page="index" class="page with-subnavbar">
-              <div class="center">Swipeable Tabs</div>
-              <div class="subnavbar">
-                <div class="buttons-row">
-                  <a id="tabToIDC" href="#tab1" class="button tab-link active">TO IDC</a>
-                  <a id="tabFromIDC" href="#tab2" class="button tab-link">FROM IDC</a>
-                </div>
-              </div>
-              <div class="tabs-swipeable-wrap swiper-container swiper-container-horizontal" id="tabsContainer">
-                <div class="tabs swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                  <!-- TO IDC -->
-                  <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;">
-                    <div class="content-block-title">Today</div>
-                    <div class="list-block media-list inset">
-                      <ul id="todayToIDC">
-                      <li class="rideComponent" onclick="ridePage.handler(0)"><a href="#ride" class="item-link item-content"><div class="item-media"><img src="img/driver.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Raanana to IDC</div></div><div class="item-subtitle">Sapir<span class="timeSpan">Leaving 12:30</span></div></div></a></li></ul>
-                    </div>
-                    <div class="content-block-title">Tomorrow</div>
-                    <div class="list-block media-list inset">
-                      <ul id="tomorrowToIDC">
-                      <li class="rideComponent" onclick="ridePage.handler(1)"><a href="#ride" class="item-link item-content"><div class="item-media"><img src="img/pedestrian.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Tel Aviv to IDC</div></div><div class="item-subtitle">Sivan<span class="timeSpan">Requesting 08:15</span></div></div></a></li></ul>
-                    </div>
-                    <div class="content-block-title">Later</div>
-                    <div class="list-block media-list inset">
-                      <ul id="laterToIDC">
-                      <li class="rideComponent" onclick="ridePage.handler(2)"><a href="#ride" class="item-link item-content"><div class="item-media"><img src="img/pedestrian.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Tel Aviv to IDC</div></div><div class="item-subtitle">Barak<span class="timeSpan">Requesting 09:00</span></div></div></a></li></ul>
-                    </div>
-                  </div>
-                  <!-- FROM IDC -->
-                  <div id="tab2" class="page-content tab swiper-slide swiper-slide-next" style="width: 375px;">
-                    <div class="content-block-title">Today</div>
-                    <div class="list-block media-list inset">
-                      <ul id="todayFromIDC">
-                      <li class="rideComponent" onclick="ridePage.handler(3)"><a href="#ride" class="item-link item-content"><div class="item-media"><img src="img/driver.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Ramat Gan to IDC west gate</div></div><div class="item-subtitle">Sivan<span class="timeSpan">Leaving 08:30</span></div></div></a></li></ul>
-                    </div>
-                    <div class="content-block-title">Tomorrow</div>
-                    <div class="list-block media-list inset">
-                      <ul id="tomorrowFromIDC">
-                      </ul>
-                    </div>
-                    <div class="content-block-title">Later</div>
-                    <div class="list-block media-list inset">
-                      <ul id="laterFromIDC">
-                      </ul>
-                    </div>
-                  </div>
+            <div data-page="index" class="page">
+              <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;">
+                <div class="content-block-title">My Carts</div>
+                <div class="list-block media-list inset">
+                   <ul id="todayToIDC">
+                     <li class="rideComponent" onclick="ridePage.handler(0)">
+                        <a href="#ride" class="item-link item-content">
+                           <div class="item-media">
+                              <img src="img/cart.png" width="44">
+                           </div>
+                           <div class="item-inner" dir="rtl">
+                              <div class="item-title-row">
+                                 <div class="item-title">על האש יום העצמאות</div>
+                              </div>
+                              <div class="item-subtitle ownerName">אופיר</div>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="rideComponent" onclick="ridePage.handler(4)" style="background-color: rgb(255, 255, 255);">
+                        <a href="#ride" class="item-link item-content">
+                           <div class="item-media">
+                              <img src="img/cart.png" width="44">
+                           </div>
+                           <div class="item-inner" dir="rtl">
+                              <div class="item-title-row">
+                                 <div class="item-title">שותפים</div>
+                              </div>
+                              <div class="item-subtitle ownerName">בילו</div>
+                           </div>
+                        </a>
+                     </li>
+                   </ul>
                 </div>
               </div>
             </div>
@@ -126,14 +113,12 @@
 
                   <div class="content-block-title">Today</div>
                     <div class="list-block media-list inset">
-                      <ul id="notifToday">
-                      </ul>
+                      <ul id="notifToday"><li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a href="#ride" class="item-link item-content"><div class="item-media"><img id="notifImg1" src="img/notificationOn.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Sivan's request to IDC</div></div><div class="item-subtitle">2 new comments<span class="timeSpan">13:34</span></div></div></a></li></ul>
                     </div>
 
                   <div class="content-block-title">OLDER</div>
                     <div class="list-block media-list inset">
-                      <ul id="notifOlder">
-                      </ul>
+                      <ul id="notifOlder"></ul>
                     </div>
 
                 </div>
@@ -141,21 +126,75 @@
             </div>
 
             <!-- Ride Page -->
-            <div data-page="ride" class="page cached">
+            <div data-page="ride" class="page cached" dir="rtl">
               <div class="page-content">
                 <div class="content-block">
                   <div class="card">
-                    <div class="card-header"><b>Post by:</b><span id="ridePageAuthor">Barak Cohen</span>
-                      <div class="item-media"><img id="ridePageImg" src="img/driver.png" width="44"></div>
+                    <div class="card-header"><b>מנהל העגלה</b><span id="ridePageAuthor">אופיר</span>
+                      <div class="item-media"><img id="ridePageImg" src="img/cart.png" width="44"></div>
                     </div>
                     <div class="card-content">
                       <div class="card-content-inner">
-                        <p id="ridePageFromTo">From Tel aviv to IDC.</p>
-                        <p id="ridePageTime">Time: 20:30</p>
+                        <p id="ridePageFromTo">חברים יקרים בשעה טובה חוגגים יום העצמאות אצלי בחצר, כמובן שהאוכל טיל ושגיא הגרילמן ידאג לבשל לנו את ארוחת השף.</p>
                       </div>
                     </div>
+                    <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header"><b>אתה משלם</b>
+                       <!-- <span id="ridePageAuthor">אופיר המלך</span> -->
+                      <!-- <div class="item-media"><img id="ridePageImg" src="img/cart.png" width="44"></div> -->
+                    </div>
+
+                    <div id="ridePageNotes" class="card-footer">3 spots<br /> flag</div>
+                    <div id="ridePageNotes" class="card-footer">3 spots</div>
                     <div id="ridePageNotes" class="card-footer">3 spots</div>
                   </div>
+                  <div class="card">
+                    <div id="ridePageNotes" class="card-footer">3 spots<br /> flag</div>
+                    <div id="ridePageNotes" class="card-footer">3 spots</div>
+                    <div id="ridePageNotes" class="card-footer">3 spots</div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <div class="card-content-inner">
+                        <span id="ridePageFromTo">במבה</span><b> - 2 יחידות</b><span id="epsilon">12.90</span>
+                      </div>
+                    </div>
+                    <div id="ridePageNotes" class="card-footer">אופיר משלם</div>
+
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <div class="card-content-inner">
+                        <span id="ridePageFromTo">ביסלי</span><b> - 2 יחידות</b><span id="epsilon">12.90</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <div class="card-content-inner">
+                        <span id="ridePageFromTo">ביסלי</span><span id="epsilon">12.90</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <div class="card-content-inner">
+                        <span id="ridePageFromTo">דג'גד'</span><span id="epsilon">12.90</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <div class="card-content-inner">
+                        <span id="ridePageFromTo">במבה</span><b> - 2 יחידות</b><span id="epsilon">12.90</span>
+                      </div>
+                    </div>
+                    <div id="ridePageNotes" class="card-footer">אופיר משלם</div>
+                  </div>
+
                   <div class="content-block-title">Comments</div>
                   <div id="commentsSec">
                   </div>

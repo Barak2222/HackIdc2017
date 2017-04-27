@@ -52,9 +52,12 @@ i.tabbar-demo-icon-4 {
   position: absolute;
 }
 
-.timeSpan{
-  float: right;
+.ownerName{
   font-weight: bold;
+}
+
+#epsilon{
+   float: left;
 }
 
 #newcomment{
