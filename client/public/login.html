@@ -17,14 +17,14 @@
 
 <div class="container" id = "login">
 <img src="Shopping-Cart-5.png" id="topPic"	>
-	<form id = "log">
+	<form id = "log" action="/login">
 		<div class = "title">
 	     Login 
 		</div>
-		<input name = "username" placeholder = "username"><br>
-		<input name = "password" input type = "password" placeholder = "password" type="password"><br>
+		<input type="text" name = "user" placeholder = "user" required><br>
+		<input  name = "password"  type = "password" placeholder = "password" required><br>
 		<br>
-		<input type = "Submit" class="btn btn-primary" id="login-button" value="Login">
+		<input type = "submit" class="btn btn-primary" id="login-button" value="Login">
 		<input type = "button" class="btn btn-primary" id="sign-in-button" value="Sign Up" onclick="window.location.href='register.html'">
 	</form>
 </div>
