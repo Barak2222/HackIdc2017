@@ -1,0 +1,146 @@
+from decimal import Decimal
+
+from mysql.connector import connect
+
+
+def cursor_needed(func):
+    def with_cursor(self, *args, **kwargs):
+        cursor = None
+        try:
+            if not self._connection.is_connected():
+                self._initialize_connection()
+
+            cursor = self._connection.cursor()
+
+            return func(self, cursor, *args, **kwargs)
+        finally:
+            if cursor:
+                cursor.close()
+
+    return with_cursor
+
+
+class MySqlDal(object):
+    BOOL_FIELDS = []
+
+    AUTHENTICATE_USER = "select id from users where name=%s and password=%s"
+    GET_PRODUCTS = "select * from products2"
+    GET_CARTS = "select c.id, c.name, c.owner from carts c, user_carts uc where c.id = uc.c_id and uc.u_id = %s"
+    GET_COMMENTS = "select u.name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
+    GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners from cart_items ci, products2 p where p.id = ci.p_id and c_id = %s"
+    CREATE_CART = "insert into carts (name, owner) values (%s, %s)"
+    ADD_USER_CART = "insert into user_carts (c_id, u_id, status) values (%(c_id)s, %(u_id)s, 0)"
+    USER_ID_BY_NAME = "select id from users where name = %s"
+    ADD_CART_ITEM = 'insert into cart_items values (%s, %s, %s, %s)'
+    ADD_COMMENT = 'insert into comments values (%s, %s, %s)'
+    APPROVE_CART = 'update user_carts set status = 1 where c_id = %s and u_id = %s'
+
+    def __init__(self, config):
+        self._config = config
+        self._initialize_connection()
+
+    def __del__(self):
+        if self._connection and self._connection.is_connected():
+            self._connection.close()
+
+    def _initialize_connection(self):
+        self._connection = connect(user=self._config.USER, password=self._config.PASSWORD, host=self._config.HOST,
+                                   database=self._config.SCHEMA, port=self._config.PORT, buffered=True)
+
+    def _get_row_data(self, cursor, row):
+        data = {}
+
+        for i in xrange(len(row)):
+            field_name = cursor.column_names[i]
+            val = row[i]
+
+            if field_name in self.BOOL_FIELDS:
+                val = bool(val)
+
+            if type(val) == Decimal:
+                val = float(val)
+
+            data[field_name] = val
+
+        return data
+
+    @cursor_needed
+    def authenticate_user(self, cur, user, passwd):
+        cur.execute(self.AUTHENTICATE_USER, (user, passwd))
+
+        for user_data in cur:
+            return self._get_row_data(cur, user_data)
+
+    @cursor_needed
+    def get_products(self, cur):
+        products = []
+
+        cur.execute(self.GET_PRODUCTS)
+
+        for product in cur:
+            products.append(self._get_row_data(cur, product))
+
+        return products
+
+    @cursor_needed
+    def get_user_carts(self, cur, u_id):
+        carts = []
+
+        cur.execute(self.GET_CARTS, (u_id,))
+
+        for cart in cur:
+            carts.append(self._get_row_data(cur, cart))
+
+        return carts
+
+    @cursor_needed
+    def get_cart_comments(self, cur, c_id):
+        comments = []
+
+        cur.execute(self.GET_COMMENTS, (c_id,))
+
+        for comment in cur:
+            comments.append(self._get_row_data(cur, comment))
+
+        return comments
+
+    @cursor_needed
+    def get_cart_items(self, cur, c_id):
+        items = []
+
+        cur.execute(self.GET_CART_ITEMS, (c_id,))
+
+        for item in cur:
+            items.append(self._get_row_data(cur, item))
+
+        return items
+
+    @cursor_needed
+    def create_cart(self, cur, u_id, name):
+        cur.execute(self.CREATE_CART, (name, u_id))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def add_user_cart(self, cur, c_id, u_id):
+        cur.execute(self.ADD_USER_CART, {'c_id': c_id, 'u_id': u_id})
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def add_cart_item(self, cur, c_id, i_id, quantity, owner):
+        cur.execute(self.ADD_CART_ITEM, (c_id, i_id, quantity, owner))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def add_comment(self, cur, c_id, u_id, comment):
+        cur.execute(self.ADD_COMMENT, (c_id, u_id, comment))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def approve_cart(self, cur, c_id, u_id):
+        cur.execute(self.APPROVE_CART, (c_id, u_id))
+        self._connection.commit()
+        return True
