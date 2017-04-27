@@ -1,4 +1,4 @@
-var myApp = angular.module('cartpoolApp', ['ngCookies']);
+var myApp = angular.module('cartpoolApp', ['ngCookies', 'ngMaterial']);
 
 myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $cookies, $window) {
 
