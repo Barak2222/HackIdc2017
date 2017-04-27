@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="cartpoolApp">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>IDC carpool</title>
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="static/www/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="static/www/css/my-app.css">
+    <link rel="stylesheet" href="static/www/css/spinner.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
-    <script src="js/angular/cartpool.js"></script>
+    <script src="/static/www/js/angular/cartpool.js"></script>
   </head>
 
-  <body ng-controller="MainController as main">
+  <body ng-controller="mainCtrl">
       <div class="statusbar-overlay"></div>
       <div class="panel-overlay"></div>
       <!-- NAVIGATION MENU -->
@@ -32,7 +33,7 @@
             <div data-page="index" class="navbar-inner">
 
               <div class="left">
-                <a href="#notifications" onclick="notifications.createPage()"><img class="notificationIcon" id="mainNotiIcon" src="img/notificationOff.png">
+                <a href="#notifications" onclick="notifications.createPage()"><img class="notificationIcon" id="mainNotiIcon" src="static/www/img/notificationOff.png">
                   <span id="numNotifications" style="display: none">0</span>
                 </a>
               </div>
@@ -78,7 +79,7 @@
                      <li class="rideComponent" onclick="ridePage.handler(0)">
                         <a href="#ride" class="item-link item-content">
                            <div class="item-media">
-                              <img src="img/cart.png" width="44">
+                              <img src="static/www/img/cart.png" width="44">
                            </div>
                            <div class="item-inner" dir="rtl">
                               <div class="item-title-row">
@@ -91,7 +92,7 @@
                      <li class="rideComponent" onclick="ridePage.handler(4)" style="background-color: rgb(255, 255, 255);">
                         <a href="#ride" class="item-link item-content">
                            <div class="item-media">
-                              <img src="img/cart.png" width="44">
+                              <img src="static/www/img/cart.png" width="44">
                            </div>
                            <div class="item-inner" dir="rtl">
                               <div class="item-title-row">
@@ -113,7 +114,7 @@
 
                   <div class="content-block-title">Today</div>
                     <div class="list-block media-list inset">
-                      <ul id="notifToday"><li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a href="#ride" class="item-link item-content"><div class="item-media"><img id="notifImg1" src="img/notificationOn.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Sivan's request to IDC</div></div><div class="item-subtitle">2 new comments<span class="timeSpan">13:34</span></div></div></a></li></ul>
+                      <ul id="notifToday"><li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a href="#ride" class="item-link item-content"><div class="item-media"><img id="notifImg1" src="static/www/img/notificationOn.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Sivan's request to IDC</div></div><div class="item-subtitle">2 new comments<span class="timeSpan">13:34</span></div></div></a></li></ul>
                     </div>
 
                   <div class="content-block-title">OLDER</div>
@@ -131,11 +132,13 @@
                 <div class="content-block">
                   <div class="card">
                     <div class="card-header"><b>מנהל העגלה</b><span id="ridePageAuthor">אופיר</span>
-                      <div class="item-media"><img id="ridePageImg" src="img/cart.png" width="44"></div>
+                      <div class="item-media"><img id="ridePageImg" src="static/www/img/cart.png" width="44"></div>
                     </div>
                     <div class="card-content">
                       <div class="card-content-inner">
                         <p id="ridePageFromTo">חברים יקרים בשעה טובה חוגגים יום העצמאות אצלי בחצר, כמובן שהאוכל טיל ושגיא הגרילמן ידאג לבשל לנו את ארוחת השף.</p>
+                        <p><b>תאריך רכישה: </b>1.5.17 22:00</p>
+                        <p><b>חברים בעגלה: </b>דניאל, בילו, נאור, גיא</p>
                       </div>
                     </div>
                     <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
@@ -143,31 +146,41 @@
 
                   <div class="content-block-title">אתה משלם</div>
                   <div class="card">
+                    <div class="card-header">
+                       <a href="#" class="link">
+                          <div><img class="add-to-cart-image" src="img/plus-sign.png"><b class="add-to-cart-text"> הוסף פריט</b></div>
+                       </a>
+                    </div>
+
                     <div class="card-content">
                       <div class="list-block">
                         <ul>
                           <li>
-                            <a href="#" class="item-link">
-                               <div class="item-content">
-                                 <div class="item-inner">
-                                   <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-                          <li>
-                            <div href="#" class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
-                              </div>
-                           </div>
+                             <a href="#" class="item-link">
+                                <div class="item-content">
+                                   <div class="item-inner">
+                                      <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
+                                   </div>
+                                </div>
+                             </a>
                           </li>
                           <li>
-                            <div href="#" class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
-                              </div>
-                           </div>
+                              <a href="#" class="item-link">
+                                  <div class="item-content">
+                                     <div class="item-inner">
+                                        <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
+                                     </div>
+                                  </div>
+                              </a>
+                           </li>
+                           <li>
+                             <a href="#" class="item-link">
+                                <div class="item-content">
+                                   <div class="item-inner">
+                                      <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
+                                   </div>
+                                </div>
+                             </a>
                           </li>
                         </ul>
                       </div>
@@ -177,29 +190,40 @@
 
                   <div class="content-block-title">כולם משלמים</div>
                   <div class="card">
+                     <div class="card-header">
+                       <a href="#" class="link">
+                          <div><img class="add-to-cart-image" src="img/plus-sign.png"><b class="add-to-cart-text"> הוסף פריט</b></div>
+                       </a>
+                    </div>
                     <div class="card-content">
                       <div class="list-block">
                         <ul>
                           <li>
-                            <div href="#" class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
-                              </div>
-                           </div>
+                             <a href="#" class="item-link">
+                                <div class="item-content">
+                                   <div class="item-inner">
+                                      <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
+                                   </div>
+                                </div>
+                             </a>
                           </li>
                           <li>
-                            <div href="#" class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
-                              </div>
-                           </div>
-                          </li>
-                          <li>
-                            <div href="#" class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
-                              </div>
-                           </div>
+                              <a href="#" class="item-link">
+                                  <div class="item-content">
+                                     <div class="item-inner">
+                                        <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
+                                     </div>
+                                  </div>
+                              </a>
+                           </li>
+                           <li>
+                             <a href="#" class="item-link">
+                                <div class="item-content">
+                                   <div class="item-inner">
+                                      <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
+                                   </div>
+                                </div>
+                             </a>
                           </li>
                         </ul>
                       </div>
@@ -209,29 +233,40 @@
 
                   <div class="content-block-title">אחרים משלמים</div>
                   <div class="card">
+                     <div class="card-header">
+                       <a href="#" class="link">
+                          <div><img class="add-to-cart-image" src="img/plus-sign.png"><b class="add-to-cart-text"> הוסף פריט</b></div>
+                       </a>
+                    </div>
                     <div class="card-content">
                       <div class="list-block">
                         <ul>
                           <li>
-                            <div class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
-                              </div>
-                           </div>
+                             <a href="#" class="item-link">
+                                <div class="item-content">
+                                   <div class="item-inner">
+                                      <span id="ridePageFromTo">במבה</span>2x4.90<span id="epsilon">9.80</span>
+                                   </div>
+                                </div>
+                             </a>
                           </li>
                           <li>
-                            <div href="#" class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
-                              </div>
-                           </div>
-                          </li>
-                          <li>
-                            <div href="#" class="item-content">
-                              <div class="item-inner">
-                                <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
-                              </div>
-                           </div>
+                              <a href="#" class="item-link">
+                                  <div class="item-content">
+                                     <div class="item-inner">
+                                        <span id="ridePageFromTo">חלב</span>1x7.50<span id="epsilon">7.5</span>
+                                     </div>
+                                  </div>
+                              </a>
+                           </li>
+                           <li>
+                             <a href="#" class="item-link">
+                                <div class="item-content">
+                                   <div class="item-inner">
+                                      <span id="ridePageFromTo">מסטיקים</span>5x6.00<span id="epsilon">30.00</span>
+                                   </div>
+                                </div>
+                             </a>
                           </li>
                         </ul>
                       </div>
@@ -239,8 +274,29 @@
                     <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">45.00</span></div>
                   </div>
 
-                  <div class="content-block-title">Comments</div>
+                  <div class="content-block-title">תגובות</div>
                   <div id="commentsSec">
+                     <div class="card" id="aaa">
+                        <div class="card-content">
+                           <div class="card-content-inner">
+                              <b>בילו: </b>אל תשכח עוגת בצל!
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card" id="aaa">
+                        <div class="card-content">
+                           <div class="card-content-inner">
+                              <b>אופיר: </b>לך תחרבן קוביה
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card" id="aaa">
+                        <div class="card-content">
+                           <div class="card-content-inner">
+                              <b>דניאל: </b>יש לי קקי
+                           </div>
+                        </div>
+                     </div>
                   </div>
                 </div>
                 <div id="newcomment">
@@ -386,13 +442,13 @@
           <div class="toolbar">
             <div class="toolbar-inner">
               <div id="logoutB"><a href="#" id="logout" class="link">התנתק</a></div>
-              <a href="#form" onclick="navigation.toIDCTab()" class="link"><img src="img/create.png" width="30px"></a>
+              <a href="#form" onclick="navigation.toIDCTab()" class="link"><img src="static/www/img/create.png" width="30px"></a>
             </div>
           </div>
         </div>
       </div>
       <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-      <script type="text/javascript" src="js/framework7.min.js"></script>
-      <script type="text/javascript" src="js/my-app.js"></script>
+      <script type="text/javascript" src="/static/www/js/framework7.min.js"></script>
+      <script type="text/javascript" src="/static/www/js/my-app.js"></script>
   </body>
 </html>

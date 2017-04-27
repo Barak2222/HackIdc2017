@@ -39,7 +39,7 @@ def login():
     if not res:
         return json.dumps(False)
 
-    return json.dumps(res['id'])
+    return json.dumps(res)
 
 
 @app.route('/get_products')
@@ -164,6 +164,18 @@ def remove_item_from_cart():
         db_dal.remove_cart_approve(c_id)
 
     return json.dumps(res)
+
+
+@app.route('/register')
+def register():
+    name = request.args.get('name')
+    passwd = request.args.get('password')
+    display_name = request.args.get('display_name')
+
+    if not name or not passwd or not display_name:
+        return json.dumps(False)
+
+    return json.dumps(db_dal.register(name, display_name, passwd))
 
 
 if __name__ == '__main__':
