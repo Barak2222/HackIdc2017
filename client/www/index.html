@@ -256,7 +256,7 @@
                         <form  ng-if="cart.owner==uid">
                             <input type="text" ng-model="new_cart_member">
                             <button class="btn" ng-click="add_user_to_cart(new_cart_member);">הוסף חבר</button>
-                            <button class="btn" >מחק עגלה</button>
+                            <button class="btn" ng-click="delete_cart(cart.id);">מחק עגלה</button>
                         </form>
                         <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
                       </div>
