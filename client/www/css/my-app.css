@@ -77,6 +77,11 @@ i.tabbar-demo-icon-4 {
     text-shadow: 2px 2px #6d6d72;
     margin: 5px 0px;
 }
+.payment--inner-header {
+    text-align: center;
+    font-size: 22px;
+    margin: 5px 0px;
+}
 .payment--final-total-header {
     text-align: center;
     font-size: 35px;
@@ -85,14 +90,20 @@ i.tabbar-demo-icon-4 {
 .payment-pay-options {
     text-align: center;
 }
+
+.payment-pay-options-image {
+    height: 50px;
+    width: 50px;
+}
 .payment-pay-options-image:hover {
-    position:relative;
-    top:-25px;
-    left:-35px;
-    width:500px;
-    height:auto;
-    display:block;
-    z-index:999;
+    position: relative;
+    top: -25px;
+    left: -35px;
+    width: 120px;
+    height: auto;
+    display: block;
+    z-index: 999;
+}
 
 .select-product-dropped{
    direction: rtl;

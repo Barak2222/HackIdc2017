@@ -121,7 +121,10 @@
                    <div class="apply-rtl">
                        <h1 class="payment--main-header"> סיכום ביניים</h1>
                        <div class="card">
-                           <div class="card-header"><b>המוצרים שלך</b></div>
+                           <div class="card-header payment">
+                               <p style="font-size: 25px">המוצרים שלך</p>
+                               <img src="/static/www/img/person.svg" class="payment-pay-options-image">
+                           </div>
                            <div class="card-content">
                                <div class="card-content-inner">
                                    <p>מוצר א</p>
@@ -129,9 +132,10 @@
                                    <p><b>על החלק שלך תשלם: </b>20 ש"ח</p>
                                </div>
                            </div>
-                       </div>
-                       <div class="card">
-                           <div class="card-header"><b>המוצרים של כולם</b></div>
+                           <div class="card-header">
+                               <p style="font-size: 25px">המוצרים של כולם</p>
+                               <img src="/static/www/img/group.svg" class="payment-pay-options-image">
+                           </div>
                            <div class="card-content">
                                <div class="card-content-inner">
                                    <p>מוצר א</p>
@@ -139,14 +143,24 @@
                                    <p><b>כל אחד ישלם: </b>20 ש"ח</p>
                                </div>
                            </div>
-                       </div>
-                           <div>
-                               <p class="payment--final-total-header"><b>בסך הכול תשלם</b></p>
-                               <p class="payment--final-total-header"><b>35 ש"ח</b></p>
+                           <div class="card-header">
+                               <p style="font-size: 25px">סך הכול תשלם</p>
+                               <img src="/static/www/img/total_cost.svg" class="payment-pay-options-image">
                            </div>
-                       <div class="payment-pay-options">
-                           <img src="/static/www/img/pepper.png" class="payment-pay-options-image" height="50px" width="50px">
-                           <img src="/static/www/img/paypal.png" class="payment-pay-options-image" height="50px" width="50px">
+                           <div class="card-content">
+                               <div class="card-content-inner">
+                                   <p><b>20 ש"ח</b></p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="card">
+                           <div>
+                               <p class="payment--final-total-header"><b>שלם באמצעות</b></p>
+                           </div>
+                           <div class="payment-pay-options">
+                               <img src="/static/www/img/pepper.png" class="payment-pay-options-image">
+                               <img src="/static/www/img/paypal.png" class="payment-pay-options-image">
+                           </div>
                        </div>
                    </div>
                </div>
