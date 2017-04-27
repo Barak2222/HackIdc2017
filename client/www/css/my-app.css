@@ -60,6 +60,14 @@ i.tabbar-demo-icon-4 {
    float: left;
 }
 
+.add-to-cart-image {
+   margin-top: 10px;
+   padding-top: 10px;
+}
+
+.add-to-cart-text{
+   margin-bottom: 25px;
+}
 
 
 #newcomment{
