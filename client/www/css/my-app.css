@@ -57,10 +57,11 @@ i.tabbar-demo-icon-4 {
 }
 
 #search-product-input{
-   width: 80%;
+   width: 90%;
    height: 10%;
    font-size: 40px;
    size: 20;
+   border-radius: 10px;
 }
 #select-product-div{
    direction: rtl;
@@ -92,6 +93,10 @@ i.tabbar-demo-icon-4 {
     height:auto;
     display:block;
     z-index:999;
+
+.select-product-dropped{
+   direction: rtl;
+   float: right;
 }
 
 #quantity-for-product{
