@@ -34,6 +34,10 @@ class MySqlDal(object):
     ADD_CART_ITEM = 'insert into cart_items values (%s, %s, %s, %s)'
     ADD_COMMENT = 'insert into comments values (%s, %s, %s)'
     APPROVE_CART = 'update user_carts set status = 1 where c_id = %s and u_id = %s'
+    REMOVE_CART_APPROVE = 'update user_carts set status = 0 where c_id = %s'
+    REMOVE_CART_APPROVE_USER = 'update user_carts set status = 0 where c_id = %s and u_id = %s'
+    DELETE_CART = 'delete from carts where id = %s'
+    REMOVE_ITEM_FROM_CART = 'delete from cart_items where c_id = %s and p_id = %s'
 
     def __init__(self, config):
         self._config = config
@@ -67,6 +71,13 @@ class MySqlDal(object):
     @cursor_needed
     def authenticate_user(self, cur, user, passwd):
         cur.execute(self.AUTHENTICATE_USER, (user, passwd))
+
+        for user_data in cur:
+            return self._get_row_data(cur, user_data)
+
+    @cursor_needed
+    def get_user_id_by_name(self, cur, name):
+        cur.execute(self.USER_ID_BY_NAME, (name, ))
 
         for user_data in cur:
             return self._get_row_data(cur, user_data)
@@ -142,5 +153,29 @@ class MySqlDal(object):
     @cursor_needed
     def approve_cart(self, cur, c_id, u_id):
         cur.execute(self.APPROVE_CART, (c_id, u_id))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def remove_cart_approve(self, cur, c_id):
+        cur.execute(self.REMOVE_CART_APPROVE, (c_id, ))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def remove_cart_approve_user(self, cur, c_id, u_id):
+        cur.execute(self.REMOVE_CART_APPROVE_USER, (c_id, u_id))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def delete_cart(self, cur, c_id):
+        cur.execute(self.DELETE_CART, (c_id, ))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def remove_item_from_cart(self, cur, c_id, item_id):
+        cur.execute(self.REMOVE_ITEM_FROM_CART, (c_id, item_id))
         self._connection.commit()
         return True
