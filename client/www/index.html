@@ -168,7 +168,7 @@
                   <div class="content-block-title">OLDER</div>
                     <div class="list-block media-list inset">
                       <ul id="notifOlder"></ul>
-                    </div>
+                   </div>swe
 
                 </div>
               </div>
@@ -179,7 +179,7 @@
               <div class="page-content">
                 <div class="content-block">
 
-                  <div class="content-block-title" dir="rtl"><input id="search-product-input" type="text" placeholder="חפש מוצר..."></input></div>
+                  <div class="content-block-title" dir="rtl"><input id="search-product-input" ng-model="product_name_search" type="text" placeholder="חפש מוצר..."></input></div>
 
                     <div class="list-block media-list inset">
                       <ul id="notifToday">
@@ -199,18 +199,20 @@
                      </ul>
                    </div>
 
-                   <div class="list-block media-list inset">
-                      <ul id="notifToday">
-                        <li class="rideComponent" onclick="/** open dropdown! */">
-                          <div class="item-inner">
-                             <div class="item-title-row" id="select-product-div">
-                                <div class="item-title">לחם</div>
-                                <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
-                             </div>
-                          </div>
-                       </li>
-                    </ul>
-                 </div>
+                  <div ng-repeat="x in prods | filter:product_name_search | limitTo:10">
+                      <div class="list-block media-list inset">
+                         <ul id="notifToday">
+                           <li class="rideComponent" onclick="/** open dropdown! */">
+                             <div class="item-inner">
+                                <div class="item-title-row" id="select-product-div">
+                                   <div class="item-title">{{x.name}}</div>
+                                   <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                     </div>
+                  </div>
 
                  <div class="list-block media-list inset">
                    <ul id="notifToday">
@@ -378,7 +380,7 @@
                         <div class="item-inner">
                           <div class="item-title label">מנהל העגלה</div>
                           <div class="item-input">
-                          {{ display_name }}
+                            לי בילו
                           </div>
                         </div>
                       </div>
@@ -412,7 +414,7 @@
                         <div class="item-inner">
                           <div class="item-title label">שם העגלה</div>
                           <div class="item-input">
-                            <input type="text" name="cart_name" required="" ng-model="new_cart_name">
+                            <input type="text" name="cart_name" required="">
                           </div>
                         </div>
                       </div>
@@ -424,7 +426,7 @@
                         <div class="item-inner">
                           <div class="item-title label">תיאור העגלה</div>
                           <div class="item-input">
-                            <input type="text" name="description" required="" ng-model="new_cart_desc">
+                            <input type="text" name="description" required="">
                           </div>
                         </div>
                       </div>
@@ -445,7 +447,7 @@
                 </div>
                 <div class="content-block">
                   <div class="row">
-                    <input type="Submit" class="Submit button button-big button-fill color-green" ng-click="add_cart(new_cart_name, new_cart_desc);">
+                    <input type="Submit" class="Submit button button-big button-fill color-green">
                   </div>
                 </div>
               </form></div>
