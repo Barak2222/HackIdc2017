@@ -62,7 +62,7 @@ def get_products():
 
 @app.route('/get_user_data')
 def get_user_data():
-    u_id = request.args.get('user_id')
+    u_id = request.args.get('u_id')
     if not u_id:
         return json.dumps(False)
 
@@ -192,7 +192,7 @@ def register():
     if not res:
         return json.dumps(False)
 
-    u_id = db_dal.get_user_id_by_name(name)
+    u_id = db_dal.get_user_id_by_name(name)['id']
     redirect_to_index = redirect('/')
     response = app.make_response(redirect_to_index)
     response.set_cookie('cartpool_session', value=json.dumps({'display_name': display_name, 'id': u_id}))
