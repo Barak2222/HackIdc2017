@@ -38,6 +38,7 @@ class MySqlDal(object):
     REMOVE_CART_APPROVE_USER = 'update user_carts set status = 0 where c_id = %s and u_id = %s'
     DELETE_CART = 'delete from carts where id = %s'
     REMOVE_ITEM_FROM_CART = 'delete from cart_items where c_id = %s and p_id = %s'
+    REGISTER = 'insert into users (name, password) values (%s, %s)'
 
     def __init__(self, config):
         self._config = config
@@ -177,5 +178,11 @@ class MySqlDal(object):
     @cursor_needed
     def remove_item_from_cart(self, cur, c_id, item_id):
         cur.execute(self.REMOVE_ITEM_FROM_CART, (c_id, item_id))
+        self._connection.commit()
+        return True
+
+    @cursor_needed
+    def register(self, cur, name, passwd):
+        cur.execute(self.REGISTER, (name, passwd))
         self._connection.commit()
         return True

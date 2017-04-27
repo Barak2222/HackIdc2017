@@ -166,5 +166,16 @@ def remove_item_from_cart():
     return json.dumps(res)
 
 
+@app.route('/register')
+def register():
+    name = request.args.get('name')
+    passwd = request.args.get('password')
+
+    if not name or not passwd:
+        return json.dumps(False)
+
+    return json.dumps(db_dal.register(name, passwd))
+
+
 if __name__ == '__main__':
     app.run()
