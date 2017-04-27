@@ -5,36 +5,29 @@
 	<script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel = "stylesheet" href="stylePublic.css">
+
+	<link rel = "stylesheet" href="stylePublic.css"> 
+
+	
+	
 </head>
 <body>
-<div class = "well text-center" id = "login">
+
+<div class="container" id="topPicDiv">
+
+<div class="container" id = "login">
+<img src="Shopping-Cart-5.png" id="topPic"	>
 	<form id = "log">
 		<div class = "title">
-			Login
+	     Login 
 		</div>
 		<input name = "username" placeholder = "username"><br>
-		<input name = "password" placeholder = "password" type="password"><br>
+		<input name = "password" input type = "password" placeholder = "password" type="password"><br>
 		<br>
-		<input type = "Submit" class="submit" class ="btn btn-primary" value="Login">
+		<input type = "Submit" class="btn btn-primary" id="login-button" value="Login">
+		<input type = "Submit" class="btn btn-primary" id="sign-in-button" value="Sign Up">
 	</form>
 </div>
-<img src="idccarpool.jpg" width="300" height="200" alt="logo">
-<div id="sign_up">
-	<form id="reg">
-		<div class = "title">
-			Register
-		</div>
-		It's free and always will be.<br>
-		username:   
-		<input name = "username" required><br>
-		passward:   
-		<input name = "password" type="password" required><br>
-		<br>
-		<input type = "Submit"  class = "submit" class ="btn btn-primary" value="Sign Up">
-	</form>
-</div>
-
 <script src="login.js"></script>
-</body>
+</body>	
 </html>
