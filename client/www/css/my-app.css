@@ -143,3 +143,9 @@ i.tabbar-demo-icon-4 {
   font-weight: bold;
   text-align: center;
 }
+
+
+#delete-cart-btn {
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
