@@ -1,3 +1,6 @@
+setInterval = function(){
+   
+}
 var myApp = new Framework7({
     animateNavBackIcon:true
 });
@@ -59,7 +62,7 @@ var navigation = {
     goBack: function(){
         var l = document.getElementById('form-go-back');
         for(var i = 0; i < 50; i++){
-            l.click();            
+            l.click();
         }
     },
     toIDCTab: function(){
@@ -103,7 +106,7 @@ newPostSubmit = {
             e.preventDefault();
             var form = $(this);
             var userData = form.serialize();
-    
+
             $.ajax({
                 type: 'POST',
                 url: '/www/createRide',
@@ -112,7 +115,7 @@ newPostSubmit = {
                 if(dataRecieved){
                     navigation.goBack();
                     rides.addOnePost(dataRecieved);
-                    form.trigger('reset');    
+                    form.trigger('reset');
                 } else {
                     console.log("there was an error?");
                 }
@@ -136,7 +139,7 @@ var rides = {
         }
     },
     runLoop: function(){
-        setInterval(function(){ 
+        setInterval(function(){
             $.getJSON( "/www/futureRides", function(data) {
                 if(rides.data.length != data.length){
                     rides.data = data;
@@ -202,7 +205,7 @@ var ridePage = {
     data: null,
     tempIdx: null,
     runLoop: function(){
-        setInterval(function(){ 
+        setInterval(function(){
             if(!ridePage.current){
                 return ;
             }
@@ -282,7 +285,7 @@ var comments = {
         var name = data.author;
         var $node = comments.createCommentCard(name, data.message);
         $("#commentsSec").append($node);
-        
+
         if(callback){
             callback($node);
         }
@@ -328,7 +331,7 @@ function Highlighter($node){
     var i = 1;
     var colors = ["#ffff99", "#ffffa3", "#ffffad", "#ffffb8", "#ffffc2", "#ffffcc", "#ffffd6", "#ffffe0", "#ffffeb", "#fffff5", "#ffffff"];
     $node.css({"background-color": colors[0]});
-    
+
     var tFunc = function() {
         setTimeout(function(){
             $node.css({"background-color": colors[i]});
@@ -358,7 +361,7 @@ var notifications = {
     $todayContainer: $('#notifToday'),
     $olderContainer: $('#notifOlder'),
     runLoop: function(){
-        setInterval(function(){ 
+        setInterval(function(){
             $.getJSON( "/www/notifications", function(data) {
                 if(utils.isDifferent(notifications.data.notSeen, data.notSeen)){
                     notifications.data = data;
