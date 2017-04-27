@@ -104,8 +104,26 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
                     location.reload();
                 }
             });
-        };
-    }
+        }
+        ;
+    };
+
+    $scope.add_user_to_cart = function (u_name) {
+        $http.get("/add_user_cart", {
+            params: {
+                u_name: u_name,
+                c_id: $scope.cart.id
+            }
+        }).then(function (response) {
+            if (response.data == "false") {
+                alert('היוזר לא קיים');
+            }
+            else{
+                $scope.reload_data();
+            }
+        });
+
+    };
 
     if (!cartPoolCookie) {
         $window.location.href = "/static/public/login.html";

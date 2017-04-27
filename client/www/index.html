@@ -248,18 +248,20 @@
                     <div class="card-header"><b>מנהל העגלה</b><span id="ridePageAuthor">{{ cart.display_name }}</span>
                       <div class="item-media"><img id="ridePageImg" src="static/www/img/cart.png" width="44"></div>
                     </div>
-                    <div class="card-content">
+                    <div class="card-content"><div class="card-content">
                       <div class="card-content-inner">
                         <p id="ridePageFromTo">{{ cart.description }}</p>
                         <p><b>תאריך רכישה: </b>1.5.17 22:00</p>
                         <p><b>חברים בעגלה: </b>{{ members }}</p>
+                        <form  ng-if="cart.owner==uid">
+                            <input type="text" ng-model="new_cart_member">
+                            <button class="btn" ng-click="add_user_to_cart(new_cart_member);">הוסף חבר</button>
+                            <button class="btn" >מחק עגלה</button>
+                        </form>
                         <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
                       </div>
                     </div>
                     <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
-                    <div ng-if="cart.owner==uid">
-                        <img id="delete-cart-btn" src="static/www/img/delete.png" width="30px" ng-click="delete_cart(cart.id)">
-                    </div>
                   </div>
 
                   <div class="content-block-title">אתה משלם</div>
