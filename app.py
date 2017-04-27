@@ -24,7 +24,7 @@ def log_error(err):
 
 @app.route('/')
 def index():
-    return send_file(os.path.join(os.path.dirname(__file__), 'static', 'build', 'index.html'))
+    return send_file(os.path.join(os.path.dirname(__file__), 'client', 'www', 'index.html'))
 
 
 @app.route('/login')
