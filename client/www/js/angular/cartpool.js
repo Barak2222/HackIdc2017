@@ -5,6 +5,5 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http) {
 
     $http.get("/get_products").then(function (response) {
         $scope.prods = response.data;
-        $scope.content_ready = true;
     });
 });
