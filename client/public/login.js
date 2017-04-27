@@ -16,7 +16,7 @@ $('#log').on('submit', function(e){
 		form.trigger('reset');
 	})
 	.fail(function(data){
-		window.location.href = "/public/accessDenied.html";
+		
 	});
 });
 
