@@ -23,10 +23,10 @@ def cursor_needed(func):
 class MySqlDal(object):
     BOOL_FIELDS = []
 
-    AUTHENTICATE_USER = "select id from users where name=%s and password=%s"
+    AUTHENTICATE_USER = "select id, display_name from users where name=%s and password=%s"
     GET_PRODUCTS = "select * from products2"
     GET_CARTS = "select c.id, c.name, c.owner from carts c, user_carts uc where c.id = uc.c_id and uc.u_id = %s"
-    GET_COMMENTS = "select u.name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
+    GET_COMMENTS = "select u.display_name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
     GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners from cart_items ci, products2 p where p.id = ci.p_id and c_id = %s"
     CREATE_CART = "insert into carts (name, owner) values (%s, %s)"
     ADD_USER_CART = "insert into user_carts (c_id, u_id, status) values (%(c_id)s, %(u_id)s, 0)"
@@ -38,7 +38,7 @@ class MySqlDal(object):
     REMOVE_CART_APPROVE_USER = 'update user_carts set status = 0 where c_id = %s and u_id = %s'
     DELETE_CART = 'delete from carts where id = %s'
     REMOVE_ITEM_FROM_CART = 'delete from cart_items where c_id = %s and p_id = %s'
-    REGISTER = 'insert into users (name, password) values (%s, %s)'
+    REGISTER = 'insert into users (name, display_name, password) values (%s, %s, %s)'
 
     def __init__(self, config):
         self._config = config
@@ -182,7 +182,7 @@ class MySqlDal(object):
         return True
 
     @cursor_needed
-    def register(self, cur, name, passwd):
-        cur.execute(self.REGISTER, (name, passwd))
+    def register(self, cur, name, display_name, passwd):
+        cur.execute(self.REGISTER, (name, display_name, passwd))
         self._connection.commit()
         return True

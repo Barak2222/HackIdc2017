@@ -4,6 +4,7 @@
     <list default="true" id="26368d44-4c17-423c-9cf4-83b7e74b16fe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/mysql_dal.py" afterPath="$PROJECT_DIR$/db/mysql_dal.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="73f6b1dc-9b46-4fbe-a3cb-022cd4cda357" name="idea" comment="" />
     <ignored path="HackIdc2017.iws" />
@@ -33,44 +34,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mysql_dal.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mysql_dal.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.5172415" vertical-offset="2845" max-vertical-offset="3281">
-              <caret line="187" column="19" selection-start-line="187" selection-start-column="19" selection-end-line="187" selection-end-column="19" />
+            <state vertical-scroll-proportion="-3.0986238" vertical-offset="1827" max-vertical-offset="3281">
+              <caret line="28" column="75" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="75" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <marker date="1493306238226" expanded="true" signature="541:589" placeholder="select id fr..users..." />
-                <marker date="1493306238226" expanded="true" signature="613:636" placeholder="select * fro..products2..." />
-                <marker date="1493306238226" expanded="true" signature="655:747" placeholder="select c.id,..carts..." />
-                <marker date="1493306238226" expanded="true" signature="771:854" placeholder="select u.nam..comments..." />
-                <marker date="1493306238226" expanded="true" signature="880:988" placeholder="select p.id,..cart_items..." />
-                <marker date="1493306238226" expanded="true" signature="1011:1058" placeholder="insert into ..." />
-                <marker date="1493306238226" expanded="true" signature="1081:1155" placeholder="insert into ..." />
-                <marker date="1493306238226" expanded="true" signature="1180:1214" placeholder="select id fr..users..." />
-                <marker date="1493306238226" expanded="true" signature="1239:1285" placeholder="insert into ..." />
-                <marker date="1493306238226" expanded="true" signature="1306:1346" placeholder="insert into ..." />
-                <marker date="1493306238226" expanded="true" signature="1368:1428" placeholder="update user_..." />
-                <marker date="1493306238226" expanded="true" signature="1459:1505" placeholder="update user_..." />
-                <marker date="1493306238226" expanded="true" signature="1459:1507" placeholder="update user_..." />
-                <marker date="1493306238226" expanded="true" signature="1541:1587" placeholder="update user_..." />
-                <marker date="1493306238226" expanded="true" signature="1541:1600" placeholder="update user_..." />
-                <marker date="1493306238226" expanded="true" signature="1541:1601" placeholder="update user_..." />
-                <marker date="1493306238226" expanded="true" signature="1641:1655" placeholder="update user_..." />
-                <marker date="1493306238226" expanded="true" signature="1686:1722" placeholder="delete from ..." />
-                <marker date="1493306238226" expanded="true" signature="1686:1735" placeholder="delete from ..." />
-                <marker date="1493306238226" expanded="true" signature="1686:1736" placeholder="delete from ..." />
-                <marker date="1493306238226" expanded="true" signature="1756:1806" placeholder="insert into ..." />
+                <marker date="1493307798581" expanded="true" signature="541:603" placeholder="select id, d..users..." />
+                <marker date="1493307798581" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
+                <marker date="1493307798581" expanded="true" signature="669:761" placeholder="select c.id,..carts..." />
+                <marker date="1493307798581" expanded="true" signature="785:876" placeholder="select u.dis..comments..." />
+                <marker date="1493307798581" expanded="true" signature="902:1010" placeholder="select p.id,..cart_items..." />
+                <marker date="1493307798581" expanded="true" signature="1033:1080" placeholder="insert into ..." />
+                <marker date="1493307798581" expanded="true" signature="1103:1177" placeholder="insert into ..." />
+                <marker date="1493307798581" expanded="true" signature="1202:1236" placeholder="select id fr..users..." />
+                <marker date="1493307798581" expanded="true" signature="1261:1307" placeholder="insert into ..." />
+                <marker date="1493307798581" expanded="true" signature="1328:1368" placeholder="insert into ..." />
+                <marker date="1493307798581" expanded="true" signature="1390:1450" placeholder="update user_..." />
+                <marker date="1493307798581" expanded="true" signature="1481:1527" placeholder="update user_..." />
+                <marker date="1493307798581" expanded="true" signature="1481:1529" placeholder="update user_..." />
+                <marker date="1493307798581" expanded="true" signature="1563:1609" placeholder="update user_..." />
+                <marker date="1493307798581" expanded="true" signature="1563:1622" placeholder="update user_..." />
+                <marker date="1493307798581" expanded="true" signature="1563:1623" placeholder="update user_..." />
+                <marker date="1493307798581" expanded="true" signature="1663:1677" placeholder="update user_..." />
+                <marker date="1493307798581" expanded="true" signature="1708:1744" placeholder="delete from ..." />
+                <marker date="1493307798581" expanded="true" signature="1708:1757" placeholder="delete from ..." />
+                <marker date="1493307798581" expanded="true" signature="1708:1758" placeholder="delete from ..." />
+                <marker date="1493307798581" expanded="true" signature="1778:1846" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5978495" vertical-offset="2646" max-vertical-offset="3162">
-              <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1237" max-vertical-offset="3179">
+              <caret line="83" column="31" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="31" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -88,8 +89,8 @@
       <list>
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/server.py" />
-        <option value="$PROJECT_DIR$/db/mysql_dal.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/db/mysql_dal.py" />
       </list>
     </option>
   </component>
@@ -539,43 +540,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.5172415" vertical-offset="2845" max-vertical-offset="3281">
-          <caret line="187" column="19" selection-start-line="187" selection-start-column="19" selection-end-line="187" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1237" max-vertical-offset="3179">
+          <caret line="83" column="31" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="31" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
-            <marker date="1493306238226" expanded="true" signature="541:589" placeholder="select id fr..users..." />
-            <marker date="1493306238226" expanded="true" signature="613:636" placeholder="select * fro..products2..." />
-            <marker date="1493306238226" expanded="true" signature="655:747" placeholder="select c.id,..carts..." />
-            <marker date="1493306238226" expanded="true" signature="771:854" placeholder="select u.nam..comments..." />
-            <marker date="1493306238226" expanded="true" signature="880:988" placeholder="select p.id,..cart_items..." />
-            <marker date="1493306238226" expanded="true" signature="1011:1058" placeholder="insert into ..." />
-            <marker date="1493306238226" expanded="true" signature="1081:1155" placeholder="insert into ..." />
-            <marker date="1493306238226" expanded="true" signature="1180:1214" placeholder="select id fr..users..." />
-            <marker date="1493306238226" expanded="true" signature="1239:1285" placeholder="insert into ..." />
-            <marker date="1493306238226" expanded="true" signature="1306:1346" placeholder="insert into ..." />
-            <marker date="1493306238226" expanded="true" signature="1368:1428" placeholder="update user_..." />
-            <marker date="1493306238226" expanded="true" signature="1459:1505" placeholder="update user_..." />
-            <marker date="1493306238226" expanded="true" signature="1459:1507" placeholder="update user_..." />
-            <marker date="1493306238226" expanded="true" signature="1541:1587" placeholder="update user_..." />
-            <marker date="1493306238226" expanded="true" signature="1541:1600" placeholder="update user_..." />
-            <marker date="1493306238226" expanded="true" signature="1541:1601" placeholder="update user_..." />
-            <marker date="1493306238226" expanded="true" signature="1641:1655" placeholder="update user_..." />
-            <marker date="1493306238226" expanded="true" signature="1686:1722" placeholder="delete from ..." />
-            <marker date="1493306238226" expanded="true" signature="1686:1735" placeholder="delete from ..." />
-            <marker date="1493306238226" expanded="true" signature="1686:1736" placeholder="delete from ..." />
-            <marker date="1493306238226" expanded="true" signature="1756:1806" placeholder="insert into ..." />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5978495" vertical-offset="2646" max-vertical-offset="3162">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.0986238" vertical-offset="1827" max-vertical-offset="3281">
+          <caret line="28" column="75" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="75" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1493307798581" expanded="true" signature="541:603" placeholder="select id, d..users..." />
+            <marker date="1493307798581" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
+            <marker date="1493307798581" expanded="true" signature="669:761" placeholder="select c.id,..carts..." />
+            <marker date="1493307798581" expanded="true" signature="785:876" placeholder="select u.dis..comments..." />
+            <marker date="1493307798581" expanded="true" signature="902:1010" placeholder="select p.id,..cart_items..." />
+            <marker date="1493307798581" expanded="true" signature="1033:1080" placeholder="insert into ..." />
+            <marker date="1493307798581" expanded="true" signature="1103:1177" placeholder="insert into ..." />
+            <marker date="1493307798581" expanded="true" signature="1202:1236" placeholder="select id fr..users..." />
+            <marker date="1493307798581" expanded="true" signature="1261:1307" placeholder="insert into ..." />
+            <marker date="1493307798581" expanded="true" signature="1328:1368" placeholder="insert into ..." />
+            <marker date="1493307798581" expanded="true" signature="1390:1450" placeholder="update user_..." />
+            <marker date="1493307798581" expanded="true" signature="1481:1527" placeholder="update user_..." />
+            <marker date="1493307798581" expanded="true" signature="1481:1529" placeholder="update user_..." />
+            <marker date="1493307798581" expanded="true" signature="1563:1609" placeholder="update user_..." />
+            <marker date="1493307798581" expanded="true" signature="1563:1622" placeholder="update user_..." />
+            <marker date="1493307798581" expanded="true" signature="1563:1623" placeholder="update user_..." />
+            <marker date="1493307798581" expanded="true" signature="1663:1677" placeholder="update user_..." />
+            <marker date="1493307798581" expanded="true" signature="1708:1744" placeholder="delete from ..." />
+            <marker date="1493307798581" expanded="true" signature="1708:1757" placeholder="delete from ..." />
+            <marker date="1493307798581" expanded="true" signature="1708:1758" placeholder="delete from ..." />
+            <marker date="1493307798581" expanded="true" signature="1778:1846" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
