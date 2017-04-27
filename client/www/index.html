@@ -69,7 +69,7 @@
             <!-- Navbar inner for Form page-->
             <div data-page="form" class="navbar-inner cached">
               <div class="left sliding"><a href="#" id="form-go-back" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-              <div class="center sliding">New Post</div>
+              <div class="center sliding">New Cart</div>
             </div>
           </div>
 
@@ -106,16 +106,51 @@
               <div class="page-content">
                <div class="content-block">
 
-                  <div class="content-block-title">Today</div>
-                    <div class="list-block media-list inset">
-                      <ul id="notifToday"><li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a href="#ride" class="item-link item-content"><div class="item-media"><img id="notifImg1" src="static/www/img/notificationOn.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Sivan's request to IDC</div></div><div class="item-subtitle">2 new comments<span class="timeSpan">13:34</span></div></div></a></li></ul>
-                    </div>
-
-                  <div class="content-block-title">OLDER</div>
-                    <div class="list-block media-list inset">
-                      <ul id="notifOlder"></ul>
-                    </div>
-
+                   <div class="apply-rtl">
+                       <h1 class="payment--main-header"> סיכום ביניים</h1>
+                       <div class="card">
+                           <div class="card-header payment">
+                               <p style="font-size: 25px">המוצרים שלך</p>
+                               <img src="/static/www/img/person.svg" class="payment-pay-options-image">
+                           </div>
+                           <div class="card-content">
+                               <div class="card-content-inner">
+                                   <p>מוצר א</p>
+                                   <p>מוצר ב</p>
+                                   <p><b>על החלק שלך תשלם: </b>20 ש"ח</p>
+                               </div>
+                           </div>
+                           <div class="card-header">
+                               <p style="font-size: 25px">המוצרים של כולם</p>
+                               <img src="/static/www/img/group.svg" class="payment-pay-options-image">
+                           </div>
+                           <div class="card-content">
+                               <div class="card-content-inner">
+                                   <p>מוצר א</p>
+                                   <p>מוצר ב</p>
+                                   <p><b>כל אחד ישלם: </b>20 ש"ח</p>
+                               </div>
+                           </div>
+                           <div class="card-header">
+                               <p style="font-size: 25px">סך הכול תשלם</p>
+                               <img src="/static/www/img/total_cost.svg" class="payment-pay-options-image">
+                           </div>
+                           <div class="card-content">
+                               <div class="card-content-inner">
+                                   <p><b>20 ש"ח</b></p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="card">
+                           <div>
+                               <p class="payment--final-total-header"><b>שלם באמצעות</b></p>
+                           </div>
+                           <div class="payment-pay-options">
+                               <img src="/static/www/img/pepper.png" class="payment-pay-options-image">
+                               <img src="/static/www/img/paypal.png" class="payment-pay-options-image">
+                           </div>
+                       </div>
+                   </div>
                </div>
               </div>
             </div>
@@ -145,6 +180,7 @@
                 <div class="content-block">
 
                   <div class="content-block-title" dir="rtl"><input id="search-product-input" type="text" placeholder="חפש מוצר..."></input></div>
+
                     <div class="list-block media-list inset">
                       <ul id="notifToday">
                         <li class="rideComponent" onclick="/** open dropdown! */">
@@ -162,6 +198,32 @@
                         </li>
                      </ul>
                    </div>
+
+                   <div class="list-block media-list inset">
+                      <ul id="notifToday">
+                        <li class="rideComponent" onclick="/** open dropdown! */">
+                          <div class="item-inner">
+                             <div class="item-title-row" id="select-product-div">
+                                <div class="item-title">לחם</div>
+                                <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
+                             </div>
+                          </div>
+                       </li>
+                    </ul>
+                 </div>
+
+                 <div class="list-block media-list inset">
+                   <ul id="notifToday">
+                     <li class="rideComponent" onclick="/** open dropdown! */">
+                        <div class="item-inner">
+                           <div class="item-title-row" id="select-product-div">
+                              <div class="item-title">12 ביצים</div>
+                              <span style="float: left; font-weight: bold; margin-left: 8px">15.90</span>
+                           </div>
+                        </div>
+                     </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -303,42 +365,20 @@
             </div>
 
             <!-- Form Page-->
-
             <div data-page="form" class="page cached">
               <div class="page-content">
               <form id="newPostForm">
-                <div class="content-block-title">Direction</div>
-                <div class="list-block">
-                  <ul>
-                    <li>
-                      <label class="label-radio item-content">
-                        <input type="radio" name="type" value="fromIDC">
-                        <div class="item-inner" onclick="navigation.fromIDCTab()">
-                          <div class="item-title">From IDC</div>
-                        </div>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="label-radio item-content">
-                        <input type="radio" name="type" value="toIDC" checked="">
-                        <div class="item-inner" onclick="navigation.toIDCTab()">
-                          <div class="item-title">To IDC</div>
-                        </div>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
 
-                <div class="list-block">
+
+                <div class="list-block" dir="rtl">
                   <ul>
                     <li>
                       <div class="item-content">
                         <div class="item-media"><i class="icon icon-form-name"></i></div>
                         <div class="item-inner">
-                          <div class="item-title label">I am a</div>
+                          <div class="item-title label">מנהל העגלה</div>
                           <div class="item-input">
-                            <label>Driver<input type="radio" name="role" value="driver" checked=""></label>
-                            <label>Passenger<input type="radio" name="role" value="passenger"></label>
+                            לי בילו
                           </div>
                         </div>
                       </div>
@@ -347,7 +387,7 @@
                       <div class="item-content">
                         <div class="item-media"><i class="icon icon-form-calendar"></i></div>
                         <div class="item-inner">
-                          <div class="item-title label">Depart Date</div>
+                          <div class="item-title label">תאריך למשלוח</div>
                           <div class="item-input">
                             <input type="date" name="date" placeholder="Date" required="">
                           </div>
@@ -358,7 +398,7 @@
                       <div class="item-content">
                         <div class="item-media"><i class="icon icon-form-calendar"></i></div>
                         <div class="item-inner">
-                          <div class="item-title label">Depart Hour</div>
+                          <div class="item-title label">שעה למשלוח</div>
                           <div class="item-input">
                             <input type="time" name="hour" placeholder="Hour" required="">
                           </div>
@@ -370,9 +410,9 @@
                       <div class="item-content">
                         <div class="item-media"><i class="icon icon-form-settings"></i></div>
                         <div class="item-inner">
-                          <div class="item-title label">Leaving from</div>
+                          <div class="item-title label">שם העגלה</div>
                           <div class="item-input">
-                            <input type="text" name="from" required="">
+                            <input type="text" name="cart_name" required="">
                           </div>
                         </div>
                       </div>
@@ -380,11 +420,11 @@
 
                     <li>
                       <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                        <div class="item-media"><i class="icon icon-form-comment"></i></div>
                         <div class="item-inner">
-                          <div class="item-title label">Destination</div>
+                          <div class="item-title label">תיאור העגלה</div>
                           <div class="item-input">
-                            <input type="text" name="to" required="">
+                            <input type="text" name="description" required="">
                           </div>
                         </div>
                       </div>
@@ -394,7 +434,7 @@
                       <div class="item-content">
                         <div class="item-media"><i class="icon icon-form-comment"></i></div>
                         <div class="item-inner">
-                          <div class="item-title label">Notes</div>
+                          <div class="item-title label">הערות משלוח</div>
                           <div class="item-input">
                             <input type="text" name="notes">
                           </div>
