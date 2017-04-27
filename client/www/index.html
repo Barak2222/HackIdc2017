@@ -257,7 +257,7 @@
                       </div>
                     </div>
                     <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
-                    <div>
+                    <div ng-if="cart.owner==uid">
                         <img id="delete-cart-btn" src="static/www/img/delete.png" width="30px" ng-click="delete_cart(cart.id)">
                     </div>
                   </div>
