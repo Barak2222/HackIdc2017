@@ -138,15 +138,6 @@ i.tabbar-demo-icon-4 {
     height: 50px;
     width: 50px;
 }
-.payment-pay-options-image:hover {
-    position: relative;
-    top: -25px;
-    left: -35px;
-    width: 120px;
-    height: auto;
-    display: block;
-    z-index: 999;
-}
 
 .select-product-dropped{
    direction: rtl;
