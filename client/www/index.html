@@ -209,8 +209,7 @@
                                         <b ng-if="cart.owner!=uid && cart.status==0">אשר תשלום באמצעות</b></p>
                                 </div>
                                 <div class="payment-pay-options" ng-if="cart.owner==uid">
-                                    <img src="/static/www/img/pepper.png" class="payment-pay-options-image">
-                                    <img src="/static/www/img/paypal.png" class="payment-pay-options-image">
+                                    <img src="/static/www/img/pepper.png" class="payment-pay-options-image" ng-enable="cart.ready_to_buy">
                                 </div>
                                 <div class="payment-pay-options" ng-if="cart.owner!=uid && cart.status==0">
                                     <img src="/static/www/img/pepper.png" class="payment-pay-options-image"
