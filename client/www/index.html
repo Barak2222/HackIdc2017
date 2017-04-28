@@ -306,7 +306,6 @@
                                             מחק עגלה
                                         </button>
                                     </form>
-                                    <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
                                 </div>
                             </div>
                             <!-- <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div> -->
@@ -388,16 +387,14 @@
                         </md-content>
                     </div>
 
-                    <!--<div class="card">
+                    <div class="card">
                         <div class="card-header">
-
+                            <p><b><a href="#pay-page" style="color: black">המשך לאישור ההזמנה</a></b></p>
+                        <img src="/static/www/img/money.svg">
                         </div>
 
-                        <div class="card-content">
-
-                        </div>
-                        <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
-                    </div>-->
+                        <div id="ridePageNotes" class="card-footer">סכום כולל לתשלום<span id="epsilon">{{ sum_sum.toFixed(2) }} ש"ח</span></div>
+                    </div>
 
                     <div id="commentsSec" ng-if="cart.comments && cart.comments.length > 0">
                         <div class="card" id="aaa">
