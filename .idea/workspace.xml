@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26368d44-4c17-423c-9cf4-83b7e74b16fe" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\IDC\CartPool\HackIdc2017\Pitch.pptx" afterPath="" />
+      <change type="DELETED" beforePath="E:\IDC\CartPool\HackIdc2017\images.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/www/js/angular/cartpool.js" afterPath="$PROJECT_DIR$/client/www/js/angular/cartpool.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/www/index.html" afterPath="$PROJECT_DIR$/client/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -20,7 +22,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/HackIdc2017$HackIdc2017.coverage" NAME="HackIdc2017 Coverage Results" MODIFIED="1493299722664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/HackIdc2017$server.coverage" NAME="server Coverage Results" MODIFIED="1493331331052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HackIdc2017$server.coverage" NAME="server Coverage Results" MODIFIED="1493342040049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -37,8 +39,8 @@
       <file leaf-file-name="mysql_dal.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2230" max-vertical-offset="3417">
-              <caret line="142" column="50" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="3417">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
                 <element signature="e#3192#3320#0" expanded="false" />
@@ -69,14 +71,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.334873" vertical-offset="1793" max-vertical-offset="3638">
-              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3173" max-vertical-offset="3638">
+              <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/flask/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="26841" max-vertical-offset="33677">
+              <caret line="1613" column="0" selection-start-line="1613" selection-start-column="0" selection-end-line="1613" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,22 +103,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="4029" max-vertical-offset="10472">
-              <caret line="253" column="79" selection-start-line="253" selection-start-column="66" selection-end-line="253" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.51960784" vertical-offset="570" max-vertical-offset="7514">
+              <caret line="104" column="57" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="57" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-content#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -125,8 +128,8 @@
       <file leaf-file-name="cartpool.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/www/js/angular/cartpool.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1986" max-vertical-offset="2703">
-              <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
+            <state vertical-scroll-proportion="-9.689655" vertical-offset="1249" max-vertical-offset="2703">
+              <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -149,8 +152,8 @@
         <option value="$PROJECT_DIR$/db/mysql_dal.py" />
         <option value="$PROJECT_DIR$/client/www/css/my-app.css" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/client/www/index.html" />
         <option value="$PROJECT_DIR$/client/www/js/angular/cartpool.js" />
+        <option value="$PROJECT_DIR$/client/www/index.html" />
       </list>
     </option>
   </component>
@@ -593,7 +596,13 @@
       <option name="project" value="LOCAL" />
       <updated>1493339269491</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed items adding">
+      <created>1493341977328</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1493341977328</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -602,7 +611,6 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32968536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -611,15 +619,16 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3255814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -641,15 +650,100 @@
     <MESSAGE value="Added Server" />
     <MESSAGE value="Fixes" />
     <MESSAGE value="Unneeded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unneeded" />
+    <MESSAGE value="Changed items adding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed items adding" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>189</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2230" max-vertical-offset="3417">
+          <caret line="142" column="50" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#3192#3320#0" expanded="false" />
+            <marker date="1493329486707" expanded="true" signature="541:603" placeholder="select id, d..users..." />
+            <marker date="1493329486707" expanded="true" signature="627:650" placeholder="select * fro..products2..." />
+            <marker date="1493329486707" expanded="true" signature="669:820" placeholder="select c.id,..carts..." />
+            <marker date="1493329486707" expanded="true" signature="844:935" placeholder="select u.dis..comments..." />
+            <marker date="1493329486707" expanded="true" signature="961:1078" placeholder="select p.id,..cart_items..." />
+            <marker date="1493329486707" expanded="true" signature="1101:1165" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1188:1262" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1287:1321" placeholder="select id fr..users..." />
+            <marker date="1493329486707" expanded="true" signature="1346:1392" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1413:1453" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1475:1535" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1566:1612" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1566:1614" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1694" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1707" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1648:1708" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1748:1762" placeholder="update user_..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1829" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1842" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1793:1843" placeholder="delete from ..." />
+            <marker date="1493329486707" expanded="true" signature="1863:1931" placeholder="insert into ..." />
+            <marker date="1493329486707" expanded="true" signature="1953:2034" placeholder="select u.dis..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3638">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/css/my-app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2102" max-vertical-offset="2652">
+          <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4301" max-vertical-offset="8874">
+          <caret line="253" column="79" selection-start-line="253" selection-start-column="66" selection-end-line="253" selection-end-column="79" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/js/my-app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8279">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/js/angular/cartpool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1986" max-vertical-offset="2703">
+          <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3281">
@@ -705,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.3636365" vertical-offset="236" max-vertical-offset="646">
           <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2363636" vertical-offset="272" max-vertical-offset="850">
           <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31182796" vertical-offset="25" max-vertical-offset="935">
           <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,10 +854,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/css/my-app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2102" max-vertical-offset="2652">
+          <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/js/my-app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8279">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/js/angular/cartpool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.689655" vertical-offset="1249" max-vertical-offset="2703">
+          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/mysql_dal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2230" max-vertical-offset="3417">
-          <caret line="142" column="50" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="3417">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
             <element signature="e#3192#3320#0" expanded="false" />
@@ -799,61 +913,28 @@
     </entry>
     <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="26569" max-vertical-offset="33677">
-          <caret line="1597" column="0" selection-start-line="1597" selection-start-column="0" selection-end-line="1597" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/www/css/my-app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2102" max-vertical-offset="2652">
-          <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/www/js/my-app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8279">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="4029" max-vertical-offset="10472">
-          <caret line="253" column="79" selection-start-line="253" selection-start-column="66" selection-end-line="253" selection-end-column="79" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-content#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/www/js/angular/cartpool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1986" max-vertical-offset="2703">
-          <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="26841" max-vertical-offset="33677">
+          <caret line="1613" column="0" selection-start-line="1613" selection-start-column="0" selection-end-line="1613" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.334873" vertical-offset="1793" max-vertical-offset="3638">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3173" max-vertical-offset="3638">
+          <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51960784" vertical-offset="570" max-vertical-offset="7514">
+          <caret line="104" column="57" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="57" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
