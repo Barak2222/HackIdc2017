@@ -479,3 +479,9 @@ var notifications = {
     }
 
 }
+$$('.notification-default').on('click', function () {
+    myApp.addNotification({
+        title: 'CartPool',
+        message: 'Guy just added new item to the cart '
+    });
+});

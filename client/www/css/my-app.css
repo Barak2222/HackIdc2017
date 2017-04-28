@@ -70,7 +70,22 @@ i.tabbar-demo-icon-4 {
 .apply-rtl{
     direction: rtl;
 }
-
+.comments-display-name{
+    padding: 3px 5px 3px 0px;
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: thin dashed #928181;
+}
+.comment-img{
+    float: right;
+    height: 22px;
+    width: 22px;
+    padding: 10px;
+    opacity: 0.5;
+}
+.comments-text {
+    padding-right: 15px;
+}
 .payment--main-header {
     text-align: center;
     font-size: 60px;

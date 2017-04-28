@@ -203,7 +203,7 @@
             <div data-page="notifications" class="page cached">
                 <div class="page-content">
                     <div class="content-block">
-
+                      <p><a href="#" class="button notification-default">This is a default noti'</a></p>
                         <div class="content-block-title">Today</div>
                         <div class="list-block media-list inset">
                             <ul id="notifToday">
@@ -354,13 +354,111 @@
                                 </md-tabs>
                             </md-content>
                         </div>
+                        <div class="content-block-title">אתה משלם</div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#select-product-page" class="link">
+                                    <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b
+                                            class="add-to-cart-text"> הוסף פריט</b></div>
+                                </a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="list-block">
+                                    <ul ng-repeat="item in my_items">
+                                        <li>
+                                            <a href="#" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
+                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
+                        </div>
+
+                        <div class="content-block-title">כולם משלמים</div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#" class="link">
+                                    <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b
+                                            class="add-to-cart-text"> הוסף פריט</b></div>
+                                </a>
+                            </div>
+                            <div class="card-content">
+                                <div class="list-block">
+                                    <ul ng-repeat="item in shared_items">
+                                        <li>
+                                            <a href="#" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
+                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span>
+                            </div>
+                        </div>
+
+                        <div class="content-block-title">אחרים משלמים</div>
+                        <div class="card">
+                            <div class="card-header">
+                                
+                            </div>
+                            <div class="card-content">
+                                <div class="list-block">
+                                    <ul ng-repeat="item in others_items">
+                                        <li>
+                                            <a href="#" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
+                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span>
+                            </div>
+                        </div>
+
+                        <!--<div class="card">
+                            <div class="card-header">
+
+                            </div>
+
+                            <div class="card-content">
+
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
+                        </div>-->
+
 
                         <div class="content-block-title">תגובות</div>
-                        <div id="commentsSec" ng-repeat="comm in cart.comments">
+                        <div id="commentsSec">
                             <div class="card" id="aaa">
                                 <div class="card-content">
-                                    <div class="card-content-inner">
-                                        <b>{{ comm.display_name }}:</b>{{ comm.comment }}
+                                    <div ng-repeat="comm in cart.comments">
+                                        <div>
+                                            <img src="/static/www/img/mark.svg" class="comment-img">
+                                        </div>
+                                        <div style="margin-right: 30px">
+                                            <div class="comments-text">{{ comm.comment }}</div>
+                                            <div class="comments-display-name">~{{ comm.display_name }}</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
