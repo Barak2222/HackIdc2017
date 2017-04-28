@@ -373,11 +373,17 @@
                         </div>
 
                         <div class="content-block-title">תגובות</div>
-                        <div id="commentsSec" ng-repeat="comm in cart.comments">
+                        <div id="commentsSec">
                             <div class="card" id="aaa">
                                 <div class="card-content">
-                                    <div class="card-content-inner">
-                                        <b>{{ comm.display_name }}:</b>{{ comm.comment }}
+                                    <div ng-repeat="comm in cart.comments">
+                                        <div>
+                                            <img src="/static/www/img/mark.svg" class="comment-img">
+                                        </div>
+                                        <div style="margin-right: 30px">
+                                            <div class="comments-text">{{ comm.comment }}</div>
+                                            <div class="comments-display-name">~{{ comm.display_name }}</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
