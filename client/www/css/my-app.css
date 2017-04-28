@@ -76,7 +76,7 @@ i.tabbar-demo-icon-4 {
     font-weight: bold;
     color: black;
 }
-input[type=text] {
+.search_bar {
     float: right;
     width: 180px;
     direction: rtl;
@@ -92,10 +92,10 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 /* When the input field gets focus, change its width to 100% */
-input[type=text]:hover {
+.search_bar:hover {
     width: 100%;
 }
-input[type=text]:focus {
+.search_bar:focus {
     width: 100%;
 }
 .comments-display-name{
