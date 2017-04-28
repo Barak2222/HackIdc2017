@@ -203,7 +203,7 @@
             <div data-page="notifications" class="page cached">
                 <div class="page-content">
                     <div class="content-block">
-                      <p><a href="#" class="button notification-default">This is a default noti'</a></p>
+                        <p><a href="#" class="button notification-default">This is a default noti'</a></p>
                         <div class="content-block-title">Today</div>
                         <div class="list-block media-list inset">
                             <ul id="notifToday">
@@ -237,24 +237,29 @@
                 <div class="page-content">
                     <div class="content-block">
 
-                        <div class="content-block-title" dir="rtl"><input id="search-product-input"
-                                                                          ng-model="product_name_search" type="text"
-                                                                          placeholder="חפש מוצר..."></input></div>
-
-
-                        <div ng-repeat="x in prods | filter:product_name_search | limitTo:10">
-                            <div class="card" dir="rtl">
-                                    <div class="card-header">
+                        <input type="text" ng-model="product_name_search" placeholder="מה תרצה לחפש?">
+                        <div style="float: right; display: inline-block; direction: rtl; min-width: 100%">
+                            <div ng-repeat="x in prods | filter:product_name_search | limitTo:10">
+                                <div ng-show="product_name_search">
+                                    <div class="card">
+                                        <div class="card-header">
                                             <div><b>{{ x.name }} : {{ x.price }} ש"ח</b></div>
-                                    </div>
+                                        </div>
 
-                                    <div id="ridePageNotes" class="card-footer">כמות
-                                    <input type="number" ng-model="x.new_item_quantity"/>
-                                    <span id="epsilon">
-                                    <button class="btn" ng-click="add_cart_item(cart.id, 0, x.id, x.new_item_quantity)">שיתופי</button>
-                                    <button class="btn" ng-click="add_cart_item(cart.id, uid, x.id, x.new_item_quantity)">אישי</button>
-                                    </span></div>
+                                        <div class="card-footer">כמות
+                                            <input type="number" ng-model="x.new_item_quantity"/>
+                                            <button class="btn"
+                                                    ng-click="add_cart_item(cart.id, 0, x.id, x.new_item_quantity)">
+                                                שיתופי
+                                            </button>
+                                            <button class="btn"
+                                                    ng-click="add_cart_item(cart.id, uid, x.id, x.new_item_quantity)">
+                                                אישי
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
                         </div>
 
                     </div>
@@ -286,6 +291,30 @@
                                 </div>
                             </div>
                             <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
+                        </div>
+
+                        <div class="card add-items">
+                            <a href="#select-product-page" style="color:black">
+                                <img class="add-to-cart-image" src="/static/www/img/plus-sign.png">
+                                <div class="add-to-cart-text"> הוסף פריטים</div>
+                            </a>
+
+                            <div class="card-content">
+                                <div class="list-block">
+                                    <ul ng-repeat="item in my_items">
+                                        <li>
+                                            <a href="#" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
+                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div ng-cloak="" class="tabsdemoDynamicHeight">
@@ -353,31 +382,6 @@
                                     </md-tab>
                                 </md-tabs>
                             </md-content>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <a href="#select-product-page" class="link">
-                                    <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b
-                                            class="add-to-cart-text"> הוסף פריט</b></div>
-                                </a>
-                            </div>
-
-                            <div class="card-content">
-                                <div class="list-block">
-                                    <ul ng-repeat="item in my_items">
-                                        <li>
-                                            <a href="#" class="item-link">
-                                                <div class="item-content">
-                                                    <div class="item-inner">
-                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
-                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
 
                         <!--<div class="card">

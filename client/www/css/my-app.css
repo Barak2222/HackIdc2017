@@ -70,6 +70,34 @@ i.tabbar-demo-icon-4 {
 .apply-rtl{
     direction: rtl;
 }
+.add-items{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+}
+input[type=text] {
+    float: right;
+    width: 180px;
+    direction: rtl;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:hover {
+    width: 100%;
+}
+input[type=text]:focus {
+    width: 100%;
+}
 .comments-display-name{
     padding: 3px 5px 3px 0px;
     font-weight: bold;
@@ -143,7 +171,6 @@ i.tabbar-demo-icon-4 {
 
 .add-to-cart-image {
    margin-top: 10px;
-   padding-top: 10px;
 }
 
 .add-to-cart-text{
