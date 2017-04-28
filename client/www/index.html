@@ -170,7 +170,7 @@
                                         <div ng-repeat="p in my_items">
                                             <p>{{ p.name }}</p>
                                         </div>
-                                        <p><b>על החלק שלך תשלם: </b>{{ my_sum }} ש"ח</p>
+                                        <p><b>על החלק שלך תשלם: </b>{{ my_sum.toFixed(2) }} ש"ח</p>
                                     </div>
                                 </div>
                                 <div class="card-header">
@@ -260,7 +260,7 @@
                                 <div ng-show="product_name_search">
                                     <div class="card">
                                         <div class="card-header">
-                                            <div><b>{{ x.name }} : {{ x.price }} ש"ח</b></div>
+                                            <div><b>{{ x.name }} : {{ (x.price).toFixed(2) }} ש"ח</b></div>
                                         </div>
 
                                         <div class="card-footer">כמות
@@ -333,14 +333,14 @@
                                             <tr ng-repeat="item in my_items">
                                                 <a href="#" class="item-link">
                                                     <td>{{ item.name }}</td>
-                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
+                                                    <td>{{ item.quantity }}x{{ item.price.toFixed(2) }}</td>
                                                     <td>{{ item.sum }}</td>
                                                 </a>
                                             </tr>
                                         </table>
                                     </md-content>
                                     <div id="ridePageNotes" class="card-footer">סה"כ<span
-                                            id="epsilon">{{ my_sum }} ש"ח</span></div>
+                                            id="epsilon">{{ my_sum.toFixed(2) }} ש"ח</span></div>
                                 </md-tab>
                                 <md-tab label="הסל המשותף">
                                     <md-content class="tab-content">
@@ -353,14 +353,14 @@
                                             <tr ng-repeat="item in shared_items">
                                                 <a href="#" class="item-link">
                                                     <td>{{ item.name }}</td>
-                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
-                                                    <td>{{ item.sum }}</td>
+                                                    <td>{{ item.quantity }}x{{ item.price.toFixed(2) }}</td>
+                                                    <td>{{ item.sum.toFixed(2) }}</td>
                                                 </a>
                                             </tr>
                                         </table>
                                     </md-content>
                                     <div id="ridePageNotes" class="card-footer">סה"כ<span
-                                            id="epsilon">{{ shared_sum }}</span>
+                                            id="epsilon">{{ shared_sum.toFixed(2) }}</span>
                                     </div>
                                 </md-tab>
                                 <md-tab label="אחרים">
@@ -374,14 +374,14 @@
                                             <tr ng-repeat="item in others_items">
                                                 <a href="#" class="item-link">
                                                     <td>{{ item.name }}</td>
-                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
-                                                    <td>{{ item.sum }}</td>
+                                                    <td>{{ item.quantity }}x{{ item.price.toFixed(2) }}</td>
+                                                    <td>{{ item.sum.toFixed(2) }}</td>
                                                 </a>
                                             </tr>
                                         </table>
                                     </md-content>
                                     <div id="ridePageNotes" class="card-footer">סה"כ<span
-                                            id="epsilon">{{ others_sum }}</span>
+                                            id="epsilon">{{ others_sum.toFixed(2) }}</span>
                                     </div>
                                 </md-tab>
                             </md-tabs>
