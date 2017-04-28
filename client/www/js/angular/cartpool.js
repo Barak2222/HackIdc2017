@@ -165,7 +165,7 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
             $scope.reload_data();
             var msg = "ההזמנה בוצעה בהצלחה וייגבו ממך ";
             msg += $scope.sum_sum.toFixed(2);
-            msg += "שקלים מחשבונך בבנק פפר.";
+            msg += " שקלים מחשבונך בבנק פפר.";
             alert(msg);
         });
     };
@@ -186,7 +186,7 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         if ($scope.cart.ready_to_buy && $scope.cart.members.length > 1){
             var msg = "העגלה אושרה בהצלחה ומנהל העגלה יוכל לגבות ממך ";
             msg += $scope.sum_sum.toFixed(2);
-            msg += "שקלים כאשר יבוצע המשלוח.";
+            msg += " שקלים כאשר יבוצע המשלוח.";
             alert(msg);
         }
         else{
