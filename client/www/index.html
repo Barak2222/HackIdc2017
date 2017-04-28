@@ -74,7 +74,7 @@
                 <div class="left sliding"><a href="#" class="back link"> <i
                         class="icon icon-back"></i><span>הקודם</span></a>
                 </div>
-                <div class="center sliding">Select</div>
+                <div class="center sliding">בחר</div>
             </div>
             <!-- Navbar inner for ride page-->
             <div data-page="ride" class="navbar-inner cached">
@@ -101,7 +101,7 @@
             <div data-page="form" class="navbar-inner cached">
                 <div class="left sliding"><a href="#" id="form-go-back" class="back link"> <i
                         class="icon icon-back"></i><span>הקודם</span></a></div>
-                <div class="center sliding">New Cart</div>
+                <div class="center sliding">עגלה חדשה</div>
             </div>
         </div>
 
@@ -182,7 +182,7 @@
                                         <div ng-repeat="p in shared_items">
                                             <p>{{ p.name }}</p>
                                         </div>
-                                        <p><b>כל אחד ישלם: </b>{{ shared_sum }} ש"ח</p>
+                                        <p><b>תשלום עבור פריטים משותפים: </b>{{ (shared_sum / cart.members.length).toFixed(2) }} ש"ח</p>
                                     </div>
                                 </div>
                                 <div class="card-header">
@@ -191,7 +191,7 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-content-inner">
-                                        <p><b>{{ sum_sum.toFixed(2) }} ש"ח</b></p>
+                                        <p><b>{{ (sum_sum).toFixed(2) }} ש"ח</b></p>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +296,6 @@
                             <div class="card-content">
                                 <div class="card-content-inner">
                                     <p id="ridePageFromTo">{{ cart.description }}</p>
-                                    <p><b>תאריך רכישה: </b>1.5.17 22:00</p>
                                     <p><b>חברים בעגלה: </b>{{ members }}</p>
                                     <form ng-if="cart.owner==uid">
                                         <input type="text" ng-model="new_cart_member">
@@ -310,7 +309,7 @@
                                     <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
                                 </div>
                             </div>
-                            <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
+                            <!-- <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div> -->
                         </div>
 
                         <div class="card add-items">
