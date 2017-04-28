@@ -211,3 +211,5 @@ i.tabbar-demo-icon-4 {
    from{ bottom:-100px; opacity:0 }
    to{ bottom:0; opacity:1 }
  }
+
+.ng-cloak { display: none; }
