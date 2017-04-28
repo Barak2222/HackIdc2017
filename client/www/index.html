@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="cartpoolApp">
+<html ng-app="cartpoolApp" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport"
@@ -241,37 +241,20 @@
                                                                           ng-model="product_name_search" type="text"
                                                                           placeholder="חפש מוצר..."></input></div>
 
-                        <div class="list-block media-list inset">
-                            <ul id="notifToday">
-                                <li class="rideComponent" onclick="/** open dropdown! */">
-                                    <div class="item-inner">
-                                        <div class="item-title-row" id="select-product-div">
-                                            <div class="item-title">לחם</div>
-                                            <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
-                                        </div>
-                                        <div class="select-product-dropped" class="card-footer">
-                                            <span style="float: right">כמות: </span>
-                                            <input type="number" id="quantity-for-product" value="1"/>
-                                            <a href="#" class="link back" style="float: left;"><b>הוספה</b></a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
 
                         <div ng-repeat="x in prods | filter:product_name_search | limitTo:10">
-                            <div class="list-block media-list inset">
-                                <ul id="notifToday">
-                                    <li class="rideComponent" onclick="/** open dropdown! */">
-                                        <div class="item-inner">
-                                            <div class="item-title-row" id="select-product-div">
-                                                <div class="item-title">{{x.name}}</div>
-                                                <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                            <div class="card" dir="rtl">
+                                    <div class="card-header">
+                                            <div><b>{{ x.name }} : {{ x.price }} ש"ח</b></div>
+                                    </div>
+
+                                    <div id="ridePageNotes" class="card-footer">כמות
+                                    <input type="number" ng-model="x.new_item_quantity"/>
+                                    <span id="epsilon">
+                                    <button class="btn" ng-click="add_cart_item(cart.id, 0, x.id, x.new_item_quantity)">שיתופי</button>
+                                    <button class="btn" ng-click="add_cart_item(cart.id, uid, x.id, x.new_item_quantity)">אישי</button>
+                                    </span></div>
+                                </div>
                         </div>
 
                     </div>
