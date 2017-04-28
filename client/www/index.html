@@ -6,7 +6,7 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>IDC carpool</title>
+    <title>CartPool</title>
     <link rel="stylesheet" href="static/www/css/framework7.ios.min.css">
     <link rel="stylesheet" href="static/www/css/my-app.css">
     <link rel="stylesheet" href="static/www/css/tabs.css">
@@ -32,9 +32,8 @@
 <!-- NAVIGATION MENU -->
 <div class="panel panel-left panel-reveal">
     <div class="content-block">
-        <p><b>IDC CARPOOL 2016</b></p>
-        <p><a href="#index" class="close-panel">Rides feed</a></p>
-        <p><a href="#about" class="close-panel">about</a></p>
+        <p><b>CartPool</b></p>
+        <p><a href="#about" class="close-panel">אודות</a></p>
     </div>
 </div>
 
@@ -53,7 +52,7 @@
                     </a>
                 </div>
                 <!-- We have home navbar without left link-->
-                <div class="center sliding" style="left: 9.5px;">IDC Carpool</div>
+                <div class="center sliding" style="left: 9.5px;">CartPool</div>
                 <div class="right">
                     <!-- Right link contains only icon - additional "icon-only" class--><a href="#"
                                                                                            class="link icon-only open-panel">
@@ -64,39 +63,39 @@
 
             <!-- Navbar inner for pay page -->
             <div data-page="pay-page" class="navbar-inner cached">
-                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>הקודם</span></a>
                 </div>
                 <div class="center sliding">Pay</div>
             </div>
 
             <!-- Navbar inner for select-product-page-->
             <div data-page="select-product-page" class="navbar-inner cached">
-                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>הקודם</span></a>
                 </div>
                 <div class="center sliding">Select</div>
             </div>
             <!-- Navbar inner for ride page-->
             <div data-page="ride" class="navbar-inner cached">
-                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>הקודם</span></a>
                 </div>
-                <div class="center sliding">Cart Info</div>
+                <div class="center sliding">{{ cart.name }}</div>
             </div>
             <!-- Navbar inner for Notifications page-->
             <div data-page="notifications" class="navbar-inner cached">
-                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>הקודם</span></a>
                 </div>
                 <div class="center sliding">Notifications</div>
             </div>
             <!-- Navbar inner for About page-->
             <div data-page="about" class="navbar-inner cached">
-                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>הקודם</span></a>
                 </div>
-                <div class="center sliding">About Us</div>
+                <div class="center sliding">אודותינו</div>
             </div>
             <!-- Navbar inner for Form page-->
             <div data-page="form" class="navbar-inner cached">
                 <div class="left sliding"><a href="#" id="form-go-back" class="back link"> <i
-                        class="icon icon-back"></i><span>Back</span></a></div>
+                        class="icon icon-back"></i><span>הקודם</span></a></div>
                 <div class="center sliding">New Cart</div>
             </div>
         </div>
@@ -105,17 +104,17 @@
         <div class="pages navbar-through toolbar-through">
             <!-- Index Page-->
             <div data-page="index" class="page">
-                <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;">
+                <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;" ng-if="carts">
                     <div dir="rtl" class="content-block-title">שלום {{ display_name }}, הנה העגלות שלך</div>
                     <div class="list-block media-list inset">
                         <ul id="todayToIDC" ng-repeat="c in carts">
 
-                            <li class="rideComponent" onclick="ridePage.handler(0)" ng-click="choose_cart(c);">
+                            <li class="rideComponent" ng-click="choose_cart(c);">
 
                                 <a href="#ride" class="item-link item-content">
 
                                     <div class="item-media">
-                                        <img src="static/www/img/cart.png" width="44">
+                                        <img src="static/www/img/cart.png" width="38">
 
                                     </div>
                                     <div class="item-inner" dir="rtl">
@@ -130,6 +129,10 @@
                         </ul>
                     </div>
                 </div>
+                <div class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;" ng-if="! carts">
+                   <h1 dir="rtl"><center><b>טוען נתונים...</b><center></h1>
+                   <div id="loadingSign"></div>
+                </div>
             </div>
 
 
@@ -140,7 +143,7 @@
 
                         <div class="apply-rtl">
                             <h1 class="payment--main-header"> סיכום ביניים</h1>
-                            <div class="card">
+                            <div class="card" ng-if="cart.owner==uid">
                                 <div class="card-header payment">
                                     <p style="font-size: 25px">בדקנו ומצאנו כי הסל הזול ביותר שייך ל</p><br>
                                     <img src="/static/www/img/best_super.png" class="payment-pay-options-image">
@@ -159,8 +162,9 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-content-inner">
-                                        <p>מוצר א</p>
-                                        <p>מוצר ב</p>
+                                        <div ng-repeat="p in my_items">
+                                        <p>{{ p.name }}</p>
+                                       </div>
                                         <p><b>על החלק שלך תשלם: </b>{{ my_sum }} ש"ח</p>
                                     </div>
                                 </div>
@@ -170,8 +174,9 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-content-inner">
-                                        <p>מוצר א</p>
-                                        <p>מוצר ב</p>
+                                    <div ng-repeat="p in shared_items">
+                                        <p>{{ p.name }}</p>
+                                       </div>
                                         <p><b>כל אחד ישלם: </b>{{ shared_sum }} ש"ח</p>
                                     </div>
                                 </div>
@@ -181,17 +186,22 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-content-inner">
-                                        <p><b>{{ others_sum }} ש"ח</b></p>
+                                        <p><b>{{ sum_sum }} ש"ח</b></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div>
-                                    <p class="payment--final-total-header"><b>שלם באמצעות</b></p>
+                                    <p class="payment--final-total-header"><b ng-if="cart.owner==uid">שלם באמצעות</b>
+                                    <a href="#" class="button notification-default" ng-if="cart.owner!=uid && cart.status!=0" ng-click="remove_cart_approve(cart.id, uid);">בטל אישור תשלום</a>
+                                    <b ng-if="cart.owner!=uid && cart.status==0">אשר תשלום באמצעות</b></p>
                                 </div>
-                                <div class="payment-pay-options">
+                                <div class="payment-pay-options" ng-if="cart.owner==uid">
                                     <img src="/static/www/img/pepper.png" class="payment-pay-options-image">
                                     <img src="/static/www/img/paypal.png" class="payment-pay-options-image">
+                                </div>
+                                <div class="payment-pay-options" ng-if="cart.owner!=uid && cart.status==0">
+                                    <img src="/static/www/img/pepper.png" class="payment-pay-options-image" ng-click="approve_cart(cart.id, uid);">
                                 </div>
                             </div>
                         </div>
@@ -207,7 +217,7 @@
                         <div class="content-block-title">Today</div>
                         <div class="list-block media-list inset">
                             <ul id="notifToday">
-                                <li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a
+                                <li class="rideComponent"><a
                                         href="#ride" class="item-link item-content">
                                     <div class="item-media"><img id="notifImg1" src="static/www/img/notificationOn.png"
                                                                  width="44"></div>
@@ -249,11 +259,11 @@
                                         <div class="card-footer">כמות
                                             <input type="number" ng-model="x.new_item_quantity"/>
                                             <button class="btn"
-                                                    ng-click="add_cart_item(cart.id, 0, x.id, x.new_item_quantity)">
+                                                    ng-click="add_cart_item(cart.id, 0, x.id, x.new_item_quantity);x.new_item_quantity=''">
                                                 שיתופי
                                             </button>
                                             <button class="btn"
-                                                    ng-click="add_cart_item(cart.id, uid, x.id, x.new_item_quantity)">
+                                                    ng-click="add_cart_item(cart.id, uid, x.id, x.new_item_quantity);x.new_item_quantity=''">
                                                 אישי
                                             </button>
                                         </div>
@@ -283,9 +293,9 @@
                                     <p><b>חברים בעגלה: </b>{{ members }}</p>
                                     <form ng-if="cart.owner==uid">
                                         <input type="text" ng-model="new_cart_member">
-                                        <button class="btn" ng-click="add_user_to_cart(new_cart_member);">הוסף חבר
+                                        <button class="btn" ng-click="add_user_to_cart(new_cart_member);new_cart_member=''">הוסף חבר
                                         </button>
-                                        <button class="btn" ng-click="delete_cart(cart.id);">מחק עגלה</button>
+                                        <button style="margin-top: 10px" class="btn" ng-click="delete_cart(cart.id);">מחק עגלה</button>
                                     </form>
                                     <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
                                 </div>
@@ -338,7 +348,7 @@
                                             </table>
                                         </md-content>
                                         <div id="ridePageNotes" class="card-footer">סה"כ<span
-                                                id="epsilon">{{ my_sum }}</span></div>
+                                                id="epsilon">{{ my_sum }} ש"ח</span></div>
                                     </md-tab>
                                     <md-tab label="הסל המשותף">
                                         <md-content class="tab-content">
@@ -395,7 +405,7 @@
                             <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
                         </div>-->
 
-                        <div id="commentsSec">
+                        <div id="commentsSec" ng-if="cart.comments && cart.comments.length > 0">
                             <div class="card" id="aaa">
                                 <div class="card-header">
                                     <p>תגובות</p>
@@ -443,11 +453,9 @@
             </div>
             <!-- About Page -->
             <div data-page="about" class="page cached">
-                <div class="page-content">
+                <div dir="rtl" class="page-content">
                     <div class="content-block">
-                        <p>This web application was created by Sapir, Sivan and Barak as part of a final assignement for
-                            the course "mobile web application development</p>
-                        <p>Thanks for your time</p>
+                        <p>Cartpool הגיעה להביא לכם חווית קניות שיתופית וחדשה שתפשט לכם את הקניות.</p>
                     </div>
                 </div>
             </div>
@@ -527,6 +535,7 @@
         <div class="toolbar">
             <div class="toolbar-inner">
                 <div id="logoutB"><a href="#" id="logout" class="link" ng-click="logout();">התנתק</a></div>
+                <img src="static/www/img/cartpool.png" width="50px">
                 <a href="#form" onclick="navigation.toIDCTab()" class="link"><img src="static/www/img/create.png"
                                                                                   width="30px"></a>
             </div>

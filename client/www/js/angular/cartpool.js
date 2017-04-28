@@ -25,11 +25,22 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
 
     $scope.choose_cart = function (cart) {
         $scope.cart = cart;
+        $scope.cart.ready_to_buy = true;
 
         // Build members string
         $scope.members = cart.members[0].display_name;
-        for (var i = 1; i < cart.members.length; i++) {
-            $scope.members += ', ' + cart.members[i].display_name;
+        for (var i = 0; i < cart.members.length; i++) {
+            var member = cart.members[i];
+            if (i > 0) {
+                $scope.members += ', ' + member.display_name;
+            }
+
+            if (member.id == $scope.uid){
+                $scope.cart.status = member.status;
+            }
+            if (member.status == 0 && cart.owner != member.id){
+                $scope.cart.ready_to_buy = false;
+            }
         }
 
         // Build cart items
@@ -56,6 +67,8 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
                 $scope.others_sum += product.sum;
             }
         }
+
+        $scope.sum_sum = $scope.my_sum + ($scope.shared_sum / $scope.cart.members.length);
     };
 
 
@@ -104,7 +117,7 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
                     location.reload();
                 }
             });
-        };
+        }
     };
 
     $scope.add_user_to_cart = function (u_name) {
@@ -124,12 +137,40 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
     };
 
     $scope.add_cart_item = function(c_id, owner, i_id, quantity){
+        if ($scope.cart.ready_to_buy && $scope.cart.members.length > 1){
+            if (!confirm("העגלה מאושרת לתשלום, הוספת פריט תבטל את האישור, האם ברצונך להמשיך?")){
+                return;
+            }
+        }
+
         $http.get("/add_cart_item", {
             params: {
                 c_id: c_id,
                 owner: owner,
                 i_id: i_id,
                 quantity: quantity
+            }
+        }).then(function (response) {
+            $scope.reload_data();
+        });
+    };
+
+    $scope.approve_cart = function(c_id, u_id){
+        $http.get("/approve_cart", {
+            params: {
+                c_id: c_id,
+                u_id: u_id
+            }
+        }).then(function (response) {
+            $scope.reload_data();
+        });
+    };
+
+    $scope.remove_cart_approve = function(c_id, u_id){
+        $http.get("/remove_cart_approve", {
+            params: {
+                c_id: c_id,
+                u_id: u_id
             }
         }).then(function (response) {
             $scope.reload_data();
@@ -150,5 +191,6 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         $scope.uid = cartPoolCookie.id;
         $scope.display_name = cartPoolCookie.display_name;
         $scope.reload_data();
+        $interval($scope.reload_data, 3000);
     }
 });

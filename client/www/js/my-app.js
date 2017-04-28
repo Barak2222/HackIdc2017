@@ -1,6 +1,4 @@
-setInterval = function(){
-   
-}
+
 var myApp = new Framework7({
     animateNavBackIcon:true
 });
@@ -15,48 +13,6 @@ var mainView = myApp.addView('.view-main', {
 });
 
 currentUser = null;
-utils = {
-    isDifferent: function(arr1, arr2){
-        if(arr1.length != arr2.length){
-            return true;
-        }
-        for(var i = 0; i < arr1.length; i++){
-            if(arr1[i] != arr2[i]){
-                if(arr1[i] == null || arr2[i] == null || arr1[i].length != arr2[i].length){
-                    return true
-                }
-            }
-        }
-        return false;
-    },
-    dateFormatter(d){
-        return d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
-    },
-    dateFormatHourMinute: function(d){
-        d = new Date(d);
-        return utils.twoDigitsFormat(d.getHours()) + ":" + utils.twoDigitsFormat(d.getMinutes());
-    },
-    twoDigitsFormat: function(st){
-        return ((st + "").length >= 2) ? st : "0" + st;
-    },
-    isSameDay: function(d1, d2){
-        d1 = new Date(d1);
-        d2 = new Date(d2);
-        if(d1.getDate() != d2.getDate()){ return false; }
-        if(d1.getFullYear() != d2.getFullYear()){ return false; }
-        if(d1.getMonth() != d2.getMonth()){ return false; }
-        return true;
-    },
-    isOld(d){
-        var yesturday = new Date();
-        yesturday.setDate(yesturday.getDate() - 1);
-        return (d.getTime() < yesturday.getTime());
-    },
-    isToday: function(d){
-        return utils.isSameDay(d, new Date());
-    }
-}
-
 
 var navigation = {
     goBack: function(){
@@ -76,28 +32,25 @@ var navigation = {
 
 
 $(document).ready(function(){
-    $(".back").on('click', function(){
-        ridePage.current = null;
-    });
+   //  $(".back").on('click', function(){
+   //      ridePage.current = null;
+   //  });
     $('#logoutB').on('click', logout);
     $("#commentForm").on('submit', comments.createCommentHandler);
-    $.getJSON( "/www/futureRides", function(data) {
-        rides.init(data);
-    })
-    .fail(function(){
-        console.log('error while trying to get data from server');
-    });
-    $.getJSON( "/www/getCurrentUser", function(data) {
-        currentUser = data;
-    })
-    .fail(function(){
-        console.log('error while trying to get data from server');
-    });
+   //  $.getJSON( "/www/futureRides", function(data) {
+   //      rides.init(data);
+   //  })
+   //  .fail(function(){
+   //      console.log('error while trying to get data from server');
+   //  });
+   //  $.getJSON( "/www/getCurrentUser", function(data) {
+   //      currentUser = data;
+   //  })
+   //  .fail(function(){
+   //      console.log('error while trying to get data from server');
+   //  });
     newPostSubmit.init();
     notifications.init();
-    notifications.runLoop();
-    rides.runLoop();
-    ridePage.runLoop();
 });
 
 newPostSubmit = {
@@ -128,132 +81,6 @@ newPostSubmit = {
 }
 
 
-var rides = {
-    data: null,
-    init: function(data){
-        rides.data = data;
-        for (var i = 0; i < data.length; i++) {
-            var $ride = this.createNode(data[i]);
-            var $container = $(this.whereToPut(data[i]));
-            $container.append($ride);
-        }
-    },
-    runLoop: function(){
-        setInterval(function(){
-            $.getJSON( "/www/futureRides", function(data) {
-                if(rides.data.length != data.length){
-                    rides.data = data;
-                    rides.emptyTheFeed();
-                    rides.init(data);
-                }
-            })
-            .fail(function(){
-                console.log('error while trying to get data from server');
-            });
-        }, 1000);
-
-    },
-    emptyTheFeed: function(){
-        $(".tabs-swipeable-wrap ul").empty();
-    },
-    addOnePost: function(obj){
-        rides.data.push(obj)
-        var $ride = this.createNode(obj);
-        var $container = $(this.whereToPut(obj));
-        $container.append($ride);
-        new Highlighter($ride);
-    },
-    whereToPut: function(obj){
-        var st = "#";
-        var today = new Date();
-        var tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        if(utils.isSameDay(obj.date, today)){
-            st+= "today";
-        } else if(utils.isSameDay(obj.date, tomorrow)){
-            st+= "tomorrow";
-        } else {
-            st+= "later";
-        }
-        st+= (obj.type == "toIDC") ? "ToIDC" : "FromIDC";
-        return st;
-    },
-    createNode: function(obj){
-        var time = obj.hour[0] + ':' + obj.hour[1];
-        var $item = $('<div class="item-title">' + obj.from + " to " + obj.to + '</div>');
-        var $row = $('<div class="item-title-row"></div>');
-        $row.append($item);
-        var leavingOrRequesting = (obj.role == "driver") ? "Leaving " : "Requesting ";
-        var $span = $('<span class="timeSpan">' + leavingOrRequesting + time + '</span>');
-        var $subtitle = $('<div class="item-subtitle">' + obj.author + '</div>');
-        $subtitle.append($span);
-        $inner = $('<div class="item-inner"></div>').append($row).append($subtitle);
-        var imgType = (obj.role == "driver") ? "driver" : "pedestrian";
-        $img = $('<div class="item-media"><img src="img/' + imgType + '.png" width="44" /></div>');
-        $a = $('<a href="#ride" class="item-link item-content"></a>');
-        $a.append($img).append($inner);
-        $li = $('<li class="rideComponent" onClick="ridePage.handler(' + obj.id + ')"></li>');
-        $li.append($a);
-        return $li;
-    },
-}
-
-
-
-var ridePage = {
-    current: null,
-    data: null,
-    tempIdx: null,
-    runLoop: function(){
-        setInterval(function(){
-            if(!ridePage.current){
-                return ;
-            }
-            $.getJSON("/www/getComments/" + ridePage.current, function(data) {
-                if(data.length != ridePage.data.comments.length){
-                    ridePage.tempIdx = ridePage.data.comments.length;
-                    ridePage.data.comments = data;
-                    comments.init(data);
-                }
-            })
-            .fail(function(){
-                console.log('error while trying to get data from server');
-            });
-        }, 1000);
-    },
-    handler: function(rideID){
-        ridePage.current = rideID;
-        var data = this.getData(rideID);
-    },
-    handleNotificationsForCurrentPage: function(){
-        $.getJSON( "/www/notifications/notify/" + ridePage.current, function( data ) {
-        })
-        .fail(function(){
-            console.log('error while trying to get data from server');
-        })
-
-    },
-    getData: function(rideID){
-        $.getJSON( "/www/getRide/" + rideID, function( data ) {
-            ridePage.data = data;
-            ridePage.createPage(data);
-        })
-        .fail(function(){
-            console.log('error while trying to get data from server');
-        })
-    },
-    createPage: function(data){
-        $("#ridePageAuthor").text(data.author);
-        var role = (data.role == "driver") ? "driver" : "pedestrian";
-        document.getElementById('ridePageImg').src = "img/" + role + ".png";
-        $("#ridePageFromTo").text("From " + data.from + " to " + data.to);
-        var time = data.hour[0] + ":" + data.hour[1] + " - " + utils.dateFormatter(new Date(data.date));
-        $("#ridePageTime").text("Time: " + time);
-        $("#ridePageNotes").text(data.notes);
-        comments.init(data.comments);
-    },
-}
-
 
 var comments = {
     createCommentHandler: function(e){
@@ -264,17 +91,17 @@ var comments = {
         new Highlighter($node);
     },
     addOneComment: function(){
-        var message = document.getElementById('message').value;
-        $.post('/www/CreateNewComment', {message: message , rideID: ridePage.current} , function(data){
-            if(data){
-                ridePage.data.comments.push(data);
-                comments.createCommentComponent(data, comments.highlightCallback);
-                document.getElementById('message').value = "";
-            }
-            else{
-                alert("error uploading the comment");
-            }
-        });
+      //   var message = document.getElementById('message').value;
+      //   $.post('/www/CreateNewComment', {message: message , rideID: ridePage.current} , function(data){
+      //       if(data){
+      //           ridePage.data.comments.push(data);
+      //           comments.createCommentComponent(data, comments.highlightCallback);
+      //           document.getElementById('message').value = "";
+      //       }
+      //       else{
+      //           alert("error uploading the comment");
+      //       }
+      //   });
     },
     createCommentCard: function(author, message){
         var st = '<div class="card" id="aaa"><div class="card-content"><div class="card-content-inner">'
@@ -376,13 +203,13 @@ var notifications = {
         notifications.data.notSeen
     },
     init: function(){
-        $.getJSON( "/www/notifications", function(data) {
-        notifications.data = data;
-        notifications.updateIcon();
-        })
-        .fail(function(){
-            console.log('error while trying to get data from server');
-        });
+      //   $.getJSON( "/www/notifications", function(data) {
+      //   notifications.data = data;
+      //   notifications.updateIcon();
+      //   })
+      //   .fail(function(){
+      //       console.log('error while trying to get data from server');
+      //   });
     },
     updateIcon: function(){
         var numNew = countRealLength(notifications.data.notSeen);
@@ -479,9 +306,3 @@ var notifications = {
     }
 
 }
-$$('.notification-default').on('click', function () {
-    myApp.addNotification({
-        title: 'CartPool',
-        message: 'Guy just added new item to the cart '
-    });
-});
