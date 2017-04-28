@@ -143,7 +143,7 @@
 
                         <div class="apply-rtl">
                             <h1 class="payment--main-header"> סיכום ביניים</h1>
-                            <div class="card">
+                            <div class="card" ng-if="cart.owner==uid">
                                 <div class="card-header payment">
                                     <p style="font-size: 25px">בדקנו ומצאנו כי הסל הזול ביותר שייך ל</p><br>
                                     <img src="/static/www/img/best_super.png" class="payment-pay-options-image">
@@ -162,8 +162,9 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-content-inner">
-                                        <p>מוצר א</p>
-                                        <p>מוצר ב</p>
+                                        <div ng-repeat="p in my_items">
+                                        <p>{{ p.name }}</p>
+                                       </div>
                                         <p><b>על החלק שלך תשלם: </b>{{ my_sum }} ש"ח</p>
                                     </div>
                                 </div>
@@ -173,8 +174,9 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-content-inner">
-                                        <p>מוצר א</p>
-                                        <p>מוצר ב</p>
+                                    <div ng-repeat="p in shared_items">
+                                        <p>{{ p.name }}</p>
+                                       </div>
                                         <p><b>כל אחד ישלם: </b>{{ shared_sum }} ש"ח</p>
                                     </div>
                                 </div>
@@ -184,18 +186,22 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-content-inner">
-                                        <p><b>{{ others_sum }} ש"ח</b></p>
+                                        <p><b>{{ sum_sum }} ש"ח</b></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div>
                                     <p class="payment--final-total-header"><b ng-if="cart.owner==uid">שלם באמצעות</b>
-                                    <b ng-if="cart.owner!=uid">אשר תשלום באמצעות</b></p>
+                                    <a href="#" class="button notification-default" ng-if="cart.owner!=uid && cart.status!=0" ng-click="remove_cart_approve(cart.id, uid);">בטל אישור תשלום</a>
+                                    <b ng-if="cart.owner!=uid && cart.status==0">אשר תשלום באמצעות</b></p>
                                 </div>
-                                <div class="payment-pay-options">
+                                <div class="payment-pay-options" ng-if="cart.owner==uid">
                                     <img src="/static/www/img/pepper.png" class="payment-pay-options-image">
                                     <img src="/static/www/img/paypal.png" class="payment-pay-options-image">
+                                </div>
+                                <div class="payment-pay-options" ng-if="cart.owner!=uid && cart.status==0">
+                                    <img src="/static/www/img/pepper.png" class="payment-pay-options-image" ng-click="approve_cart(cart.id, uid);">
                                 </div>
                             </div>
                         </div>
