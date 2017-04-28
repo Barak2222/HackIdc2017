@@ -39,7 +39,7 @@ class MySqlDal(object):
     DELETE_CART = 'delete from carts where id = %s'
     REMOVE_ITEM_FROM_CART = 'delete from cart_items where c_id = %s and p_id = %s'
     REGISTER = 'insert into users (name, display_name, password) values (%s, %s, %s)'
-    CART_MEMBERS = 'select u.display_name from users u, user_carts uc where u.id=uc.u_id and uc.c_id=%s'
+    CART_MEMBERS = 'select u.display_name, uc.status, u.id from users u, user_carts uc where u.id=uc.u_id and uc.c_id=%s'
 
     def __init__(self, config):
         self._config = config
