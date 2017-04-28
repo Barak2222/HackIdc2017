@@ -260,7 +260,7 @@
                 <div class="page-content">
                     <div class="content-block">
 
-                        <input type="text" ng-model="product_name_search" placeholder="מה תרצה לחפש?">
+                        <input type="text" class="search_bar" ng-model="product_name_search" placeholder="מה תרצה לחפש?">
                         <div style="float: right; display: inline-block; direction: rtl; min-width: 100%">
                             <div ng-repeat="x in prods | filter:product_name_search | limitTo:10">
                                 <div ng-show="product_name_search">
