@@ -191,5 +191,6 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         $scope.uid = cartPoolCookie.id;
         $scope.display_name = cartPoolCookie.display_name;
         $scope.reload_data();
+        $interval($scope.reload_data, 3000);
     }
 });
