@@ -88,7 +88,7 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
             }
         }).then(function (response) {
             if (response) {
-                $scope.reload_data();
+                location.reload();
             }
         });
     };
