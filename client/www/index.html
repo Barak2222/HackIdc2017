@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="cartpoolApp">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>IDC carpool</title>
@@ -13,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-cookies.js"></script>
     <script src="/static/www/js/angular/cartpool.js"></script>
 
-      <!-- Angular Material requires Angular.js Libraries -->
+    <!-- Angular Material requires Angular.js Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
@@ -23,552 +24,604 @@
 
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-  </head>
+</head>
 
-  <body ng-controller="mainCtrl">
-      <div class="statusbar-overlay"></div>
-      <div class="panel-overlay"></div>
-      <!-- NAVIGATION MENU -->
-      <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-          <p><b>IDC CARPOOL 2016</b></p>
-          <p><a href="#index" class="close-panel">Rides feed</a></p>
-          <p><a href="#about" class="close-panel">about</a></p>
-        </div>
-      </div>
+<body ng-controller="mainCtrl">
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
+<!-- NAVIGATION MENU -->
+<div class="panel panel-left panel-reveal">
+    <div class="content-block">
+        <p><b>IDC CARPOOL 2016</b></p>
+        <p><a href="#index" class="close-panel">Rides feed</a></p>
+        <p><a href="#about" class="close-panel">about</a></p>
+    </div>
+</div>
 
-      <div class="views">
-        <div class="view view-main" data-page="index">
-          <!-- Top Navbar-->
-          <div class="navbar">
+<div class="views">
+    <div class="view view-main" data-page="index">
+        <!-- Top Navbar-->
+        <div class="navbar">
             <!-- Navbar inner for Index page-->
             <div data-page="index" class="navbar-inner">
 
-              <div class="left">
-                <a href="#notifications" onclick="notifications.createPage()"><img class="notificationIcon" id="mainNotiIcon" src="static/www/img/notificationOff.png">
-                  <span id="numNotifications" style="display: none">0</span>
-                </a>
-              </div>
-              <!-- We have home navbar without left link-->
-              <div class="center sliding" style="left: 9.5px;">IDC Carpool</div>
-              <div class="right">
-                <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
-              </div>
+                <div class="left">
+                    <a href="#notifications" onclick="notifications.createPage()"><img class="notificationIcon"
+                                                                                       id="mainNotiIcon"
+                                                                                       src="static/www/img/notificationOff.png">
+                        <span id="numNotifications" style="display: none">0</span>
+                    </a>
+                </div>
+                <!-- We have home navbar without left link-->
+                <div class="center sliding" style="left: 9.5px;">IDC Carpool</div>
+                <div class="right">
+                    <!-- Right link contains only icon - additional "icon-only" class--><a href="#"
+                                                                                           class="link icon-only open-panel">
+                    <i class="icon icon-bars"></i></a>
+                </div>
             </div>
 
 
             <!-- Navbar inner for pay page -->
             <div data-page="pay-page" class="navbar-inner cached">
-              <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-              <div class="center sliding">Pay</div>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                </div>
+                <div class="center sliding">Pay</div>
             </div>
 
             <!-- Navbar inner for select-product-page-->
             <div data-page="select-product-page" class="navbar-inner cached">
-              <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-              <div class="center sliding">Select</div>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                </div>
+                <div class="center sliding">Select</div>
             </div>
             <!-- Navbar inner for ride page-->
             <div data-page="ride" class="navbar-inner cached">
-              <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-              <div class="center sliding">Cart Info</div>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                </div>
+                <div class="center sliding">Cart Info</div>
             </div>
             <!-- Navbar inner for Notifications page-->
             <div data-page="notifications" class="navbar-inner cached">
-              <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-              <div class="center sliding">Notifications</div>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                </div>
+                <div class="center sliding">Notifications</div>
             </div>
             <!-- Navbar inner for About page-->
             <div data-page="about" class="navbar-inner cached">
-              <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-              <div class="center sliding">About Us</div>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                </div>
+                <div class="center sliding">About Us</div>
             </div>
             <!-- Navbar inner for Form page-->
             <div data-page="form" class="navbar-inner cached">
-              <div class="left sliding"><a href="#" id="form-go-back" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-              <div class="center sliding">New Cart</div>
+                <div class="left sliding"><a href="#" id="form-go-back" class="back link"> <i
+                        class="icon icon-back"></i><span>Back</span></a></div>
+                <div class="center sliding">New Cart</div>
             </div>
-          </div>
+        </div>
 
-          <!-- Pages-->
-          <div class="pages navbar-through toolbar-through">
+        <!-- Pages-->
+        <div class="pages navbar-through toolbar-through">
             <!-- Index Page-->
             <div data-page="index" class="page">
-              <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;">
-                <div dir="rtl" class="content-block-title">שלום {{ display_name }}, הנה העגלות שלך</div>
-                <div class="list-block media-list inset">
-                   <ul id="todayToIDC" ng-repeat="c in carts">
+                <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;">
+                    <div dir="rtl" class="content-block-title">שלום {{ display_name }}, הנה העגלות שלך</div>
+                    <div class="list-block media-list inset">
+                        <ul id="todayToIDC" ng-repeat="c in carts">
 
-                     <li class="rideComponent" onclick="ridePage.handler(0)" ng-click="choose_cart(c);">
+                            <li class="rideComponent" onclick="ridePage.handler(0)" ng-click="choose_cart(c);">
 
-                        <a href="#ride" class="item-link item-content">
+                                <a href="#ride" class="item-link item-content">
 
-                           <div class="item-media">
-                                <img src="static/www/img/cart.png" width="44">
+                                    <div class="item-media">
+                                        <img src="static/www/img/cart.png" width="44">
 
-                           </div>
-                           <div class="item-inner" dir="rtl">
-                              <div class="item-title-row">
-                                 <div class="item-title">{{ c.name }}</div>
-                              </div>
-                              <div class="item-subtitle ownerName">{{ c.display_name }}</div>
-                           </div>
+                                    </div>
+                                    <div class="item-inner" dir="rtl">
+                                        <div class="item-title-row">
+                                            <div class="item-title">{{ c.name }}</div>
+                                        </div>
+                                        <div class="item-subtitle ownerName">{{ c.display_name }}</div>
+                                    </div>
 
-                        </a>
-                     </li>
-                   </ul>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
             </div>
 
 
             <!-- pay page -->
             <div data-page="pay-page" class="page cached">
-              <div class="page-content">
-               <div class="content-block">
+                <div class="page-content">
+                    <div class="content-block">
 
-                   <div class="apply-rtl">
-                       <h1 class="payment--main-header"> סיכום ביניים</h1>
-                       <div class="card">
-                           <div class="card-header payment">
-                               <p style="font-size: 25px">בדקנו ומצאנו כי הסל הזול ביותר שייך ל</p><br>
-                               <img src="/static/www/img/best_super.png" class="payment-pay-options-image">
-                           </div>
-                           <p>זמני המשלוח קרובים</p>
-                           <div class="card-content-inner">
-                               <input type="radio" name="deliveryTimes" value="1">28.04.17 - 08:00-12:00<br>
-                               <input type="radio" name="deliveryTimes" value="2">28.04.17 - 08:00-12:00<br>
-                               <p>זמני משלוח נוספים</p>
-                           </div>
-                       </div>
-                       <div class="card">
-                           <div class="card-header payment">
-                               <p style="font-size: 25px; margin: 5px 25px">המוצרים שלך</p>
-                               <img src="/static/www/img/person.svg" class="payment-pay-options-image">
-                           </div>
-                           <div class="card-content">
-                               <div class="card-content-inner">
-                                   <p>מוצר א</p>
-                                   <p>מוצר ב</p>
-                                   <p><b>על החלק שלך תשלם: </b>{{ my_sum }} ש"ח</p>
-                               </div>
-                           </div>
-                           <div class="card-header">
-                               <p style="font-size: 25px ; margin: 5px 25px">המוצרים של כולם</p>
-                               <img src="/static/www/img/group.svg" class="payment-pay-options-image">
-                           </div>
-                           <div class="card-content">
-                               <div class="card-content-inner">
-                                   <p>מוצר א</p>
-                                   <p>מוצר ב</p>
-                                   <p><b>כל אחד ישלם: </b>{{ shared_sum }} ש"ח</p>
-                               </div>
-                           </div>
-                           <div class="card-header">
-                               <p style="font-size: 25px; margin: 5px 25px">סך הכול תשלם</p>
-                               <img src="/static/www/img/total_cost.svg" class="payment-pay-options-image">
-                           </div>
-                           <div class="card-content">
-                               <div class="card-content-inner">
-                                   <p><b>{{ others_sum }} ש"ח</b></p>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="card">
-                           <div>
-                               <p class="payment--final-total-header"><b>שלם באמצעות</b></p>
-                           </div>
-                           <div class="payment-pay-options">
-                               <img src="/static/www/img/pepper.png" class="payment-pay-options-image">
-                               <img src="/static/www/img/paypal.png" class="payment-pay-options-image">
-                           </div>
-                       </div>
-                   </div>
-               </div>
-              </div>
+                        <div class="apply-rtl">
+                            <h1 class="payment--main-header"> סיכום ביניים</h1>
+                            <div class="card">
+                                <div class="card-header payment">
+                                    <p style="font-size: 25px">בדקנו ומצאנו כי הסל הזול ביותר שייך ל</p><br>
+                                    <img src="/static/www/img/best_super.png" class="payment-pay-options-image">
+                                </div>
+                                <p>זמני המשלוח קרובים</p>
+                                <div class="card-content-inner">
+                                    <input type="radio" name="deliveryTimes" value="1">28.04.17 - 08:00-12:00<br>
+                                    <input type="radio" name="deliveryTimes" value="2">28.04.17 - 08:00-12:00<br>
+                                    <p>זמני משלוח נוספים</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header payment">
+                                    <p style="font-size: 25px; margin: 5px 25px">המוצרים שלך</p>
+                                    <img src="/static/www/img/person.svg" class="payment-pay-options-image">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        <p>מוצר א</p>
+                                        <p>מוצר ב</p>
+                                        <p><b>על החלק שלך תשלם: </b>{{ my_sum }} ש"ח</p>
+                                    </div>
+                                </div>
+                                <div class="card-header">
+                                    <p style="font-size: 25px ; margin: 5px 25px">המוצרים של כולם</p>
+                                    <img src="/static/www/img/group.svg" class="payment-pay-options-image">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        <p>מוצר א</p>
+                                        <p>מוצר ב</p>
+                                        <p><b>כל אחד ישלם: </b>{{ shared_sum }} ש"ח</p>
+                                    </div>
+                                </div>
+                                <div class="card-header">
+                                    <p style="font-size: 25px; margin: 5px 25px">סך הכול תשלם</p>
+                                    <img src="/static/www/img/total_cost.svg" class="payment-pay-options-image">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        <p><b>{{ others_sum }} ש"ח</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div>
+                                    <p class="payment--final-total-header"><b>שלם באמצעות</b></p>
+                                </div>
+                                <div class="payment-pay-options">
+                                    <img src="/static/www/img/pepper.png" class="payment-pay-options-image">
+                                    <img src="/static/www/img/paypal.png" class="payment-pay-options-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Notifications Page -->
             <div data-page="notifications" class="page cached">
-              <div class="page-content">
-                <div class="content-block">
+                <div class="page-content">
+                    <div class="content-block">
 
-                  <div class="content-block-title">Today</div>
-                    <div class="list-block media-list inset">
-                      <ul id="notifToday"><li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a href="#ride" class="item-link item-content"><div class="item-media"><img id="notifImg1" src="static/www/img/notificationOn.png" width="44"></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Sivan's request to IDC</div></div><div class="item-subtitle">2 new comments<span class="timeSpan">13:34</span></div></div></a></li></ul>
+                        <div class="content-block-title">Today</div>
+                        <div class="list-block media-list inset">
+                            <ul id="notifToday">
+                                <li class="rideComponent" onclick="ridePage.handler(1);notifications.notifClicked(1)"><a
+                                        href="#ride" class="item-link item-content">
+                                    <div class="item-media"><img id="notifImg1" src="static/www/img/notificationOn.png"
+                                                                 width="44"></div>
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">Sivan's request to IDC</div>
+                                        </div>
+                                        <div class="item-subtitle">2 new comments<span class="timeSpan">13:34</span>
+                                        </div>
+                                    </div>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <div class="content-block-title">OLDER</div>
+                        <div class="list-block media-list inset">
+                            <ul id="notifOlder"></ul>
+                        </div>
+                        swe
+
                     </div>
-
-                  <div class="content-block-title">OLDER</div>
-                    <div class="list-block media-list inset">
-                      <ul id="notifOlder"></ul>
-                   </div>swe
-
                 </div>
-              </div>
             </div>
 
             <!-- Select product page -->
             <div data-page="select-product-page" class="page cached">
-              <div class="page-content">
-                <div class="content-block">
+                <div class="page-content">
+                    <div class="content-block">
 
-                  <div class="content-block-title" dir="rtl"><input id="search-product-input" ng-model="product_name_search" type="text" placeholder="חפש מוצר..."></input></div>
+                        <div class="content-block-title" dir="rtl"><input id="search-product-input"
+                                                                          ng-model="product_name_search" type="text"
+                                                                          placeholder="חפש מוצר..."></input></div>
 
-                    <div class="list-block media-list inset">
-                      <ul id="notifToday">
-                        <li class="rideComponent" onclick="/** open dropdown! */">
-                           <div class="item-inner">
-                              <div class="item-title-row" id="select-product-div">
-                                 <div class="item-title">לחם</div>
-                                 <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
-                              </div>
-                              <div class="select-product-dropped" class="card-footer">
-                                 <span style="float: right">כמות: </span>
-                                 <input type="number" id="quantity-for-product" value="1" />
-                                 <a href="#" class="link back" style="float: left;"><b>הוספה</b></a>
-                              </div>
-                           </div>
-                        </li>
-                     </ul>
-                   </div>
+                        <div class="list-block media-list inset">
+                            <ul id="notifToday">
+                                <li class="rideComponent" onclick="/** open dropdown! */">
+                                    <div class="item-inner">
+                                        <div class="item-title-row" id="select-product-div">
+                                            <div class="item-title">לחם</div>
+                                            <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
+                                        </div>
+                                        <div class="select-product-dropped" class="card-footer">
+                                            <span style="float: right">כמות: </span>
+                                            <input type="number" id="quantity-for-product" value="1"/>
+                                            <a href="#" class="link back" style="float: left;"><b>הוספה</b></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-                  <div ng-repeat="x in prods | filter:product_name_search | limitTo:10">
-                      <div class="list-block media-list inset">
-                         <ul id="notifToday">
-                           <li class="rideComponent" onclick="/** open dropdown! */">
-                             <div class="item-inner">
-                                <div class="item-title-row" id="select-product-div">
-                                   <div class="item-title">{{x.name}}</div>
-                                   <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                     </div>
-                  </div>
+                        <div ng-repeat="x in prods | filter:product_name_search | limitTo:10">
+                            <div class="list-block media-list inset">
+                                <ul id="notifToday">
+                                    <li class="rideComponent" onclick="/** open dropdown! */">
+                                        <div class="item-inner">
+                                            <div class="item-title-row" id="select-product-div">
+                                                <div class="item-title">{{x.name}}</div>
+                                                <span style="float: left; font-weight: bold; margin-left: 8px">4.90</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
-              </div>
             </div>
 
             <!-- Ride Page -->
             <div data-page="ride" class="page cached" dir="rtl">
-              <div class="page-content">
-                <div class="content-block">
-                  <div class="card">
-                    <div class="card-header"><b>מנהל העגלה</b><span id="ridePageAuthor">{{ cart.display_name }}</span>
-                      <div class="item-media"><img id="ridePageImg" src="static/www/img/cart.png" width="44"></div>
-                    </div>
-                    <div class="card-content">
-                      <div class="card-content-inner">
-                        <p id="ridePageFromTo">{{ cart.description }}</p>
-                        <p><b>תאריך רכישה: </b>1.5.17 22:00</p>
-                        <p><b>חברים בעגלה: </b>{{ members }}</p>
-                        <form  ng-if="cart.owner==uid">
-                            <input type="text" ng-model="new_cart_member">
-                            <button class="btn" ng-click="add_user_to_cart(new_cart_member);">הוסף חבר</button>
-                            <button class="btn" ng-click="delete_cart(cart.id);">מחק עגלה</button>
-                        </form>
-                        <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
-                      </div>
-                    </div>
-                    <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
-                  </div>
-
-                    <div ng-cloak="" class="tabsdemoDynamicHeight">
-                        <md-content style="margin: 10px; box-shadow: 0 1px 2px rgba(0,0,0,.3); border-radius: 2px">
-                            <md-tabs md-dynamic-height="" md-border-bottom="">
-                                <md-tab label="המוצרים שלך">
-                                    <md-content class="tab-content">
-                                        <table class="tab-table">
-                                            <tr>
-                                                <th>מוצר</th>
-                                                <th>כמות</th>
-                                                <th>מחיר</th>
-                                            </tr>
-                                            <tr ng-repeat="item in my_items">
-                                                <a href="#" class="item-link">
-                                                    <td>{{ item.name }}</td>
-                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
-                                                    <td>{{ item.sum }}</td>
-                                                </a>
-                                            </tr>
-                                        </table>
-                                    </md-content>
-                                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
-                                </md-tab>
-                                <md-tab label="הסל המשותף">
-                                    <md-content class="tab-content">
-                                        <table class="tab-table">
-                                            <tr>
-                                                <th>מוצר</th>
-                                                <th>כמות</th>
-                                                <th>מחיר</th>
-                                            </tr>
-                                            <tr ng-repeat="item in shared_items">
-                                                <a href="#" class="item-link">
-                                                    <td>{{ item.name }}</td>
-                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
-                                                    <td>{{ item.sum }}</td>
-                                                </a>
-                                            </tr>
-                                        </table>
-                                    </md-content>
-                                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span></div>
-                                </md-tab>
-                                <md-tab label="אחרים">
-                                    <md-content class="tab-content">
-                                        <table class="tab-table">
-                                            <tr>
-                                                <th>מוצר</th>
-                                                <th>כמות</th>
-                                                <th>מחיר</th>
-                                            </tr>
-                                            <tr ng-repeat="item in others_items">
-                                                <a href="#" class="item-link">
-                                                    <td>{{ item.name }}</td>
-                                                    <td>{{ item.quantity }}x{{ item.price }}</td>
-                                                    <td>{{ item.sum }}</td>
-                                                </a>
-                                            </tr>
-                                        </table>
-                                    </md-content>
-                                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span></div>
-                                </md-tab>
-                            </md-tabs>
-                        </md-content>
-                    </div>
-                  <div class="content-block-title">אתה משלם</div>
-                  <div class="card">
-                    <div class="card-header">
-                       <a href="#select-product-page" class="link">
-                          <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b class="add-to-cart-text"> הוסף פריט</b></div>
-                       </a>
-                    </div>
-
-                    <div class="card-content">
-                      <div class="list-block">
-                        <ul ng-repeat="item in my_items">
-                          <li>
-                             <a href="#" class="item-link">
-                                <div class="item-content">
-                                   <div class="item-inner">
-                                      <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
-                                   </div>
+                <div class="page-content">
+                    <div class="content-block">
+                        <div class="card">
+                            <div class="card-header"><b>מנהל העגלה</b><span
+                                    id="ridePageAuthor">{{ cart.display_name }}</span>
+                                <div class="item-media"><img id="ridePageImg" src="static/www/img/cart.png" width="44">
                                 </div>
-                             </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
-                  </div>
-
-                  <div class="content-block-title">כולם משלמים</div>
-                  <div class="card">
-                     <div class="card-header">
-                       <a href="#" class="link">
-                          <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b class="add-to-cart-text"> הוסף פריט</b></div>
-                       </a>
-                    </div>
-                    <div class="card-content">
-                      <div class="list-block">
-                        <ul ng-repeat="item in shared_items">
-                          <li>
-                             <a href="#" class="item-link">
-                                <div class="item-content">
-                                   <div class="item-inner">
-                                      <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
-                                   </div>
-                                </div>
-                             </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span></div>
-                  </div>
-
-                  <div class="content-block-title">אחרים משלמים</div>
-                  <div class="card">
-                     <div class="card-header">
-                       <a href="#" class="link">
-                          <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b class="add-to-cart-text"> הוסף פריט</b></div>
-                       </a>
-                    </div>
-                    <div class="card-content">
-                      <div class="list-block">
-                         <ul ng-repeat="item in others_items">
-                          <li>
-                             <a href="#" class="item-link">
-                                <div class="item-content">
-                                   <div class="item-inner">
-                                      <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
-                                   </div>
-                                </div>
-                             </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span></div>
-                  </div>
-
-                    <!--<div class="card">
-                        <div class="card-header">
-
-                        </div>
-
-                        <div class="card-content">
-
-                        </div>
-                        <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
-                    </div>-->
-
-                  <div class="content-block-title">תגובות</div>
-                  <div id="commentsSec" ng-repeat="comm in cart.comments">
-                     <div class="card" id="aaa">
-                        <div class="card-content">
-                           <div class="card-content-inner">
-                              <b>{{ comm.display_name }}:</b>{{ comm.comment }}
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                </div>
-                <div id="newcomment">
-                  <div class="card">
-                    <div class="list-block">
-                      New comment:
-                      <ul>
-                        <li class="align-top">
-                          <div class="item-content">
-                            <div class="item-inner">
-                              <div class="item-input"><form id="commentForm">
-                                <div class="card"><textarea ng-model="new_comment" id="message" style="background-color: #f0f0f0;" placeholder="Comment goes here..." required=""></textarea></div>
-                                <input ng-click="add_comment(new_comment);" type="Submit" value="Submit" class="button button-fill button-raised" style="width: 40%; margin: 4px auto;"></form>
-                              </div>
                             </div>
-                          </div>
-                        </li>
-                      </ul>
+                            <div class="card-content">
+                                <div class="card-content-inner">
+                                    <p id="ridePageFromTo">{{ cart.description }}</p>
+                                    <p><b>תאריך רכישה: </b>1.5.17 22:00</p>
+                                    <p><b>חברים בעגלה: </b>{{ members }}</p>
+                                    <form ng-if="cart.owner==uid">
+                                        <input type="text" ng-model="new_cart_member">
+                                        <button class="btn" ng-click="add_user_to_cart(new_cart_member);">הוסף חבר
+                                        </button>
+                                        <button class="btn" ng-click="delete_cart(cart.id);">מחק עגלה</button>
+                                    </form>
+                                    <p><b><a href="#pay-page">המשך לתשלום</a></b></p>
+                                </div>
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">עדכון אחרון אתמול ב 20:30</div>
+                        </div>
+
+                        <div ng-cloak="" class="tabsdemoDynamicHeight">
+                            <md-content style="margin: 10px; box-shadow: 0 1px 2px rgba(0,0,0,.3); border-radius: 2px">
+                                <md-tabs md-dynamic-height="" md-border-bottom="">
+                                    <md-tab label="המוצרים שלך">
+                                        <md-content class="tab-content">
+                                            <table class="tab-table">
+                                                <tr>
+                                                    <th>מוצר</th>
+                                                    <th>כמות</th>
+                                                    <th>מחיר</th>
+                                                </tr>
+                                                <tr ng-repeat="item in my_items">
+                                                    <a href="#" class="item-link">
+                                                        <td>{{ item.name }}</td>
+                                                        <td>{{ item.quantity }}x{{ item.price }}</td>
+                                                        <td>{{ item.sum }}</td>
+                                                    </a>
+                                                </tr>
+                                            </table>
+                                        </md-content>
+                                        <div id="ridePageNotes" class="card-footer">סה"כ<span
+                                                id="epsilon">{{ my_sum }}</span></div>
+                                    </md-tab>
+                                    <md-tab label="הסל המשותף">
+                                        <md-content class="tab-content">
+                                            <table class="tab-table">
+                                                <tr>
+                                                    <th>מוצר</th>
+                                                    <th>כמות</th>
+                                                    <th>מחיר</th>
+                                                </tr>
+                                                <tr ng-repeat="item in shared_items">
+                                                    <a href="#" class="item-link">
+                                                        <td>{{ item.name }}</td>
+                                                        <td>{{ item.quantity }}x{{ item.price }}</td>
+                                                        <td>{{ item.sum }}</td>
+                                                    </a>
+                                                </tr>
+                                            </table>
+                                        </md-content>
+                                        <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span>
+                                        </div>
+                                    </md-tab>
+                                    <md-tab label="אחרים">
+                                        <md-content class="tab-content">
+                                            <table class="tab-table">
+                                                <tr>
+                                                    <th>מוצר</th>
+                                                    <th>כמות</th>
+                                                    <th>מחיר</th>
+                                                </tr>
+                                                <tr ng-repeat="item in others_items">
+                                                    <a href="#" class="item-link">
+                                                        <td>{{ item.name }}</td>
+                                                        <td>{{ item.quantity }}x{{ item.price }}</td>
+                                                        <td>{{ item.sum }}</td>
+                                                    </a>
+                                                </tr>
+                                            </table>
+                                        </md-content>
+                                        <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span>
+                                        </div>
+                                    </md-tab>
+                                </md-tabs>
+                            </md-content>
+                        </div>
+                        <div class="content-block-title">אתה משלם</div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#select-product-page" class="link">
+                                    <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b
+                                            class="add-to-cart-text"> הוסף פריט</b></div>
+                                </a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="list-block">
+                                    <ul ng-repeat="item in my_items">
+                                        <li>
+                                            <a href="#" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
+                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
+                        </div>
+
+                        <div class="content-block-title">כולם משלמים</div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#" class="link">
+                                    <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b
+                                            class="add-to-cart-text"> הוסף פריט</b></div>
+                                </a>
+                            </div>
+                            <div class="card-content">
+                                <div class="list-block">
+                                    <ul ng-repeat="item in shared_items">
+                                        <li>
+                                            <a href="#" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
+                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span>
+                            </div>
+                        </div>
+
+                        <div class="content-block-title">אחרים משלמים</div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#" class="link">
+                                    <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b
+                                            class="add-to-cart-text"> הוסף פריט</b></div>
+                                </a>
+                            </div>
+                            <div class="card-content">
+                                <div class="list-block">
+                                    <ul ng-repeat="item in others_items">
+                                        <li>
+                                            <a href="#" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
+                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span>
+                            </div>
+                        </div>
+
+                        <!--<div class="card">
+                            <div class="card-header">
+
+                            </div>
+
+                            <div class="card-content">
+
+                            </div>
+                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
+                        </div>-->
+
+                        <div class="content-block-title">תגובות</div>
+                        <div id="commentsSec" ng-repeat="comm in cart.comments">
+                            <div class="card" id="aaa">
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        <b>{{ comm.display_name }}:</b>{{ comm.comment }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+                    <div id="newcomment">
+                        <div class="card">
+                            <div class="list-block">
+                                New comment:
+                                <ul>
+                                    <li class="align-top">
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <form id="commentForm">
+                                                        <div class="card"><textarea ng-model="new_comment" id="message"
+                                                                                    style="background-color: #f0f0f0;"
+                                                                                    placeholder="Comment goes here..."
+                                                                                    required=""></textarea></div>
+                                                        <input ng-click="add_comment(new_comment);" type="Submit"
+                                                               value="Submit" class="button button-fill button-raised"
+                                                               style="width: 40%; margin: 4px auto;"></form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
             <!-- About Page -->
             <div data-page="about" class="page cached">
-              <div class="page-content">
-                <div class="content-block">
-                <p>This web application was created by Sapir, Sivan and Barak as part of a final assignement for the course "mobile web application development</p><p>Thanks for your time</p>
+                <div class="page-content">
+                    <div class="content-block">
+                        <p>This web application was created by Sapir, Sivan and Barak as part of a final assignement for
+                            the course "mobile web application development</p>
+                        <p>Thanks for your time</p>
+                    </div>
                 </div>
-              </div>
             </div>
 
             <!-- Form Page-->
             <div data-page="form" class="page cached">
-              <div class="page-content">
-              <div class="page-content">
-              <form id="newPostForm">
+                <div class="page-content">
+                    <div class="page-content">
+                        <form id="newPostForm">
 
 
-                <div class="list-block" dir="rtl">
-                  <ul>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">מנהל העגלה</div>
-                          <div class="item-input">
-                            {{ display_name }}
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">תאריך למשלוח</div>
-                          <div class="item-input">
-                            <input type="date" name="date" placeholder="Date" required="">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">שעה למשלוח</div>
-                          <div class="item-input">
-                            <input type="time" name="hour" placeholder="Hour" required="">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+                            <div class="list-block" dir="rtl">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                            <div class="item-inner">
+                                                <div class="item-title label">מנהל העגלה</div>
+                                                <div class="item-input">
+                                                    {{ display_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                            <div class="item-inner">
+                                                <div class="item-title label">תאריך למשלוח</div>
+                                                <div class="item-input">
+                                                    <input type="date" name="date" placeholder="Date" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                            <div class="item-inner">
+                                                <div class="item-title label">שעה למשלוח</div>
+                                                <div class="item-input">
+                                                    <input type="time" name="hour" placeholder="Hour" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
 
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-settings"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">שם העגלה</div>
-                          <div class="item-input">
-                            <input type="text" name="cart_name" required="" ng-model="new_cart_name">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                                            <div class="item-inner">
+                                                <div class="item-title label">שם העגלה</div>
+                                                <div class="item-input">
+                                                    <input type="text" name="cart_name" required=""
+                                                           ng-model="new_cart_name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
 
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-comment"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">תיאור העגלה</div>
-                          <div class="item-input">
-                            <input type="text" name="description" required="" ng-model="new_cart_desc">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                                            <div class="item-inner">
+                                                <div class="item-title label">תיאור העגלה</div>
+                                                <div class="item-input">
+                                                    <input type="text" name="description" required=""
+                                                           ng-model="new_cart_desc">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
 
-                    <li class="align-top">
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-comment"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">הערות משלוח</div>
-                          <div class="item-input">
-                            <input type="text" name="notes">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                                    <li class="align-top">
+                                        <div class="item-content">
+                                            <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                                            <div class="item-inner">
+                                                <div class="item-title label">הערות משלוח</div>
+                                                <div class="item-input">
+                                                    <input type="text" name="notes">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <div class="row">
+                                    <input type="Submit" class="Submit button button-big button-fill color-green"
+                                           ng-click="add_cart(new_cart_name, new_cart_desc)">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="content-block">
-                  <div class="row">
-                    <input type="Submit" class="Submit button button-big button-fill color-green" ng-click="add_cart(new_cart_name, new_cart_desc)">
-                  </div>
-                </div>
-              </form></div>
             </div>
-          </div>
         </div>
-          <!-- Bottom Toolbar-->
-          <div class="toolbar">
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
             <div class="toolbar-inner">
-              <div id="logoutB"><a href="#" id="logout" class="link" ng-click="logout();">התנתק</a></div>
-              <a href="#form" onclick="navigation.toIDCTab()" class="link"><img src="static/www/img/create.png" width="30px"></a>
+                <div id="logoutB"><a href="#" id="logout" class="link" ng-click="logout();">התנתק</a></div>
+                <a href="#form" onclick="navigation.toIDCTab()" class="link"><img src="static/www/img/create.png"
+                                                                                  width="30px"></a>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 
 
-
-      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-      <script type="text/javascript" src="/static/www/js/framework7.min.js"></script>
-      <script type="text/javascript" src="/static/www/js/my-app.js"></script>
-  </body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/static/www/js/framework7.min.js"></script>
+<script type="text/javascript" src="/static/www/js/my-app.js"></script>
+</body>
 </html>
