@@ -298,7 +298,6 @@
                                                 <th>כמות</th>
                                                 <th>מחיר</th>
                                             </tr>
-                                            </tr>
                                             <tr ng-repeat="item in my_items">
                                                 <a href="#" class="item-link">
                                                     <td>{{ item.name }}</td>
@@ -318,7 +317,6 @@
                                                 <th>כמות</th>
                                                 <th>מחיר</th>
                                             </tr>
-                                            </tr>
                                             <tr ng-repeat="item in shared_items">
                                                 <a href="#" class="item-link">
                                                     <td>{{ item.name }}</td>
@@ -337,7 +335,6 @@
                                                 <th>מוצר</th>
                                                 <th>כמות</th>
                                                 <th>מחיר</th>
-                                            </tr>
                                             </tr>
                                             <tr ng-repeat="item in others_items">
                                                 <a href="#" class="item-link">
@@ -428,6 +425,17 @@
                     </div>
                     <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span></div>
                   </div>
+
+                    <!--<div class="card">
+                        <div class="card-header">
+
+                        </div>
+
+                        <div class="card-content">
+
+                        </div>
+                        <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
+                    </div>-->
 
                   <div class="content-block-title">תגובות</div>
                   <div id="commentsSec" ng-repeat="comm in cart.comments">
@@ -558,6 +566,7 @@
               </form></div>
             </div>
           </div>
+        </div>
           <!-- Bottom Toolbar-->
           <div class="toolbar">
             <div class="toolbar-inner">
