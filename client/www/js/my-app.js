@@ -60,22 +60,22 @@ newPostSubmit = {
             var form = $(this);
             var userData = form.serialize();
 
-            $.ajax({
-                type: 'POST',
-                url: '/www/createRide',
-                data: userData,
-            }).done(function(dataRecieved){
-                if(dataRecieved){
-                    navigation.goBack();
-                    rides.addOnePost(dataRecieved);
-                    form.trigger('reset');
-                } else {
-                    console.log("there was an error?");
-                }
-            })
-            .fail(function(data){
-                console.log("there was an error");
-            });
+            // $.ajax({
+            //     type: 'POST',
+            //     url: '/www/createRide',
+            //     data: userData,
+            // }).done(function(dataRecieved){
+            //     if(dataRecieved){
+            //         navigation.goBack();
+            //         rides.addOnePost(dataRecieved);
+            //         form.trigger('reset');
+            //     } else {
+            //         console.log("there was an error?");
+            //     }
+            // })
+            // .fail(function(data){
+            //     console.log("there was an error");
+            // });
         });
     }
 }
