@@ -27,7 +27,7 @@ class MySqlDal(object):
     GET_PRODUCTS = "select * from products"
     GET_CARTS = "select c.id, c.name, c.owner, u.display_name, c.description from carts c, user_carts uc, users u where c.owner = u.id and c.id = uc.c_id and uc.u_id = %s"
     GET_COMMENTS = "select u.display_name, c.comment from comments c, users u where c.u_id = u.id and c.c_id = %s"
-    GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners, p.price from cart_items ci, products2 p where p.id = ci.p_id and c_id = %s"
+    GET_CART_ITEMS = "select p.id, ci.quantity, p.name, ci.owners, p.price from cart_items ci, products p where p.id = ci.p_id and c_id = %s"
     CREATE_CART = "insert into carts (name, owner, description) values (%s, %s, %s)"
     ADD_USER_CART = "insert into user_carts (c_id, u_id, status) values (%(c_id)s, %(u_id)s, 0)"
     USER_ID_BY_NAME = "select id from users where name = %s"
