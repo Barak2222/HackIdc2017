@@ -123,6 +123,19 @@ myApp.controller('mainCtrl', function myController($scope, $timeout, $http, $coo
         });
     };
 
+    $scope.add_cart_item = function(c_id, owner, i_id, quantity){
+        $http.get("/add_cart_item", {
+            params: {
+                c_id: c_id,
+                owner: owner,
+                i_id: i_id,
+                quantity: quantity
+            }
+        }).then(function (response) {
+            $scope.reload_data();
+        });
+    };
+
     if (!cartPoolCookie) {
         $window.location.href = "/static/public/login.html";
     }
