@@ -238,3 +238,10 @@ input[type=text]:focus {
    from{ bottom:-100px; opacity:0 }
    to{ bottom:0; opacity:1 }
  }
+
+.ng-cloak { display: none; }
+
+.payment-pay-options img{
+   width: 100px;
+   height: 100px;
+}

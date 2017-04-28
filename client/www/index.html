@@ -109,8 +109,7 @@
         <div class="pages navbar-through toolbar-through">
             <!-- Index Page-->
             <div data-page="index" class="page">
-                <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;"
-                     ng-if="carts">
+                <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active ng-cloak" style="width: 375px;" ng-show="carts">
                     <div dir="rtl" class="content-block-title">שלום {{ display_name }}, הנה העגלות שלך</div>
                     <div class="list-block media-list inset">
                         <ul id="todayToIDC" ng-repeat="c in carts">
@@ -135,13 +134,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;"
-                     ng-if="! carts">
-                    <h1 dir="rtl">
-                        <center><b>טוען נתונים...</b>
-                            <center>
-                    </h1>
-                    <div id="loadingSign"></div>
+                <div class="page-content tab swiper-slide swiper-slide-active active" style="width: 375px;" ng-show="! carts">
+                   <!-- <h1 dir="rtl"><center><b>טוען נתונים...</b><center></h1> -->
+                   <div id="loadingSign"></div>
                 </div>
             </div>
 
