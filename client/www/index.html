@@ -354,7 +354,6 @@
                                 </md-tabs>
                             </md-content>
                         </div>
-                        <div class="content-block-title">אתה משלם</div>
                         <div class="card">
                             <div class="card-header">
                                 <a href="#select-product-page" class="link">
@@ -379,60 +378,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
-                        </div>
-
-                        <div class="content-block-title">כולם משלמים</div>
-                        <div class="card">
-                            <div class="card-header">
-                                <a href="#" class="link">
-                                    <div><img class="add-to-cart-image" src="/static/www/img/plus-sign.png"><b
-                                            class="add-to-cart-text"> הוסף פריט</b></div>
-                                </a>
-                            </div>
-                            <div class="card-content">
-                                <div class="list-block">
-                                    <ul ng-repeat="item in shared_items">
-                                        <li>
-                                            <a href="#" class="item-link">
-                                                <div class="item-content">
-                                                    <div class="item-inner">
-                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
-                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ shared_sum }}</span>
-                            </div>
-                        </div>
-
-                        <div class="content-block-title">אחרים משלמים</div>
-                        <div class="card">
-                            <div class="card-header">
-                                
-                            </div>
-                            <div class="card-content">
-                                <div class="list-block">
-                                    <ul ng-repeat="item in others_items">
-                                        <li>
-                                            <a href="#" class="item-link">
-                                                <div class="item-content">
-                                                    <div class="item-inner">
-                                                        <span id="ridePageFromTo">{{ item.name }}</span>{{ item.quantity
-                                                        }}x{{ item.price }}<span id="epsilon">{{ item.sum }}</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ others_sum }}</span>
-                            </div>
                         </div>
 
                         <!--<div class="card">
@@ -446,10 +391,11 @@
                             <div id="ridePageNotes" class="card-footer">סה"כ<span id="epsilon">{{ my_sum }}</span></div>
                         </div>-->
 
-
-                        <div class="content-block-title">תגובות</div>
                         <div id="commentsSec">
                             <div class="card" id="aaa">
+                                <div class="card-header">
+                                    <p>תגובות</p>
+                                </div>
                                 <div class="card-content">
                                     <div ng-repeat="comm in cart.comments">
                                         <div>
@@ -467,7 +413,7 @@
                     <div id="newcomment">
                         <div class="card">
                             <div class="list-block">
-                                New comment:
+                                <p>השאר תגובה</p>
                                 <ul>
                                     <li class="align-top">
                                         <div class="item-content">
@@ -476,7 +422,7 @@
                                                     <form id="commentForm">
                                                         <div class="card"><textarea ng-model="new_comment" id="message"
                                                                                     style="background-color: #f0f0f0;"
-                                                                                    placeholder="Comment goes here..."
+                                                                                    placeholder="לא מרוצה מהסל? השאר הודעה לחברייך"
                                                                                     required=""></textarea></div>
                                                         <input ng-click="add_comment(new_comment);" type="Submit"
                                                                value="Submit" class="button button-fill button-raised"
